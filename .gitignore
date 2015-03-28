@@ -1,0 +1,4 @@
+OpenSBE/
+autom4te.cache/
+build*/
+configure
