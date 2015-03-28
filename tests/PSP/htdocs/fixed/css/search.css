@@ -1,0 +1,308 @@
+body
+{
+  font-family: Verdana, Tahoma, Geneva, Helvetica, Arial, Sans-serif;
+  background: rgb(233, 233, 240);
+  border: 0;
+  padding: 0;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.print_l
+{
+  width: 100%;
+  font-size: 115%;
+}
+
+.print_s
+{
+  width: 100%;
+  font-size: 100%;
+}
+
+.msg_container
+{
+  padding: 0 1em 0 1em;
+}
+
+a
+{
+  text-decoration: none;
+}
+
+a:hover
+{
+  text-decoration: underline;
+}
+
+a:active
+{
+  text-decoration: underline;
+  color: red;
+}
+
+a:focus
+{
+  text-decoration: underline;
+  color: red;
+}
+
+.page_top_bar
+{
+  font-size: 80%;
+  background: rgb(224, 224, 255);
+  width: 100%;
+  border-bottom: 1px solid rgb(0,0,80);
+  margin: 0 0 0.3em 0;
+}
+
+.control_bar
+{
+  width: 100%; 
+  margin: 0 0 0.4em 0; 
+}
+
+.page_title
+{
+  text-align: left;
+  padding: 0.3em 0 0.5em 1em;
+}
+
+.page_title .search_exp
+{
+  font-style: italic;
+}
+
+.page_current_number
+{
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.page_navigation_bar
+{
+  text-align: left;
+  width: 70%;  
+  padding: 0.3em 0 0.3em 1em;
+}
+
+.page_menu
+{
+  text-align: right;
+  width: 30%;  
+  padding: 0.3em 1em 0.5em 0;
+}
+
+.lang_bar_select
+{
+  font-family: Verdana, Tahoma, Geneva, Helvetica, Arial, Sans-serif;
+  font-size: 100%;
+}
+
+.lang_bar
+{
+  font-size: 70%;
+/*  background: rgb(100,100,200);*/
+  width: 8em;
+/*  width: 15%;*/
+  text-align: left;
+}
+
+.country_bar_select
+{
+  font-family: Verdana, Tahoma, Geneva, Helvetica, Arial, Sans-serif;
+  font-size: 100%;
+}
+
+.country_bar
+{
+  font-size: 70%;
+/*  background: rgb(100,200,100); */
+/*  width: 15%;*/
+/*  padding: 0 0 0 0.5em;*/
+  text-align: left;
+}
+
+.display_bar
+{
+  font-size: 70%;
+/*  width: 55%;*/
+  padding: 0 0 0 0.5em;
+  text-align: center;
+}
+
+.sort_bar
+{
+  font-size: 70%;
+/*  background: rgb(200,100,100); */
+/*  width: 15%;*/
+  padding: 0 0 0 0.5em;
+  text-align: right;
+}
+
+.column 
+{
+  float: left;
+  width: 50%;
+/*  background-color: blue; */
+}
+
+.msg
+{
+  background: rgb(255, 255, 255);
+  color: rgb(60, 60, 60);
+  padding: 0.5em;
+  overflow: hidden;
+  border: 1px solid rgb(0,0,80);
+  margin: 0 0.6em 0.5em 0.6em;
+}
+
+.msg_in
+{
+  width: 100%;
+  overflow: hidden;
+}
+
+.msg_title a
+{
+  font: 90% Georgia, Palatino, Times, Times New Roman, serif;
+  color: black;
+  font-weight: bold;
+}
+
+.in_msg_link
+{
+  color: black;
+}
+
+.found_word
+{
+  background-color: rgb(255, 255, 100);
+}
+
+.msg_desc
+{
+  text-align: justify;
+  font: 70%/140% Georgia, Palatino, Times, Times New Roman, serif;
+  padding: 0.5em 0 0 0;
+}
+
+.msg_media
+{
+  text-align: justify;
+  padding: 0.2em 0 0;
+}
+
+.msg_media_header
+{
+  font-size: 60%;
+}
+
+.msg_media_item
+{
+  font: 70%/140% Georgia, Palatino, Times, Times New Roman, serif;
+  text-align: justify;
+  color: rgb(60, 60, 60);
+  width: 100%;
+  padding: 0.5em 0 0 0; 
+}
+
+.mmi_print_l
+{
+  font-size: 115%;
+  line-height: 140%;
+}
+
+img.msg_media_img
+{
+  margin: 0.2em 0.5em 0.5em 0;
+  float: left;
+}
+
+.msg_footer
+{
+  color: black;
+  font-size: 60%;
+  text-align: right;
+  width: 100%;
+  padding: 1em 0 0 0;
+  border-collapse: collapse;
+  margin: 1em 0 0.1em 0;
+}
+
+.msg_cont
+{
+  text-align: left;
+  vertical-align: top;
+  width: 17em;
+  padding: 0 0 0 0;
+/*  background-color: red; */
+}
+
+.msg_pub
+{
+  text-align: right;
+  vertical-align: bottom;
+  padding: 0 0 0 0;
+}
+
+.page_bottom_bar
+{
+  font-size: 80%;
+  background: rgb(224, 224, 255);
+  width: 100%;
+  border-top: 1px solid rgb(0,0,80);
+  margin: 0.2em 0 0 0;
+  float: left;
+}
+
+.copyright
+{
+  font: 60% Verdana, Tahoma, Geneva, Helvetica, Arial, Sans-serif;
+  text-align: center;
+  width: 100%;
+  padding: 2em 0 2em 0;
+  float: left;
+}
+
+.with_images_0, .titles_only_1
+{
+  display: none;
+}
+
+.visible
+{
+  display: inline;
+}
+
+.dbg-item
+{
+  color: rgb(0, 0, 0);
+}
+
+.dbg-word
+{
+  font-size: 85%;
+}
+
+.dbg-msg
+{
+  font-size: 70%;
+}
+
+.dbg-coreword
+{
+  color: rgb(100, 0, 0);
+}
+
+.dbg-event
+{
+  font-size: 70%;
+  padding: 1em 1em;
+}
+
+.dbg-event-word
+{
+  font-size: 95%;
+}
+

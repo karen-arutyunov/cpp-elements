@@ -1,0 +1,17 @@
+# @file   Makefile.in
+# @author Karen Aroutiounov
+# $Id:$
+
+include Common.pre.rules
+include $(osbe_builddir)/config/CXX/CXX.pre.rules
+
+include $(top_builddir)/config/El/Elements.so.pre.rules
+include $(top_builddir)/config/xsd/ElStart.so.pre.rules
+
+include $(osbe_builddir)/config/CXX/External/Xerces.pre.rules
+
+sources  := Application.cpp
+includes := .
+target   := ElStart
+
+include $(osbe_builddir)/config/CXX/Ex.post.rules

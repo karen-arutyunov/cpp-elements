@@ -1,0 +1,17 @@
+#!/bin/sh
+
+DB_NAME="test"
+DB_USER=root
+DB_SOCKET=$MYSQL_SOCKET
+
+echo "Running ElMySQLClassGen test ..."
+ElTestMySQLClassGen test unix_socket="$DB_SOCKET" user=$DB_USER db=$DB_NAME
+result=$?
+
+if test $result -eq 0; then
+  echo "done"
+else
+  echo "failed"
+fi
+
+exit $result

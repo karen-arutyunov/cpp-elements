@@ -1,0 +1,33 @@
+MSG_SRC_COUNTRY_CODES       or message source country code(s).
+PLS_MSG_SRC_COUNTRY_CODES   Please type message source contry code(s).
+
+MSG_SRC_DOMAIN_NAMES        or message source domain names(s).
+PLS_MSG_SRC_DOMAIN_NAMES    Please type message source domain names(s).
+
+MSG_SRC_KINDS               or message source kind(s).
+PLS_MSG_SRC_KINDS           Please type message source kind(s).
+
+MSG_SRC_LANG_CODES          or message language code(s).
+PLS_MSG_SRC_LANG_CODES      Please type message language code(s).
+
+MSG_WORDS                   or message word(s).
+PLS_MSG_WORDS               Please type message word(s).
+
+MSG_SRC_SITES               or message source site name(s).
+PLS_MSG_SRC_SITES           Please type message source site name(s).
+
+MSG_SRC_URLS                or message source url(s).
+PLS_MSG_SRC_URLS            Please type message source url(s).
+
+MAX_MSG_AGE                 or maximum message age (in days).
+PLS_MAX_MSG_AGE             Please type maximum message age (in days).
+
+MIN_MSG_OUTDATE             or minimum number of days messages should be outdated.
+PLS_MIN_MSG_OUTDATE         Please type minimum number of days messages should be outdated.
+
+PLS_TYPE_SPEC_WORDS         Please type one of special words 
+PLS_TYPE_ONE_SPEC_WORD      Please type special word 
+
+APPROP_VALS                 Appropriate values:
+APPROP_VALS_BEGIN_WITH      Appropriate values beginning with '%%PREFIX%%':
+LOADING                     loading ...

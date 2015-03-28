@@ -1,0 +1,7 @@
+# @file   dir.ac
+# @author Karen Aroutiounov
+# $Id:$
+
+OSBE_CONFIG_FILE([Makefile])
+OSBE_CONFIG_FILE([Application.cpp.mk])
+OSBE_CONFIG_FILE([Context.cpp.mk])

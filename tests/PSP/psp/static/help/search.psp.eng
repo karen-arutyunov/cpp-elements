@@ -1,0 +1,240 @@
+PAGE_TITLE  News Fiber - Search Help
+PAGE_NAME   Search Help
+NEW_SEARCH  New Search
+COPYRIGHT   Copyright &copy; 2007 Data Stream Navigations. All rights reserved.
+CONTACT     Contact Us
+
+BASE_OPERATORS_HEADING Basic operations ALL, ANY, SITE, URL
+
+BASE_OPERATORS_INTRO \
+\
+News Fiber provides ALL, ANY, SITE, URL <span class="op_form">basic operations</span> for searching posts by \
+words they contain or by source location news posts come from.
+
+ALL_SEARCH \
+\
+<span class="op_def">Operation ALL</span> have the <span class="op_form">ALL term...</span> form where \
+<span class="op_form">term</span> is a word or a phrase taken into double or single quotes. \
+Operation return just those posts which contain all specified terms. Operation name declaration is optional. \
+If enter only search terms then News Fiber will "guess" that word ALL is assumed at the beginning. Search is performed with \
+no respect to character case, this why <span class="inline_example">fly Moon</span> and <span class="inline_example">fly moon</span> \
+searches give the same result. Search is performed with no respect to word forms as well, so <span class="inline_example">tournament winner</span> and \
+<span class="inline_example">tournaments winners</span> searches are identical. When you search for phrases, News Fiber will display \
+only those posts which have no punctuation marks between words inside a phrase being searched. \
+There is a difference between taking search phrases into single or double quotes. \
+When phrase is double quoted then words should appear in posts in exactly same \
+form to be found. When phrase is single quoted then word form is not taken into account. \
+So 'space shuttle' will find all 3 phrases:<br>... the space shuttle \
+Atlantis ... all space shuttles ... space shuttle's fuel tank ...<br>\
+while "space shuttle" will find only the first phrase.
+
+ALL_SEARCH_SAMPLE_HEADER Usage examples:
+
+ALL_SEARCH_SAMPLES \
+\
+ALL solar system<br>\
+"solar system" research<br>\
+asteroid<br>\
+'space shuttle'
+
+ANY_SEARCH \
+\
+<span class="op_def">Operation ANY</span> have the <span class="op_form">ANY term...</span> form and differs from ALL \
+with just one thing - it find posts containing at least one term from those specified.
+
+ANY_SEARCH_SAMPLE_HEADER Usage examples:
+
+ANY_SEARCH_SAMPLES \
+\
+ANY astronaut "space shuttle" "progress M-60"</br>\
+ANY meteorite comet
+
+URL_SEARCH \
+\
+<span class="op_def">Operation URL</span> have the <span class="op_form">URL source url...</span> form and \
+return posts from sources specified.
+
+URL_SEARCH_SAMPLE_HEADER Usage examples:
+
+URL_SEARCH_SAMPLES \
+\
+URL http://rss.news.yahoo.com/rss/tech http://rss.news.yahoo.com/rss/elections<br>\
+URL http://news.yandex.ru/computers.rss
+
+SITE_SEARCH \
+\
+<span class="op_def">Operation SITE</span> have the <span class="op_form">SITE source site...</span> form and \
+return posts from sources belonging to sites specified.
+
+SITE_SEARCH_SAMPLE_HEADER Usage examples:
+
+SITE_SEARCH_SAMPLES \
+\
+SITE rss.news.yahoo.com www.prweb.com<br>\
+SITE news.yandex.ru
+
+LOGIC_OPERATORS_HEADING Logical operations AND, OR, EXCEPT
+
+LOGIC_OPERATORS_INTRO \
+\
+Besides <span class="op_form">basic operations</span> there are <span class="op_form">logical operations</span> AND, \
+OR, EXCEPT which allow to specify more complex searches - so called \
+<span class="op_form">search expressions</span>. Strictly saying basic operations are \
+search expressions as well, though trivial.
+
+AND_SEARCH \
+\
+<span class="op_def">Operation AND</span> have the <span class="op_form">search expression AND search expression</span> form and return posts \
+which have been found for left and right search expressions simultaneously.
+
+AND_SEARCH_SAMPLE_HEADER Usage examples:
+
+AND_SEARCH_SAMPLES \
+\
+ANY meteorite comet AND SITE rss.msnbc.msn.com<br>\
+rocket AND ANY space canaveral
+
+OR_SEARCH \
+\
+<span class="op_def">Operation OR</span> have the <span class="op_form">search expression OR search expression</span> form and return posts \
+which have been found for left or right search expression.
+
+OR_SEARCH_SAMPLE_HEADER Usage examples:
+
+OR_SEARCH_SAMPLES \
+\
+SITE rss.news.yahoo.com OR URL http://www.prweb.com/rdf/scienceresearch.xml<br>\
+space research OR ANY astronaut spaceship "space shield"
+
+EXCEPT_SEARCH \
+\
+<span class="op_def">Operation EXCEPT</span> have the <span class="op_form">search expression EXCEPT search expression</span> form and return \
+just those posts which have been found for left search expression but not for the right one.
+
+EXCEPT_SEARCH_SAMPLE_HEADER Usage examples:
+
+EXCEPT_SEARCH_SAMPLES \
+\
+virus EXCEPT ANY computer phone program<br>\
+SITE rss.cnn.com EXCEPT URL http://rss.cnn.com/rss/cnn_law.rss
+
+LOGIC_OPERATORS_PRECEDENCE \
+\
+Search expressions containing not only base operations are called <span class="op_form">compound</span>. \
+They get evaluated in the order of operation priority decrease and from the left \
+to the right for operations with the same priority. Evaluation order can be changed \
+by means of parenthesis. AND and EXCEPT have equal priority, which is higher \
+than that of OR operation. \
+<div style="padding: 0.3em 0;">This why</div> \
+\
+<span class="inline_example">comet AND SITE rss.msnbc.msn.com OR rocket AND ANY space canaveral</span>\
+\
+<div style="padding: 0.3em 0;">is equivalent to</div>\
+\
+<span class="inline_example">( comet AND SITE rss.msnbc.msn.com ) OR ( rocket AND ANY space canaveral ).</span>
+
+RESTRICTING_OPERATORS_HEADING Restrictive operations<br>COUNTRY, LANGUAGE, DOMAIN, FRESH, OUTDATED, FEED
+
+RESTRICTING_OPERATORS_INTRO \
+\
+Besides <span class="op_form">basic</span> and <span class="op_form">logical operations</span> News Fiber provides set of\
+<span class="op_form">restrictive operations:</span> COUNTRY, LANGUAGE, DOMAIN, FRESH, OUTDATED, FEED.
+
+COUNTRY_SEARCH \
+\
+<span class="op_def">Operation COUNTRY</span> have 2 forms: <span class="op_form">search expression COUNTRY country code...</span> and \
+<span class="op_form">search expression COUNTRY NOT country code...</span>. First form return only those posts which where found for \
+the search expression on the left and published with a source from \
+one of countries listed on the right. The second - those which were found for expression on the left and published by a source \
+not from any of countries listed on the right.
+
+COUNTRY_SEARCH_SAMPLE_HEADER Usage examples:
+
+COUNTRY_SEARCH_SAMPLES \
+\
+ipod OR itunes COUNTRY USA<br>\
+satellite launch COUNTRY NOT USA GBR
+
+LANG_SEARCH \
+\
+<span class="op_def">Operation LANGUAGE</span> have 2 forms: <span class="op_form">search expression LANGUAGE language code...</span> and \
+<span class="op_form">search expression LANGUAGE NOT language code...</span>. First form return only those posts which where found for \
+the search expression on the left and written in one of listed on the right languages. \
+The second - those which were found for expression on the left and  \
+written in language different from any of listed on the right.
+
+LANG_SEARCH_SAMPLE_HEADER Usage examples:
+
+LANG_SEARCH_SAMPLES \
+\
+ipod OR itunes LANGUAGE eng<br>\
+satellite launch COUNTRY USA LANGUAGE NOT eng rus
+
+DOMEN_SEARCH \
+\
+<span class="op_def">Operation DOMAIN</span> also have 2 forms: <span class="op_form">search expression DOMAIN internet-domain...</span> \
+and <span class="op_form">search expression DOMAIN NOT internet-domain...</span>. First form return only those posts which were found for \
+the search expression on the left and published with a source in one of listed on the right domains. \
+The second - those which were found for expression on the left and published by a source not belonging to any of listed on the right domains.
+
+DOMEN_SEARCH_SAMPLE_HEADER Usage examples:
+
+DOMEN_SEARCH_SAMPLES \
+\
+ANY mac apple DOMAIN ru by<br>\
+ANY linux DOMAIN NOT microsoft.com
+
+FRESH_SEARCH \
+\
+<span class="op_def">Operation FRESH</span> have the <span class="op_form">search expression FRESH days</span> form and return posts \
+which were found for the search expression on the left and published less than specified number of days ago.
+
+FRESH_SEARCH_SAMPLE_HEADER Usage examples:
+
+FRESH_SEARCH_SAMPLES \
+\
+president bush FRESH 2<br>\
+( ANY nasa canaveral FRESH 2 COUNTRY USA ) OR ( astronaut COUNTRY USA FRESH 3 )
+
+OUTDATED_SEARCH \
+\
+<span class="op_def">Operation OUTDATED</span> have the <span class="op_form">search expression OUTDATED days</span> form and return posts \
+which were found for the search expression on the left and published not less than specified number of days ago.
+
+OUTDATED_SEARCH_SAMPLE_HEADER Usage examples:
+
+OUTDATED_SEARCH_SAMPLES \
+\
+\
+president bush OUTDATED 2<br>\
+( ANY nasa canaveral OUTDATED 2 COUNTRY USA ) OR ( hubble COUNTRY USA OUTDATED 3 )
+
+FEED_SEARCH \
+\
+<span class="op_def">Operation FEED</span> have 2 forms: \
+<span class="op_form">search expression FEED type...</span> and <span class="op_form">search expression FEED NOT type...</span>. \
+First form return only those posts which were found for the search expression on the left and \
+published with a source in one of listed on the right feed types. \
+The second - those which were found for expression on the left and published by a source not of any type listed on the right. \
+News Fiber at the moment supports 3 type of feeds: <a href="http://en.wikipedia.org/wiki/RSS_(file_format)">rss</a>, \
+<a href="http://en.wikipedia.org/wiki/Resource_Description_Framework">rdf</a> and <a href="http://en.wikipedia.org/wiki/Atom_(standard)">atom</a>.
+
+FEED_SEARCH_SAMPLE_HEADER Usage examples:
+
+FEED_SEARCH_SAMPLES \
+\
+photo art FEED rss rdf<br>\
+photo art FEED NOT rss
+
+RESTRICTING_OPERATORS_PRECEDENCE \
+\
+Restricting operations have equal priority which is lower than the one of all other operations.
+
+PROMPTING_HEADING Prompt
+
+PROMPTING_DESC \
+\
+If you write a compound search expression and have any difficulties press <span id="hk" class="op_def">Alt 1</span> key combination \
+and News Fiber will prompt you with variants of expression continuation and even \
+complete started special word: operation, country or language code, feed type. If you submitted search making a\
+mistake in the expression syntax News Fiber will point to the erroneous place and give error description.

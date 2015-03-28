@@ -1,0 +1,107 @@
+include <El/Python/Types.pid>
+
+module el.libxml
+
+{
+  unsigned long XML_ELEMENT_NODE;
+  unsigned long XML_ATTRIBUTE_NODE;
+  unsigned long XML_TEXT_NODE;        
+  unsigned long XML_CDATA_SECTION_NODE;
+  unsigned long XML_ENTITY_REF_NODE;
+  unsigned long XML_ENTITY_NODE;
+  unsigned long XML_PI_NODE;
+  unsigned long XML_COMMENT_NODE;
+  unsigned long XML_DOCUMENT_NODE;
+  unsigned long XML_DOCUMENT_TYPE_NODE;
+  unsigned long XML_DOCUMENT_FRAG_NODE;
+  unsigned long XML_NOTATION_NODE;
+  unsigned long XML_HTML_DOCUMENT_NODE;
+  unsigned long XML_DTD_NODE;
+  unsigned long XML_ELEMENT_DECL;
+  unsigned long XML_ATTRIBUTE_DECL;
+  unsigned long XML_ENTITY_DECL;
+  unsigned long XML_NAMESPACE_DECL;
+  unsigned long XML_XINCLUDE_START;
+  unsigned long XML_XINCLUDE_END;
+  unsigned long XML_DOCB_DOCUMENT_NODE;
+
+  type Node
+  {
+    string name();
+    unsigned long type(); // XML_* values
+
+    Object attr(string name, 
+                Object def_value (""), 
+                boolean case_sensitive (True));
+
+    string text(boolean is_html (?)); // if is_html is True renders element 
+                                      // subtree as an HTML DOM model applying
+                                      // to elements corresponding semantics'
+                                      // if param not provided - detected 
+                                      // automatically from parent document 
+                                      // type
+
+    el.Sequence find(string xpath); // Returns sequence of found nodes
+  };
+
+  type DocText
+  {
+    string xpath;
+    boolean concatenate;   // Specify if text for nodes matching xpath to be 
+                           // concatenated
+    unsigned long max_len; // Specify resulted text desired length;
+                           // truncated at word boundary and " ..." appended.
+  };
+
+  type Document
+  {
+    el.Sequence find(string xpath); // Returns sequence of found nodes
+
+    // Iterate through the sequence. If item is a string then returned 
+    // as a result, otherwise item considered to be a DocText object and
+    // text is obtained according to rules in the item. If text non empty
+    // then returned as a result, otherwise go to the next item.
+    string text(sequence seq);
+
+    // Return abs url relative to document url or base url
+    Object abs_url(string url, boolean rel_base_url (True));
+  };
+
+  type HTMLErrorsHolder
+  {
+    string fatal_errors;
+    string errors;
+    string warnings;
+  };
+
+  type HTMLParser
+  {
+    unsigned long PARSE_RECOVER;
+    unsigned long PARSE_NODEFDTD;
+    unsigned long PARSE_NOERROR;
+    unsigned long PARSE_NOWARNING;
+    unsigned long PARSE_PEDANTIC;
+    unsigned long PARSE_NOBLANKS;
+    unsigned long PARSE_NONET;
+    unsigned long PARSE_NOIMPLIED;
+    unsigned long PARSE_COMPACT;
+        
+    Document parse_file(string file_path,
+                        string encoding (""),
+                        HTMLErrorsHolder error_holder (0), // If provided get 
+                                                           // filled with 
+                                                           // errors and
+                                                           // warnings
+                        unsigned long option (0)); // Combination of PARSE_* 
+                                                   // flags
+
+    Document parse(string text,
+                   unsigned long length (ULONG_MAX),
+                   string url (""), // Document URI
+                   string encoding (""),
+                   HTMLErrorsHolder error_holder (0), // If provided get 
+                                                      // filled with errors 
+                                                      // and warning
+                   unsigned long option (0)); // Combination of PARSE_* flags
+  }
+}

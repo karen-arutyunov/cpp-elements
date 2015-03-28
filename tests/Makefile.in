@@ -1,0 +1,41 @@
+# @file   Makefile.in
+# @author Karen Arutyunov
+# $Id:$
+
+include Common.pre.rules
+
+target_directory_list := Moment \
+                         HTTP_URL \
+                         HTTPSession \
+                         CRC \
+                         ZLib \
+                         Mutex \
+                         MySQL \
+                         Guid \
+                         ThreadPool \
+                         ProcessPool \
+                         Timer \
+                         CompoundService \
+                         ApacheModule \
+                         ObjectCache \
+                         Logger \
+                         Sort \
+                         Base64 \
+                         StringManip \
+                         OctetStream \
+                         Geography \
+                         HTMLLightParser \
+                         HTMLParser \
+                         Image \
+                         SharedString \
+                         PythonEmbed \
+                         PythonSandbox \
+                         PSP \
+                         UnicodeUniform \
+                         HTTPRobotsChecker \
+                         FileGen \
+                         SMTP
+
+# MySQLClassGen
+
+include $(osbe_builddir)/config/Direntry.post.rules

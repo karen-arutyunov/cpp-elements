@@ -1,0 +1,26 @@
+# @file   Makefile.dir.mk.in
+# @author Karen Arutyunov
+# $Id:$
+
+include Common.pre.rules
+
+target_directory_list := ACE \
+                         MySQL \
+                         Net \
+                         Apache \
+                         CORBA \
+                         Localization \
+                         Dictionary \
+                         XML \
+                         LibXML \
+                         Geography \
+                         HTML \
+                         Python \
+                         PSP \
+                         TokyoCabinet
+
+LibXML Net MySQL Geography Localization HTML PSP Apache Dictionary : Python
+LibXML XML Apache HTML: Net
+PSP: Apache Geography Localization
+
+include $(osbe_builddir)/config/Direntry.post.rules

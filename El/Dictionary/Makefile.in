@@ -1,0 +1,18 @@
+# @file   Makefile.in
+# @author Karen Aroutiounov
+# $Id:$
+
+include Common.pre.rules
+include $(osbe_builddir)/config/CXX/CXX.pre.rules
+
+include $(osbe_builddir)/config/CXX/External/ACE.pre.rules
+include $(osbe_builddir)/config/CXX/External/Google.pre.rules
+
+include $(top_builddir)/config/El/Elements.so.pre.rules
+include $(top_builddir)/config/El/Python/ElPython.so.pre.rules
+
+sources  := Morphology.cpp LangDetection.cpp Python/Morphology.cpp
+includes := .
+target   := ElDictionary
+
+include $(osbe_builddir)/config/CXX/So.post.rules

@@ -1,0 +1,22 @@
+include <El/Python/Types.pid>
+
+module el.dictionary.morphology
+{
+  type LemmaWord
+  {
+    unsigned long id;
+    string text;
+  };
+
+  type Lemma
+  {
+    el.Lang lang;
+    LemmaWord norm_form;
+    Sequence word_forms; // Contains LemmaWord objects
+    boolean known; // True if lemma is a known one
+
+    static unsigned long GS_NONE;
+    static unsigned long GS_SIMILAR;
+    static unsigned long GS_TRANSFORM;
+  };
+}

@@ -1,0 +1,10 @@
+# @file   dir.ac
+# @author Karen Arutyunov
+# $Id:$
+
+OSBE_CONFIG_FILE([Makefile])
+OSBE_CONFIG_SUBDIR([El])
+OSBE_CONFIG_SUBDIR([Tools])
+OSBE_CONFIG_SUBDIR([tests])
+OSBE_CONFIG_SUBDIR([xsd])
+OSBE_CONFIG_SUBDIR([scripts])

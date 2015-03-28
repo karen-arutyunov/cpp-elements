@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            targetNamespace="http://www.elements.com/Start" 
+            xmlns="http://www.elements.com/Start" 
+            elementFormDefault="qualified" 
+            xml:lang="en" 
+            version="1.0">
+  
+  <xsd:annotation>
+    <xsd:documentation>Elements Start System Configuration File XML Schema</xsd:documentation>
+  </xsd:annotation>
+
+  <xsd:element name="cluster" type="ClusterType"/>
+
+  <xsd:complexType name="ClusterType">
+    <xsd:annotation>
+      <xsd:documentation>Element that contains cluster definition elements.</xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:sequence>
+
+      <xsd:element name="parameters" 
+                   type="ParametersType" 
+                   minOccurs="0" 
+                   maxOccurs="1"/>
+
+      <xsd:element name="var" 
+                   type="VarType" 
+                   minOccurs="0" 
+                   maxOccurs="unbounded"/>
+
+      <xsd:element name="transport" 
+                   type="TransportType" 
+                   minOccurs="1" 
+                   maxOccurs="unbounded"/>
+
+      <xsd:element name="service" 
+                   type="ServiceType" 
+                   minOccurs="1" 
+                   maxOccurs="unbounded"/>
+
+      <xsd:element name="host" 
+                   type="HostType" 
+                   minOccurs="1" 
+                   maxOccurs="unbounded"/>
+
+    </xsd:sequence>
+
+  </xsd:complexType> 
+
+  <xsd:complexType name="ParametersType">
+    <xsd:annotation>
+      <xsd:documentation>Element that specifies parameters of ElStart execution.</xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:attribute name="threads" type="xsd:positiveInteger" default="10">
+      <xsd:annotation>
+        <xsd:documentation>Specifies number of threads to be used for launching services.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+
+    <xsd:attribute name="verbose" type="VerboseType" default="no">
+      <xsd:annotation>
+        <xsd:documentation>Specifies if ElStart output should be verbose.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+
+    <xsd:attribute name="service_probes" type="xsd:positiveInteger" default="2">
+      <xsd:annotation>
+        <xsd:documentation>Specifies maximum number of times service 
+                           should be probed to ensure it is started or stopped.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+
+    <xsd:attribute name="service_probes_period" type="xsd:positiveInteger" default="3">
+      <xsd:annotation>
+        <xsd:documentation>Specifies time in seconds between service probes.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+
+  </xsd:complexType>
+
+  <xsd:complexType name="VarType">
+    <xsd:annotation>
+      <xsd:documentation>Element that contains named variable definition.</xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="name" type="xsd:string" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Specifies variable name.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+
+  </xsd:complexType> 
+
+  <xsd:complexType name="TransportType">
+    <xsd:annotation>
+      <xsd:documentation>Element that specifies command execution transport parameters.</xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:simpleContent>
+
+      <xsd:extension base="xsd:string">
+
+        <xsd:attribute name="name" type="xsd:string" default="default">
+          <xsd:annotation>
+            <xsd:documentation>Specifies transport name.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+
+      </xsd:extension>
+    </xsd:simpleContent>
+
+  </xsd:complexType>
+
+  <xsd:complexType name="ServiceType">
+    <xsd:annotation>
+      <xsd:documentation>Element that specifies service properties.</xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:sequence>
+
+      <xsd:element name="tag" 
+                   type="TagServiceType" 
+                   minOccurs="0" 
+                   maxOccurs="unbounded"/>    
+
+      <xsd:element name="start" 
+                   type="StartType" 
+                   minOccurs="0" 
+                   maxOccurs="1"/>    
+
+      <xsd:element name="stop" 
+                   type="StopType" 
+                   minOccurs="0" 
+                   maxOccurs="1"/>    
+
+      <xsd:element name="status" 
+                   type="StatusType" 
+                   minOccurs="0" 
+                   maxOccurs="1"/>    
+
+      <xsd:element name="after" 
+                   type="AfterServiceType" 
+                   minOccurs="0" 
+                   maxOccurs="unbounded"/>    
+    </xsd:sequence>
+
+    <xsd:attribute name="name" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Specifies transport name.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+
+    <xsd:attribute name="transport" type="xsd:string" default="default">
+      <xsd:annotation>
+        <xsd:documentation>Specifies transport to be used to run start, 
+                           stop and status commands.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+
+    <xsd:attribute name="enabled" type="xsd:boolean" default="true">
+      <xsd:annotation>
+        <xsd:documentation>Specifies if service is enabled in the cluster.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+
+  </xsd:complexType>
+
+  <xsd:complexType name="TagServiceType">
+    <xsd:annotation>
+      <xsd:documentation>Element that specify service tag.</xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:attribute name="name" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Specifies tag name.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="AfterServiceType">
+    <xsd:annotation>
+      <xsd:documentation>Element that references service to be launched 
+                         before the current one.</xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:attribute name="service" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Specifies service name.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="HostType">
+    <xsd:annotation>
+      <xsd:documentation>Element that specifies host properties.</xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:sequence>
+      <xsd:element name="service" 
+                   type="HostServiceType" 
+                   minOccurs="1" 
+                   maxOccurs="unbounded"/>    
+    </xsd:sequence>
+
+    <xsd:attribute name="name" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Specifies host name.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+
+  </xsd:complexType>
+
+  <xsd:complexType name="HostServiceType">
+    <xsd:annotation>
+      <xsd:documentation>Element that references service to be launched 
+                         on the host.</xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:attribute name="name" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Specifies service name.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="StartType">
+    <xsd:annotation>
+      <xsd:documentation>Element that specifies service start command line.</xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:simpleContent>
+
+      <xsd:extension base="xsd:string">
+
+        <xsd:attribute name="status_check_delay" 
+                       type="xsd:boolean" 
+                       default="false">
+          <xsd:annotation>
+            <xsd:documentation>If true then service status will be checked 
+                               after delay.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+
+      </xsd:extension>
+    </xsd:simpleContent>
+
+  </xsd:complexType> 
+
+  <xsd:complexType name="StopType">
+    <xsd:annotation>
+      <xsd:documentation>Element that specifies service stop command line.</xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string"/>
+    </xsd:simpleContent>
+
+  </xsd:complexType> 
+
+  <xsd:complexType name="StatusType">
+    <xsd:annotation>
+      <xsd:documentation>Element that specifies service status command line.</xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string"/>
+    </xsd:simpleContent>
+
+  </xsd:complexType> 
+
+  <xsd:simpleType name="VerboseType">
+    <xsd:restriction base="xsd:string">
+
+      <xsd:enumeration value="no">
+        <xsd:annotation>
+            <xsd:documentation>Means no extra information should be printed.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="commands">
+        <xsd:annotation>
+            <xsd:documentation>Executed shell commands to be printed.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="full">
+        <xsd:annotation>
+            <xsd:documentation>Means that as much as possible information 
+                               should be printed.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+    </xsd:restriction>
+  </xsd:simpleType>
+
+</xsd:schema>

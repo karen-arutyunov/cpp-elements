@@ -1,0 +1,569 @@
+request = context.request
+loc, prn, = context.localization.get, request.output.stream.prn
+
+prn(
+R'''<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item type="id-pefix" value="&lt;table class='item_table'>&lt;tr>&lt;td class='item_id' valign='top'>"/>
+  <item type="id-suffix" value="&lt;/td>&lt;td>"/>
+  <item type="value-suffix" value="&lt;/td>&lt;/tr>&lt;/table>"/>
+
+  <item type="output" value="&lt;table class='items_table'>&lt;tr>&lt;td colspan='3' class='items_header'>"/>
+  <item type="output" value="A - B - C &lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td valign='top' class='item_col'>"/>
+  <item id="aar" value="''', loc("aar"), R'''"/>
+  <item id="abk" value="''', loc("abk"), R'''"/>
+  <item id="ace" value="''', loc("ace"), R'''"/>
+  <item id="ach" value="''', loc("ach"), R'''"/>
+  <item id="ada" value="''', loc("ada"), R'''"/>
+  <item id="ady" value="''', loc("ady"), R'''"/>
+  <item id="afa" value="''', loc("afa"), R'''"/>
+  <item id="afh" value="''', loc("afh"), R'''"/>
+  <item id="afr" value="''', loc("afr"), R'''"/>
+  <item id="ain" value="''', loc("ain"), R'''"/>
+  <item id="aka" value="''', loc("aka"), R'''"/>
+  <item id="akk" value="''', loc("akk"), R'''"/>
+  <item id="alb" value="''', loc("alb"), R'''"/>
+  <item id="ale" value="''', loc("ale"), R'''"/>
+  <item id="alg" value="''', loc("alg"), R'''"/>
+  <item id="alt" value="''', loc("alt"), R'''"/>
+  <item id="amh" value="''', loc("amh"), R'''"/>
+  <item id="ang" value="''', loc("ang"), R'''"/>
+  <item id="anp" value="''', loc("anp"), R'''"/>
+  <item id="apa" value="''', loc("apa"), R'''"/>
+  <item id="ara" value="''', loc("ara"), R'''"/>
+  <item id="arc" value="''', loc("arc"), R'''"/>
+  <item id="arg" value="''', loc("arg"), R'''"/>
+  <item id="arm" value="''', loc("arm"), R'''"/>
+  <item id="arn" value="''', loc("arn"), R'''"/>
+  <item id="arp" value="''', loc("arp"), R'''"/>
+  <item id="arw" value="''', loc("arw"), R'''"/>
+  <item id="asm" value="''', loc("asm"), R'''"/>
+  <item id="ast" value="''', loc("ast"), R'''"/>
+  <item id="ath" value="''', loc("ath"), R'''"/>
+  <item id="aus" value="''', loc("aus"), R'''"/>
+  <item id="ava" value="''', loc("ava"), R'''"/>
+  <item id="ave" value="''', loc("ave"), R'''"/>
+  <item id="awa" value="''', loc("awa"), R'''"/>
+  <item id="aym" value="''', loc("aym"), R'''"/>
+  <item id="aze" value="''', loc("aze"), R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="bad" value="''', loc("bad"), R'''"/>
+  <item id="bai" value="''', loc("bai"), R'''"/>
+  <item id="bak" value="''', loc("bak"), R'''"/>
+  <item id="bal" value="''', loc("bal"), R'''"/>
+  <item id="bam" value="''', loc("bam"), R'''"/>
+  <item id="ban" value="''', loc("ban"), R'''"/>
+  <item id="baq" value="''', loc("baq"), R'''"/>
+  <item id="bas" value="''', loc("bas"), R'''"/>
+  <item id="bat" value="''', loc("bat"), R'''"/>
+  <item id="bej" value="''', loc("bej"), R'''"/>
+  <item id="bel" value="''', loc("bel"), R'''"/>
+  <item id="bem" value="''', loc("bem"), R'''"/>
+  <item id="ben" value="''', loc("ben"), R'''"/>
+  <item id="ber" value="''', loc("ber"), R'''"/>
+  <item id="bho" value="''', loc("bho"), R'''"/>
+  <item id="bih" value="''', loc("bih"), R'''"/>
+  <item id="bik" value="''', loc("bik"), R'''"/>
+  <item id="bin" value="''', loc("bin"), R'''"/>
+  <item id="bis" value="''', loc("bis"), R'''"/>
+  <item id="bla" value="''', loc("bla"), R'''"/>
+  <item id="bnt" value="''', loc("bnt"), R'''"/>
+  <item id="bos" value="''', loc("bos"), R'''"/>
+  <item id="bra" value="''', loc("bra"), R'''"/>
+  <item id="bre" value="''', loc("bre"), R'''"/>
+  <item id="btk" value="''', loc("btk"), R'''"/>
+  <item id="bua" value="''', loc("bua"), R'''"/>
+  <item id="bug" value="''', loc("bug"), R'''"/>
+  <item id="bul" value="''', loc("bul"), R'''"/>
+  <item id="bur" value="''', loc("bur"), R'''"/>
+  <item id="byn" value="''', loc("byn"), R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="cad" value="''', loc("cad"), R'''"/>
+  <item id="cai" value="''', loc("cai"), R'''"/>
+  <item id="car" value="''', loc("car"), R'''"/>
+  <item id="cat" value="''', loc("cat"), R'''"/>
+  <item id="cau" value="''', loc("cau"), R'''"/>
+  <item id="ceb" value="''', loc("ceb"), R'''"/>
+  <item id="cel" value="''', loc("cel"), R'''"/>
+  <item id="cha" value="''', loc("cha"), R'''"/>
+  <item id="chb" value="''', loc("chb"), R'''"/>
+  <item id="che" value="''', loc("che"), R'''"/>
+  <item id="chg" value="''', loc("chg"), R'''"/>
+  <item id="chi" value="''', loc("chi"), R'''"/>
+  <item id="chk" value="''', loc("chk"), R'''"/>
+  <item id="chm" value="''', loc("chm"), R'''"/>
+  <item id="chn" value="''', loc("chn"), R'''"/>
+  <item id="cho" value="''', loc("cho"), R'''"/>
+  <item id="chp" value="''', loc("chp"), R'''"/>
+  <item id="chr" value="''', loc("chr"), R'''"/>
+  <item id="chu" value="''', loc("chu"), R'''"/>
+  <item id="chv" value="''', loc("chv"), R'''"/>
+  <item id="chy" value="''', loc("chy"), R'''"/>
+  <item id="cmc" value="''', loc("cmc"), R'''"/>
+  <item id="cop" value="''', loc("cop"), R'''"/>
+  <item id="cor" value="''', loc("cor"), R'''"/>
+  <item id="cos" value="''', loc("cos"), R'''"/>
+  <item id="cpe" value="''', loc("cpe"), R'''"/>
+  <item id="cpf" value="''', loc("cpf"), R'''"/>
+  <item id="cpp" value="''', loc("cpp"), R'''"/>
+  <item id="cre" value="''', loc("cre"), R'''"/>
+  <item id="crh" value="''', loc("crh"), R'''"/>
+  <item id="crp" value="''', loc("crp"), R'''"/>
+  <item id="csb" value="''', loc("csb"), R'''"/>
+  <item id="cus" value="''', loc("cus"), R'''"/>
+  <item id="cze" value="''', loc("cze"), R'''"/>
+  <item type="output" value="&lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td colspan='3' class='items_header'>"/>
+  <item type="output" value="D - E - F &lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td valign='top' class='item_col'>"/>
+  <item id="dak" value="''', loc("dak"), R'''"/>
+  <item id="dan" value="''', loc("dan"), R'''"/>
+  <item id="dar" value="''', loc("dar"), R'''"/>
+  <item id="day" value="''', loc("day"), R'''"/>
+  <item id="del" value="''', loc("del"), R'''"/>
+  <item id="den" value="''', loc("den"), R'''"/>
+  <item id="dgr" value="''', loc("dgr"), R'''"/>
+  <item id="din" value="''', loc("din"), R'''"/>
+  <item id="div" value="''', loc("div"), R'''"/>
+  <item id="doi" value="''', loc("doi"), R'''"/>
+  <item id="dra" value="''', loc("dra"), R'''"/>
+  <item id="dsb" value="''', loc("dsb"), R'''"/>
+  <item id="dua" value="''', loc("dua"), R'''"/>
+  <item id="dum" value="''', loc("dum"), R'''"/>
+  <item id="dut" value="''', loc("dut"), R'''"/>
+  <item id="dyu" value="''', loc("dyu"), R'''"/>
+  <item id="dzo" value="''', loc("dzo"), R'''"/>
+''')
+
+prn(
+'''  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="efi" value="''', loc("efi"), R'''"/>
+  <item id="egy" value="''', loc("egy"), R'''"/>
+  <item id="eka" value="''', loc("eka"), R'''"/>
+  <item id="elx" value="''', loc("elx"), R'''"/>
+  <item id="eng" value="''', loc("eng"), R'''"/>
+  <item id="enm" value="''', loc("enm"), R'''"/>
+  <item id="epo" value="''', loc("epo"), R'''"/>
+  <item id="est" value="''', loc("est"), R'''"/>
+  <item id="ewe" value="''', loc("ewe"), R'''"/>
+  <item id="ewo" value="''', loc("ewo"), R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="fan" value="''', loc("fan"), R'''"/>
+  <item id="fao" value="''', loc("fao"), R'''"/>
+  <item id="fat" value="''', loc("fat"), R'''"/>
+  <item id="fij" value="''', loc("fij"), R'''"/>
+  <item id="fil" value="''', loc("fil"), R'''"/>
+  <item id="fin" value="''', loc("fin"), R'''"/>
+  <item id="fiu" value="''', loc("fiu"), R'''"/>
+  <item id="fon" value="''', loc("fon"), R'''"/>
+  <item id="fre" value="''', loc("fre"), R'''"/>
+  <item id="frm" value="''', loc("frm"), R'''"/>
+  <item id="fro" value="''', loc("fro"), R'''"/>
+  <item id="frr" value="''', loc("frr"), R'''"/>
+  <item id="frs" value="''', loc("frs"), R'''"/>
+  <item id="fry" value="''', loc("fry"), R'''"/>
+  <item id="ful" value="''', loc("ful"), R'''"/>
+  <item id="fur" value="''', loc("fur"), R'''"/>
+  <item type="output" value="&lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td colspan='3' class='items_header'>"/>
+  <item type="output" value="G - H - I &lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td valign='top' class='item_col'>"/>
+  <item id="gaa" value="''', loc("gaa"), R'''"/>
+  <item id="gay" value="''', loc("gay"), R'''"/>
+  <item id="gba" value="''', loc("gba"), R'''"/>
+  <item id="gem" value="''', loc("gem"), R'''"/>
+  <item id="geo" value="''', loc("geo"), R'''"/>
+  <item id="ger" value="''', loc("ger"), R'''"/>
+  <item id="gez" value="''', loc("gez"), R'''"/>
+  <item id="gil" value="''', loc("gil"), R'''"/>
+  <item id="gla" value="''', loc("gla"), R'''"/>
+  <item id="gle" value="''', loc("gle"), R'''"/>
+  <item id="glg" value="''', loc("glg"), R'''"/>
+  <item id="glv" value="''', loc("glv"), R'''"/>
+  <item id="gmh" value="''', loc("gmh"), R'''"/>
+  <item id="goh" value="''', loc("goh"), R'''"/>
+  <item id="gon" value="''', loc("gon"), R'''"/>
+  <item id="gor" value="''', loc("gor"), R'''"/>
+  <item id="got" value="''', loc("got"), R'''"/>
+  <item id="grb" value="''', loc("grb"), R'''"/>
+  <item id="grc" value="''', loc("grc"), R'''"/>
+  <item id="gre" value="''', loc("gre"), R'''"/>
+  <item id="grn" value="''', loc("grn"), R'''"/>
+  <item id="gsw" value="''', loc("gsw"), R'''"/>
+  <item id="guj" value="''', loc("guj"), R'''"/>
+  <item id="gwi" value="''', loc("gwi"), R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="hai" value="''', loc("hai"), R'''"/>
+  <item id="hat" value="''', loc("hat"), R'''"/>
+  <item id="hau" value="''', loc("hau"), R'''"/>
+  <item id="haw" value="''', loc("haw"), R'''"/>
+  <item id="heb" value="''', loc("heb"), R'''"/>
+  <item id="her" value="''', loc("her"), R'''"/>
+  <item id="hil" value="''', loc("hil"), R'''"/>
+  <item id="him" value="''', loc("him"), R'''"/>
+  <item id="hin" value="''', loc("hin"), R'''"/>
+  <item id="hit" value="''', loc("hit"), R'''"/>
+  <item id="hmn" value="''', loc("hmn"), R'''"/>
+  <item id="hmo" value="''', loc("hmo"), R'''"/>
+  <item id="hsb" value="''', loc("hsb"), R'''"/>
+  <item id="hun" value="''', loc("hun"), R'''"/>
+  <item id="hup" value="''', loc("hup"), R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="iba" value="''', loc("iba"), R'''"/>
+  <item id="ibo" value="''', loc("ibo"), R'''"/>
+  <item id="ice" value="''', loc("ice"), R'''"/>
+  <item id="ido" value="''', loc("ido"), R'''"/>
+  <item id="iii" value="''', loc("iii"), R'''"/>
+  <item id="ijo" value="''', loc("ijo"), R'''"/>
+  <item id="iku" value="''', loc("iku"), R'''"/>
+  <item id="ile" value="''', loc("ile"), R'''"/>
+  <item id="ilo" value="''', loc("ilo"), R'''"/>
+  <item id="ina" value="''', loc("ina"), R'''"/>
+  <item id="inc" value="''', loc("inc"), R'''"/>
+  <item id="ind" value="''', loc("ind"), R'''"/>
+  <item id="ine" value="''', loc("ine"), R'''"/>
+  <item id="inh" value="''', loc("inh"), R'''"/>
+  <item id="ipk" value="''', loc("ipk"), R'''"/>
+  <item id="ira" value="''', loc("ira"), R'''"/>
+  <item id="iro" value="''', loc("iro"), R'''"/>
+  <item id="ita" value="''', loc("ita"), R'''"/>
+  <item type="output" value="&lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td colspan='3' class='items_header'>"/>
+  <item type="output" value="J - K - L &lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td valign='top' class='item_col'>"/>
+  <item id="jav" value="''', loc("jav"), R'''"/>
+  <item id="jbo" value="''', loc("jbo"), R'''"/>
+  <item id="jpn" value="''', loc("jpn"), R'''"/>
+  <item id="jpr" value="''', loc("jpr"), R'''"/>
+  <item id="jrb" value="''', loc("jrb"), R'''"/>
+''')
+
+prn(
+'''  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="kaa" value="''', loc("kaa"), R'''"/>
+  <item id="kab" value="''', loc("kab"), R'''"/>
+  <item id="kac" value="''', loc("kac"), R'''"/>
+  <item id="kal" value="''', loc("kal"), R'''"/>
+  <item id="kam" value="''', loc("kam"), R'''"/>
+  <item id="kan" value="''', loc("kan"), R'''"/>
+  <item id="kar" value="''', loc("kar"), R'''"/>
+  <item id="kas" value="''', loc("kas"), R'''"/>
+  <item id="kau" value="''', loc("kau"), R'''"/>
+  <item id="kaw" value="''', loc("kaw"), R'''"/>
+  <item id="kaz" value="''', loc("kaz"), R'''"/>
+  <item id="kbd" value="''', loc("kbd"), R'''"/>
+  <item id="kha" value="''', loc("kha"), R'''"/>
+  <item id="khi" value="''', loc("khi"), R'''"/>
+  <item id="khm" value="''', loc("khm"), R'''"/>
+  <item id="kho" value="''', loc("kho"), R'''"/>
+  <item id="kik" value="''', loc("kik"), R'''"/>
+  <item id="kin" value="''', loc("kin"), R'''"/>
+  <item id="kir" value="''', loc("kir"), R'''"/>
+  <item id="kmb" value="''', loc("kmb"), R'''"/>
+  <item id="kok" value="''', loc("kok"), R'''"/>
+  <item id="kom" value="''', loc("kom"), R'''"/>
+  <item id="kon" value="''', loc("kon"), R'''"/>
+  <item id="kor" value="''', loc("kor"), R'''"/>
+  <item id="kos" value="''', loc("kos"), R'''"/>
+  <item id="kpe" value="''', loc("kpe"), R'''"/>
+  <item id="krc" value="''', loc("krc"), R'''"/>
+  <item id="krl" value="''', loc("krl"), R'''"/>
+  <item id="kro" value="''', loc("kro"), R'''"/>
+  <item id="kru" value="''', loc("kru"), R'''"/>
+  <item id="kua" value="''', loc("kua"), R'''"/>
+  <item id="kum" value="''', loc("kum"), R'''"/>
+  <item id="kur" value="''', loc("kur"), R'''"/>
+  <item id="kut" value="''', loc("kut"), R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="lad" value="''', loc("lad"), R'''"/>
+  <item id="lah" value="''', loc("lah"), R'''"/>
+  <item id="lam" value="''', loc("lam"), R'''"/>
+  <item id="lao" value="''', loc("lao"), R'''"/>
+  <item id="lat" value="''', loc("lat"), R'''"/>
+  <item id="lav" value="''', loc("lav"), R'''"/>
+  <item id="lez" value="''', loc("lez"), R'''"/>
+  <item id="lim" value="''', loc("lim"), R'''"/>
+  <item id="lin" value="''', loc("lin"), R'''"/>
+  <item id="lit" value="''', loc("lit"), R'''"/>
+  <item id="lol" value="''', loc("lol"), R'''"/>
+  <item id="loz" value="''', loc("loz"), R'''"/>
+  <item id="ltz" value="''', loc("ltz"), R'''"/>
+  <item id="lua" value="''', loc("lua"), R'''"/>
+  <item id="lub" value="''', loc("lub"), R'''"/>
+  <item id="lug" value="''', loc("lug"), R'''"/>
+  <item id="lui" value="''', loc("lui"), R'''"/>
+  <item id="lun" value="''', loc("lun"), R'''"/>
+  <item id="luo" value="''', loc("luo"), R'''"/>
+  <item id="lus" value="''', loc("lus"), R'''"/>
+  <item type="output" value="&lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td colspan='3' class='items_header'>"/>
+  <item type="output" value="M - N - O &lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td valign='top' class='item_col'>"/>
+  <item id="mac" value="''', loc("mac"), R'''"/>
+  <item id="mad" value="''', loc("mad"), R'''"/>
+  <item id="mag" value="''', loc("mag"), R'''"/>
+  <item id="mah" value="''', loc("mah"), R'''"/>
+  <item id="mai" value="''', loc("mai"), R'''"/>
+  <item id="mak" value="''', loc("mak"), R'''"/>
+  <item id="mal" value="''', loc("mal"), R'''"/>
+  <item id="man" value="''', loc("man"), R'''"/>
+  <item id="mao" value="''', loc("mao"), R'''"/>
+  <item id="map" value="''', loc("map"), R'''"/>
+  <item id="mar" value="''', loc("mar"), R'''"/>
+  <item id="mas" value="''', loc("mas"), R'''"/>
+  <item id="may" value="''', loc("may"), R'''"/>
+  <item id="mdf" value="''', loc("mdf"), R'''"/>
+  <item id="mdr" value="''', loc("mdr"), R'''"/>
+  <item id="men" value="''', loc("men"), R'''"/>
+  <item id="mga" value="''', loc("mga"), R'''"/>
+  <item id="mic" value="''', loc("mic"), R'''"/>
+  <item id="min" value="''', loc("min"), R'''"/>
+  <item id="mkh" value="''', loc("mkh"), R'''"/>
+  <item id="mlg" value="''', loc("mlg"), R'''"/>
+  <item id="mlt" value="''', loc("mlt"), R'''"/>
+  <item id="mnc" value="''', loc("mnc"), R'''"/>
+  <item id="mni" value="''', loc("mni"), R'''"/>
+  <item id="mno" value="''', loc("mno"), R'''"/>
+  <item id="moh" value="''', loc("moh"), R'''"/>
+  <item id="mol" value="''', loc("mol"), R'''"/>
+  <item id="mon" value="''', loc("mon"), R'''"/>
+  <item id="mos" value="''', loc("mos"), R'''"/>
+  <item id="mun" value="''', loc("mun"), R'''"/>
+  <item id="mus" value="''', loc("mus"), R'''"/>
+  <item id="mwl" value="''', loc("mwl"), R'''"/>
+  <item id="mwr" value="''', loc("mwr"), R'''"/>
+  <item id="myn" value="''', loc("myn"), R'''"/>
+  <item id="myv" value="''', loc("myv"), R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="nah" value="''', loc("nah"), R'''"/>
+  <item id="nai" value="''', loc("nai"), R'''"/>
+  <item id="nap" value="''', loc("nap"), R'''"/>
+  <item id="nau" value="''', loc("nau"), R'''"/>
+  <item id="nav" value="''', loc("nav"), R'''"/>
+  <item id="nbl" value="''', loc("nbl"), R'''"/>
+  <item id="nde" value="''', loc("nde"), R'''"/>
+  <item id="ndo" value="''', loc("ndo"), R'''"/>
+  <item id="nds" value="''', loc("nds"), R'''"/>
+  <item id="nep" value="''', loc("nep"), R'''"/>
+  <item id="new" value="''', loc("new"), R'''"/>
+  <item id="nia" value="''', loc("nia"), R'''"/>
+  <item id="nic" value="''', loc("nic"), R'''"/>
+  <item id="niu" value="''', loc("niu"), R'''"/>
+  <item id="nno" value="''', loc("nno"), R'''"/>
+  <item id="nob" value="''', loc("nob"), R'''"/>
+  <item id="nog" value="''', loc("nog"), R'''"/>
+  <item id="non" value="''', loc("non"), R'''"/>
+  <item id="nor" value="''', loc("nor"), R'''"/>
+  <item id="nso" value="''', loc("nso"), R'''"/>
+  <item id="nub" value="''', loc("nub"), R'''"/>
+  <item id="nwc" value="''', loc("nwc"), R'''"/>
+  <item id="nya" value="''', loc("nya"), R'''"/>
+  <item id="nym" value="''', loc("nym"), R'''"/>
+  <item id="nyn" value="''', loc("nyn"), R'''"/>
+  <item id="nyo" value="''', loc("nyo"), R'''"/>
+  <item id="nzi" value="''', loc("nzi"), R'''"/>
+''')
+
+prn(
+'''  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="oci" value="''', loc("oci"), R'''"/>
+  <item id="oji" value="''', loc("oji"), R'''"/>
+  <item id="ori" value="''', loc("ori"), R'''"/>
+  <item id="orm" value="''', loc("orm"), R'''"/>
+  <item id="osa" value="''', loc("osa"), R'''"/>
+  <item id="oss" value="''', loc("oss"), R'''"/>
+  <item id="ota" value="''', loc("ota"), R'''"/>
+  <item id="oto" value="''', loc("oto"), R'''"/>
+  <item type="output" value="&lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td colspan='3' class='items_header'>"/>
+  <item type="output" value="P - Q - R &lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td valign='top' class='item_col'>"/>
+  <item id="paa" value="''', loc("paa"), R'''"/>
+  <item id="pag" value="''', loc("pag"), R'''"/>
+  <item id="pal" value="''', loc("pal"), R'''"/>
+  <item id="pam" value="''', loc("pam"), R'''"/>
+  <item id="pan" value="''', loc("pan"), R'''"/>
+  <item id="pap" value="''', loc("pap"), R'''"/>
+  <item id="pau" value="''', loc("pau"), R'''"/>
+  <item id="peo" value="''', loc("peo"), R'''"/>
+  <item id="per" value="''', loc("per"), R'''"/>
+  <item id="phi" value="''', loc("phi"), R'''"/>
+  <item id="phn" value="''', loc("phn"), R'''"/>
+  <item id="pli" value="''', loc("pli"), R'''"/>
+  <item id="pol" value="''', loc("pol"), R'''"/>
+  <item id="pon" value="''', loc("pon"), R'''"/>
+  <item id="por" value="''', loc("por"), R'''"/>
+  <item id="pra" value="''', loc("pra"), R'''"/>
+  <item id="pro" value="''', loc("pro"), R'''"/>
+  <item id="pus" value="''', loc("pus"), R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="que" value="''', loc("que"), R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="raj" value="''', loc("raj"), R'''"/>
+  <item id="rap" value="''', loc("rap"), R'''"/>
+  <item id="rar" value="''', loc("rar"), R'''"/>
+  <item id="roa" value="''', loc("roa"), R'''"/>
+  <item id="roh" value="''', loc("roh"), R'''"/>
+  <item id="rom" value="''', loc("rom"), R'''"/>
+  <item id="rum" value="''', loc("rum"), R'''"/>
+  <item id="run" value="''', loc("run"), R'''"/>
+  <item id="rup" value="''', loc("rup"), R'''"/>
+  <item id="rus" value="''', loc("rus"), R'''"/>
+  <item type="output" value="&lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td colspan='3' class='items_header'>"/>
+  <item type="output" value="S - T - U &lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td valign='top' class='item_col'>"/>
+  <item id="sad" value="''', loc("sad"), R'''"/>
+  <item id="sag" value="''', loc("sag"), R'''"/>
+  <item id="sah" value="''', loc("sah"), R'''"/>
+  <item id="sai" value="''', loc("sai"), R'''"/>
+  <item id="sal" value="''', loc("sal"), R'''"/>
+  <item id="sam" value="''', loc("sam"), R'''"/>
+  <item id="san" value="''', loc("san"), R'''"/>
+  <item id="sas" value="''', loc("sas"), R'''"/>
+  <item id="sat" value="''', loc("sat"), R'''"/>
+  <item id="scc" value="''', loc("scc"), R'''"/>
+  <item id="scn" value="''', loc("scn"), R'''"/>
+  <item id="sco" value="''', loc("sco"), R'''"/>
+  <item id="scr" value="''', loc("scr"), R'''"/>
+  <item id="sel" value="''', loc("sel"), R'''"/>
+  <item id="sem" value="''', loc("sem"), R'''"/>
+  <item id="sga" value="''', loc("sga"), R'''"/>
+  <item id="shn" value="''', loc("shn"), R'''"/>
+  <item id="sid" value="''', loc("sid"), R'''"/>
+  <item id="sin" value="''', loc("sin"), R'''"/>
+  <item id="sio" value="''', loc("sio"), R'''"/>
+  <item id="sit" value="''', loc("sit"), R'''"/>
+  <item id="sla" value="''', loc("sla"), R'''"/>
+  <item id="slo" value="''', loc("slo"), R'''"/>
+  <item id="slv" value="''', loc("slv"), R'''"/>
+  <item id="sma" value="''', loc("sma"), R'''"/>
+  <item id="sme" value="''', loc("sme"), R'''"/>
+  <item id="smi" value="''', loc("smi"), R'''"/>
+  <item id="smj" value="''', loc("smj"), R'''"/>
+  <item id="smn" value="''', loc("smn"), R'''"/>
+  <item id="smo" value="''', loc("smo"), R'''"/>
+  <item id="sms" value="''', loc("sms"), R'''"/>
+  <item id="sna" value="''', loc("sna"), R'''"/>
+  <item id="snd" value="''', loc("snd"), R'''"/>
+  <item id="snk" value="''', loc("snk"), R'''"/>
+  <item id="sog" value="''', loc("sog"), R'''"/>
+  <item id="som" value="''', loc("som"), R'''"/>
+  <item id="son" value="''', loc("son"), R'''"/>
+  <item id="sot" value="''', loc("sot"), R'''"/>
+  <item id="spa" value="''', loc("spa"), R'''"/>
+  <item id="srd" value="''', loc("srd"), R'''"/>
+  <item id="srn" value="''', loc("srn"), R'''"/>
+  <item id="srr" value="''', loc("srr"), R'''"/>
+  <item id="ssa" value="''', loc("ssa"), R'''"/>
+  <item id="ssw" value="''', loc("ssw"), R'''"/>
+  <item id="suk" value="''', loc("suk"), R'''"/>
+  <item id="sun" value="''', loc("sun"), R'''"/>
+  <item id="sus" value="''', loc("sus"), R'''"/>
+  <item id="sux" value="''', loc("sux"), R'''"/>
+  <item id="swa" value="''', loc("swa"), R'''"/>
+  <item id="swe" value="''', loc("swe"), R'''"/>
+  <item id="syr" value="''', loc("syr"), R'''"/>
+''')
+
+prn(
+'''  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="tah" value="''', loc("tah"), R'''"/>
+  <item id="tai" value="''', loc("tai"), R'''"/>
+  <item id="tam" value="''', loc("tam"), R'''"/>
+  <item id="tat" value="''', loc("tat"), R'''"/>
+  <item id="tel" value="''', loc("tel"), R'''"/>
+  <item id="tem" value="''', loc("tem"), R'''"/>
+  <item id="ter" value="''', loc("ter"), R'''"/>
+  <item id="tet" value="''', loc("tet"), R'''"/>
+  <item id="tgk" value="''', loc("tgk"), R'''"/>
+  <item id="tgl" value="''', loc("tgl"), R'''"/>
+  <item id="tha" value="''', loc("tha"), R'''"/>
+  <item id="tib" value="''', loc("tib"), R'''"/>
+  <item id="tig" value="''', loc("tig"), R'''"/>
+  <item id="tir" value="''', loc("tir"), R'''"/>
+  <item id="tiv" value="''', loc("tiv"), R'''"/>
+  <item id="tkl" value="''', loc("tkl"), R'''"/>
+  <item id="tlh" value="''', loc("tlh"), R'''"/>
+  <item id="tli" value="''', loc("tli"), R'''"/>
+  <item id="tmh" value="''', loc("tmh"), R'''"/>
+  <item id="tog" value="''', loc("tog"), R'''"/>
+  <item id="ton" value="''', loc("ton"), R'''"/>
+  <item id="tpi" value="''', loc("tpi"), R'''"/>
+  <item id="tsi" value="''', loc("tsi"), R'''"/>
+  <item id="tsn" value="''', loc("tsn"), R'''"/>
+  <item id="tso" value="''', loc("tso"), R'''"/>
+  <item id="tuk" value="''', loc("tuk"), R'''"/>
+  <item id="tum" value="''', loc("tum"), R'''"/>
+  <item id="tup" value="''', loc("tup"), R'''"/>
+  <item id="tur" value="''', loc("tur"), R'''"/>
+  <item id="tut" value="''', loc("tut"), R'''"/>
+  <item id="tvl" value="''', loc("tvl"), R'''"/>
+  <item id="twi" value="''', loc("twi"), R'''"/>
+  <item id="tyv" value="''', loc("tyv"), R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="udm" value="''', loc("udm"), R'''"/>
+  <item id="uga" value="''', loc("uga"), R'''"/>
+  <item id="uig" value="''', loc("uig"), R'''"/>
+  <item id="ukr" value="''', loc("ukr"), R'''"/>
+  <item id="umb" value="''', loc("umb"), R'''"/>
+  <item id="urd" value="''', loc("urd"), R'''"/>
+  <item id="uzb" value="''', loc("uzb"), R'''"/>
+  <item type="output" value="&lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td colspan='3' class='items_header'>"/>
+  <item type="output" value="V - W - X &lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td valign='top' class='item_col'>"/>
+  <item id="vai" value="''', loc("vai"), R'''"/>
+  <item id="ven" value="''', loc("ven"), R'''"/>
+  <item id="vie" value="''', loc("vie"), R'''"/>
+  <item id="vol" value="''', loc("vol"), R'''"/>
+  <item id="vot" value="''', loc("vot"), R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="wak" value="''', loc("wak"), R'''"/>
+  <item id="wal" value="''', loc("wal"), R'''"/>
+  <item id="war" value="''', loc("war"), R'''"/>
+  <item id="was" value="''', loc("was"), R'''"/>
+  <item id="wel" value="''', loc("wel"), R'''"/>
+  <item id="wen" value="''', loc("wen"), R'''"/>
+  <item id="wln" value="''', loc("wln"), R'''"/>
+  <item id="wol" value="''', loc("wol"), R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="xal" value="''', loc("xal"), R'''"/>
+  <item id="xho" value="''', loc("xho"), R'''"/>
+  <item type="output" value="&lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td colspan='3' class='items_header'>"/>
+  <item type="output" value="Y - Z &lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td valign='top' class='item_col'>"/>
+  <item id="yao" value="''', loc("yao"), R'''"/>
+  <item id="yap" value="''', loc("yap"), R'''"/>
+  <item id="yid" value="''', loc("yid"), R'''"/>
+  <item id="yor" value="''', loc("yor"), R'''"/>
+  <item id="ypk" value="''', loc("ypk"), R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="zap" value="''', loc("zap"), R'''"/>
+  <item id="zen" value="''', loc("zen"), R'''"/>
+  <item id="zha" value="''', loc("zha"), R'''"/>
+  <item id="znd" value="''', loc("znd"), R'''"/>
+  <item id="zul" value="''', loc("zul"), R'''"/>
+  <item id="zun" value="''', loc("zun"), R'''"/>
+  <item type="output" value="&lt;/td>&lt;/tr>&lt;/table>"/>
+</items>
+''')

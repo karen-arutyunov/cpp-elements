@@ -1,0 +1,18 @@
+# @file   Makefile.in
+# @author Karen Aroutiounov
+# $Id:$
+
+include Common.pre.rules
+include $(osbe_builddir)/config/CXX/CXX.pre.rules
+
+include $(osbe_builddir)/config/CXX/External/ACE.pre.rules
+include $(osbe_builddir)/config/CXX/External/Xerces.pre.rules
+
+include $(top_builddir)/config/El/Elements.so.pre.rules
+include $(top_builddir)/config/El/Net/ElNet.so.pre.rules
+
+sources  := Use.cpp EntityResolver.cpp
+includes := .
+target   := ElXML
+
+include $(osbe_builddir)/config/CXX/So.post.rules

@@ -1,0 +1,11 @@
+# @file   dir.ac
+# @author Karen Arutyunov
+# $Id:$
+
+OSBE_CONFIG_FILE([Makefile])
+OSBE_CONFIG_SUBDIR([MySQLClassGen])
+OSBE_CONFIG_SUBDIR([Start])
+OSBE_CONFIG_SUBDIR([CorbaAdmin])
+OSBE_CONFIG_SUBDIR([Copyrighter])
+OSBE_CONFIG_SUBDIR([Dict])
+OSBE_CONFIG_SUBDIR([PoolProcess])

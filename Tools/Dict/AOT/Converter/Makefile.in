@@ -1,0 +1,17 @@
+# @file   Makefile.in
+# @author Karen Aroutiounov
+# $Id:$
+
+include Common.pre.rules
+include $(osbe_builddir)/config/CXX/CXX.pre.rules
+
+include $(osbe_builddir)/config/CXX/External/AOTLemmatizer.pre.rules
+
+include $(top_builddir)/config/El/Elements.so.pre.rules
+
+sources  := Application.cpp
+target   := ElAOTConverter
+
+CXX_FLAGS += -Wno-unknown-pragmas
+
+include $(osbe_builddir)/config/CXX/Ex.post.rules

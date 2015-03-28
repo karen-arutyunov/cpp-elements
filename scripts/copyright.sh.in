@@ -1,0 +1,19 @@
+#! /bin/sh
+
+project_path=@abs_top_srcdir@
+tmp="/tmp/elcop~.tmp"
+
+rm -f "$tmp"
+
+cpp_files=`find "$project_path" \( -name '*.cpp' -o  -name '*.hpp' \
+-o -name '*.idl' \) -a -not \( -name 'sysdep.*' -o -name 'uuid.*' -o \
+-name 'utest.*' -o -name 'copyrt.*' -o -name 'copyright.*' \)`
+
+for f in $cpp_files; do
+  cat "$f" | ElCopyrighter update copyright=$project_path/doc/copyright.cpp > \
+  "$tmp"
+
+  mv "$tmp" "$f"
+done
+
+rm -f "$tmp"

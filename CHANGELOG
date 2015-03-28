@@ -1,0 +1,1153 @@
+Changes with Elements 1.6.0.0 (25 February 2015)
+
+  * Add crawlers into DB
+
+Changes with Elements 1.5.99.0 (18 February 2015)
+
+  * El::Net::SMTP::Session implemented
+  * El::String::Manip::word_encoding implemented
+  * EncodingAwareLocalizedTemplate invented
+  * PSP reset input locale function changed
+  * Crawler, device DB updated
+  * Python object supports pickle module
+  * eng.ext, rus.ext updated
+
+Changes with Elements 1.5.98.0 (23 December 2014)
+
+  * Copyright note updated
+
+Changes with Elements 1.5.97.0 (15 December 2014)
+
+  * eng.ext, rus.ext updated
+
+Changes with Elements 1.5.96.0 (10 December 2014)
+
+  * eng.ext, rus.ext updated
+
+Changes with Elements 1.5.95.0 (31 October 2014)
+
+  * PSP test minor extension
+
+Changes with Elements 1.5.94.0 (2 October 2014)
+
+  * Switched to GeoIP City edition
+
+Changes with Elements 1.5.93.0 (22 September 2014)
+
+  * -std=c++0x CPP option added
+  * Adoption for CentOS 7
+  * Morphology classes extended
+  * eng.ext, rus.ext updated
+
+Changes with Elements 1.5.92.0 (7 July 2014)
+
+  * eng.ext, rus.ext updated
+
+Changes with Elements 1.5.91.0 (2 July 2014)
+
+  * eng.ext, rus.ext updated
+  * Crawler, rss reader agents added
+
+Changes with Elements 1.5.90.0 (16 June 2014)
+
+  * eng.ext, rus.ext updated
+  * IPMask exception description improved
+
+Changes with Elements 1.5.89.0 (4 June 2014)
+
+  * El::Sync::AdaptiveMutex implemented
+  * Bugfix: El::Stat counting max_time overflow
+
+Changes with Elements 1.5.88.0 (23 May 2014)
+
+  * Bugfix: El::TimeMetr::max_time calculation overflow
+  * El::Moment::set_from_epoch implemented
+  * rus.ext updated
+
+Changes with Elements 1.5.87.0 (30 April 2014)
+
+  * rus.ext updated
+
+Changes with Elements 1.5.86.0 (25 April 2014)
+
+  * rus.ext updated
+
+Changes with Elements 1.5.85.0 (18 April 2014)
+
+  * Porting to RHEL 6
+  * el.Net.IpMask implemented
+  * El::Stat moved to usage of gettimeofday instead of HighResTimer
+  * Bugfix: stat metering racing condition
+  * MimeType map constructor added
+  * Sources copyright note updated
+
+Changes with Elements 1.5.84.0 (24 March 2014)
+
+  * rus.ext, eng.ext updated
+  * IpMask struct implemented  
+
+Changes with Elements 1.5.83.0 (20 December 2013)
+
+  * rus.ext, eng.ext updated
+  * std::cerr.flush() added to multiple places after info output of ElStart
+
+Changes with Elements 1.5.82.0 (6 December 2013)
+
+  * rus.stp dict updated
+  * EC_END_OF_SENTENCE unicode char category invented
+
+Changes with Elements 1.5.81.0 (15 November 2013)
+
+  * Bugfix: robot.txt checker erroneously dissalowed indexing for some urls
+  * WEB crawlers definitions added
+
+Changes with Elements 1.5.80.0 (30 October 2013)
+
+  * eng.ext updated
+  * Removing extra forms parameterized for WordInfoManager::normal_forms_ids
+
+Changes with Elements 1.5.79.0 (28 October 2013)
+
+  * rus.ext, eng.ext updated
+  * Crawlers added
+
+Changes with Elements 1.5.78.0 (24 October 2013)
+
+  * eng.ext updated
+
+Changes with Elements 1.5.77.0 (12 August 2013)
+
+  * Tokyo Cabinet wrapper implemented
+  * rus.ext, eng.ext updated
+
+Changes with Elements 1.5.76.0 (29 July 2013)
+
+  * rus.ext, eng.ext updated
+
+Changes with Elements 1.5.75.0 (23 July 2013)
+
+  * eng.ext updated
+
+Changes with Elements 1.5.74.0 (19 July 2013)
+
+  * rus.ext, eng.ext updated
+
+Changes with Elements 1.5.73.0 (17 June 2013)
+
+  * rus.ext, eng.ext updated
+  * Bugfix: language name mistake corrected
+
+Changes with Elements 1.5.72.0 (13 June 2013)
+
+  * rus.ext, eng.ext updated
+
+Changes with Elements 1.5.71.0 (5 June 2013)
+
+  * rus.ext updated
+
+Changes with Elements 1.5.70.0 (30 May 2013)
+
+  * orb_adapter and orb_adapter_cleanup made reference counting
+  * Invented counfiguration py objects cleanup stage while unloading PSP Module
+  * rus.ext updated
+
+Changes with Elements 1.5.69.0 (24 May 2013)
+
+  * Bugfix: AIF-Peterburg (in russian) normalization never complete
+  * rus.ext updated
+  * HTML Light Parser takes max_len in chars now  
+
+Changes with Elements 1.5.68.0 (17 May 2013)
+
+  * rus.ext updated
+
+Changes with Elements 1.5.67.0 (15 May 2013)
+
+  * Number of crawlers added
+  * PSP locale function adopted to use valid langs mapping
+  * PSP_CackeKey now accepts uri_crawler value
+  * PSP_LangValid made more flexible
+  * Lang,Country l3_code method extended with zzz argument
+
+Changes with Elements 1.5.66.0 (30 April 2013)
+
+  * Bugfix: broken El::Locale static members initialization
+  * psp-ice PSP param invented
+  * rus.ext updated
+
+Changes with Elements 1.5.65.0 (20 April 2013)
+
+  * rus.ext updated
+
+Changes with Elements 1.5.64.0 (19 April 2013)
+
+  * CompoundServiceMessage::enqueue_strategy implemented
+
+Changes with Elements 1.5.63.0 (18 April 2013)
+
+  * rus.ext updated
+
+Changes with Elements 1.5.62.0 (1 April 2013)
+
+  * rus.ext updated
+  * Number of C-device types and crawlers added
+  * Make 1 space ident for Logger records (EL-36)
+
+Changes with Elements 1.5.61.0 (18 March 2013)
+
+  * rus.ext updated
+  * Bugfix: El::Python::NameValueMap were thinking keys and values are 
+    always strings
+
+Changes with Elements 1.5.60.0 (14 March 2013)
+
+  * rus.ext updated
+
+Changes with Elements 1.5.59.0 (18 February 2013)
+
+  * El::Net::HTTP::phone, descktop, tab implemented
+  * Additional User-Agent recognitions added in El::Net::HTTP::browser, 
+    crawler 
+  * rus.ext, eng.ext updated
+
+Changes with Elements 1.5.58.0 (11 February 2013)
+
+  * dump-multiform param invented for ElDictConverter
+
+Changes with Elements 1.5.57.0 (28 January 2013)
+
+  * rus.ext updated
+
+Changes with Elements 1.5.56.0 (25 January 2013)
+
+  * Wide string parser implemented
+  * eng.ext, rus.ext updated
+
+Changes with Elements 1.5.55.0 (14 January 2013)
+
+  * PSP exception now provides param list
+  * eng.ext, rus.ext updated
+
+Changes with Elements 1.5.54.0 (28 December 2012)
+
+  * rus.ext updated
+
+Changes with Elements 1.5.53.0 (17 December 2012)
+
+  * rus.ext updated
+
+Changes with Elements 1.5.52.0 (13 December 2012)
+
+  * -DM64, -DM32 CPP compiler params invented
+  * po- words piece supported fo rus lan
+
+Changes with Elements 1.5.51.0 (21 November 2012)
+
+  * rus.ext updated
+
+Changes with Elements 1.5.50.0 (19 November 2012)
+
+  * rus.ext, rus.stp updated
+  * -to, -libo, -nibud, koe- words pieces supported fo rus lang
+  * Binary stream serializer invented
+  * El::PSP::Config::double_number method implemented
+
+Changes with Elements 1.5.49.0 (2 November 2012)
+
+  * Bugfix: interrupted system call for poll were causing redundant 
+    ElProcessPool worker process closing
+  * Bugfix: Wrong charset detection on HTTP sessions with redirects (EL-35)
+
+Changes with Elements 1.5.48.0 (18 October 2012)
+
+  * rus.ext updated
+
+Changes with Elements 1.5.47.0 (16 October 2012)
+
+  * El::Corba::Transport::EntityPach::deserialize now throws exception on 
+    error but not aborting application
+  * Python sandbox framework extended for testing purpoces
+  * rus.ext updated
+
+Changes with Elements 1.5.46.0 (8 October 2012)
+
+  * PSP forwarding to absolute path implemented
+  * el.psp.Context.get_localization method implemented
+
+Changes with Elements 1.5.45.0 (2 October 2012)
+
+  * Bugfix: El::HTML::LightParser::url now trims resulted urls
+  * Python sandbox ptr passed to interceptor's pre_run method
+  * HTTP::Session::charset method invented
+  * El::Net::HTTP::content_type now fixes 'win-...' charset names
+  * El::Python::Sequence::from_sequence method added
+  * El::String::Manip::base64_decode overload function implemented
+  * Python sandbox inteface extension
+  * CRC calculation for String::Manip functions made uint64_t based
+  * CRC calculation for HTTP::Session and LibXML::Document made uint64_t based
+  * El::String::Manip::xpath_escape implemented
+  * Net::Url and LibXML classes extention
+  * El::LibXML::Document now stores all document urls
+  * Python method helper string minor change
+  * el.libxml.Document.text implemented
+  * Implement el.string.manip.truncate (EL-33)
+  * el.libxml.Document.abs_url rel_base_url param is now True by default; 
+    if no base url for the document then doument url will be used as a base
+  * eng.ext, rus.ext updated
+
+Changes with Elements 1.5.44.0 (25 June 2012)
+
+  * rus.ext updated
+
+Changes with Elements 1.5.43.0 (18 June 2012)
+
+  * Cookie parsing were too strict not allowing empty header value
+
+Changes with Elements 1.5.42.0 (7 June 2012)
+
+  * rus.ext updated
+
+Changes with Elements 1.5.41.0 (31 May 2012)
+
+  * rus.ext updated
+  * Character full decomposition consequences research
+
+Changes with Elements 1.5.40.0 (28 May 2012)
+
+  * el.string.manip.valid_utf8 is implemented
+
+Changes with Elements 1.5.39.0 (11 May 2012)
+
+  * #include directive supported in El::Cache::VariablesMap
+  * default flags for el.string.manip.py_xml_encode enriched with 
+    El::String::Manip::XE_PRESERVE_UTF8
+
+Changes with Elements 1.5.38.0 (28 April 2012)
+
+  * el.string.manip.base64_to_ulong implemented
+  * search.tut.by search engine supported
+
+Changes with Elements 1.5.37.0 (13 April 2012)
+
+  * El::Service::Event do not keep source service reference anymore
+
+Changes with Elements 1.5.36.0 (6 April 2012)
+
+ * rus.ext updated
+
+Changes with Elements 1.5.35.0 (5 April 2012)
+
+ * rus.ext updated
+ * El::PSP::Context.language method invented
+
+Changes with Elements 1.5.34.0 (30 March 2012)
+
+  * Bugfix: some crawler names shortened to fit 20 bytes in len
+
+Changes with Elements 1.5.33.0 (22 March 2012)
+
+  * El::Dictionary::Morphology::WordInfoManager::get_normal_form implemented
+
+Changes with Elements 1.5.32.0 (11 March 2012)
+
+  * rus.ext updated
+  * Copyright note updated
+  * Update Elements with new bots & browsers (EL-32)
+
+Changes with Elements 1.5.31.0 (1 March 2012)
+
+  * rus.ext, rus.stp updated
+  * ahrefsbot added to known crawlers
+
+Changes with Elements 1.5.30.0 (24 February 2012)
+
+  * Bugfix: El::Python::SandboxService could crash
+
+Changes with Elements 1.5.29.0 (22 February 2012)
+
+  * rus.ext updated
+  * El::BinaryInStream::seek implemented
+  * El/test/FileGen implemented
+
+Changes with Elements 1.5.28.0 (16 February 2012)
+
+  * HTTP interceptor ptr member added to HTTP::RequestParams struct
+  
+Changes with Elements 1.5.27.0 (13 February 2012)
+
+  * Bugfix: El::Python::SandboxService::Interceptor were not called in case of 
+    script error
+  * Bugfix: improper output formatting in PythonSanboxTest
+
+Changes with Elements 1.5.26.0 (7 February 2012)
+
+  * rus.ext updated
+  * Made process pool do not send redundant noticies
+  * El::Net::Socket::StreamBuff retries syscal in case of EINTR error
+  * El::IO functions invented
+  * El::Service::PorcessPool service made more verbal on create/close process
+  * Bugfix: El::Net::HTTP::URL::URL thrown "wrong encoding" exception instead 
+    of InvalidArg (EL-31)
+  * Logger::raw_log method implemented
+  * Interceptor invented for Python Sandbox Service
+
+Changes with Elements 1.5.25.0 (23 January 2012)
+
+  * rus.ext updated
+  * Support search.avg.com search engine (EL-29)
+
+Changes with Elements 1.5.24.0 (20 January 2012)
+
+  * Ability to pass custom objects to script running by means of sandbox 
+    service
+  * Bin stream read/write implemented for most El::Python types
+
+Changes with Elements 1.5.23.0 (16 January 2012)
+
+  * Content-Encoding:none supported
+  * El::Moment::time now capable of printing days count
+
+Changes with Elements 1.5.22.0 (13 January 2012)
+
+  * rus.ext dictionary updated
+
+Changes with Elements 1.5.21.0 (12 January 2012)
+
+  * Bugfix: Moment::normalize() didn't properly work for January
+  * Bugfix: el.string.manip.xml_decode were not contained in 
+    El/Python/Types.pid
+
+Changes with Elements 1.5.20.0 (29 December 2011)
+
+  * Bugfix: when RobotsChecker::allowed failed to connect to site for 
+    robots.txt download it let networking exception through instead of 
+    returning True
+
+Changes with Elements 1.5.19.0 (28 December 2011)
+
+  * rus.ext, eng.ext updated
+  * Python Sandbox Service implementation started
+
+Changes with Elements 1.5.18.0 (19 December 2011)
+
+  * el.libxml.Document.abs_url implemented
+  * El::LibXML::Python::Document::base_url now supports standard 
+    non-compliant <base> tags with noon-absolute paths
+  * El::Net::HTTP::Session::send_request now throws UnsupportedSchema for 
+    https urls
+  * rus.ext dict updated
+
+Changes with Elements 1.5.17.0 (7 December 2011)
+
+  * rus.ext dict updated
+
+Changes with Elements 1.5.16.0 (7 December 2011)
+
+  * rus.ext dict updated
+
+Changes with Elements 1.5.15.0 (6 December 2011)
+
+  * rus.ext dict updated
+  * utf8-aware functions extended with compliances check
+  * Python::Code::run debug facility added
+  * Python Sandbox security fixes for escapeSandbox.py, escapeSandbox2.py, 
+    escapeSandbox3.py
+
+Changes with Elements 1.5.14.0 (22 November 2011)
+
+  * rus.ext dict updated
+
+Changes with Elements 1.5.13.0 (11 November 2011)
+
+  * Python Sandbox implemented
+  * Libxml python wrapper implemented
+  * Enum support added to Python wrapper
+  * Turkish language supported
+  * kor, european dicts updated
+  * Language detection made more robust
+  * String::Manip::compact implemented
+  * HTTP::Url constructor now removes \t, \r, \n chars
+  * Bugfix: python code compilation fail if contains \r
+  * Bugfix: LibXML::HTMLParser::parser clears doc_ ptr before proceeding
+  * HTTP::Session::save_body now calc CRC if required
+  * Socket::Stream interceptor implemented
+  * Bufix: Python modules deregistration removed
+  * corba_adapter_cleanup invented
+  * El::Net::HTTP::Url::abs_path extended
+  * Add www.youtube.com to search engine list (EL-28)
+
+Changes with Elements 1.5.12.0 (14 September 2011)
+
+  * El::Net::HTTP::search_info tries win1251 for yandex if not utf8
+  * Added default_val param to PSP::Localization::get
+  * Robots.txt support implemented
+  * follow_redirects support for El::Net::HTTP::Session::send_request
+  * rus.stp updated
+  * ElLibXML library invented
+  * El::Net::HTTP::Session::save_body implemented
+  * El::Net::HTTP::content_type method invented
+
+Changes with Elements 1.5.11.0 (15 August 2011)
+
+  * Removing redundant MySQL::DM::thread_init
+  * Inventing SerializableSet class template
+
+Changes with Elements 1.5.10.0 (10 August 2011)
+
+  * TAO CORBA adapter implemented
+  * Bugfix: Apache command_rec.name, errmsg fields were initialized with 
+    pointers to memory that were freed before usage
+  * Bugfix: XML/EntityResolver's system-wide mutex can not be opened by 2 
+    different users simultaneously (EL-27)
+  * Replace existing GUID implementation with a system-wide one (EL-26)
+  * eng.stp, eng.ext, rus.ext updated
+
+Changes with Elements 1.5.9.0 (16 June 2011)
+
+  * rus ext dict updated
+
+Changes with Elements 1.5.8.0 (14 June 2011)
+
+  * Minor Apache framework optimization
+
+Changes with Elements 1.5.7.0 (10 June 2011)
+
+  * Bugfix: PSP print method bottleneck (EL-25)
+
+Changes with Elements 1.5.6.0 (9 June 2011)
+
+  * eng.ext, rus.ext, rus.stp dicts updated
+  * LightArray::init - iterator based version implemented
+
+Changes with Elements 1.5.5.0 (18 May 2011)
+
+  * Make HTTP::Session class to separate header name and value with ": " 
+    (EL-24)
+  * rus, eng ext and stp dicts updated
+
+Changes with Elements 1.5.4.0 (25 April 2011)
+
+  * Bugfix: Some SharedStringManager methods were not thread safe (EL-23)
+  * Bugfix: 2 lemmas erroneously united in rus.ext
+
+Changes with Elements 1.5.3.0 (22 April 2011)
+
+  * Bugfix: EL::PSP::RequestCache crases under some rare circumstances (EL-22)
+
+Changes with Elements 1.5.2.0 (19 April 2011)
+
+  * eng.ext, rus.ext updated
+
+Changes with Elements 1.5.1.0 (18 April 2011)
+
+  * El::PSP::Request::Out::send_location invented
+  * International domain names support
+
+Changes with Elements 1.5.0.0 (4 April 2011)
+
+  * PSP Cache now supports gzip and identity encoding for single entry
+
+Changes with Elements 1.4.99.0 (30 March 2011)
+
+  * Implement PSP cache tracing (NG-113)
+
+Changes with Elements 1.4.98.0 (23 March 2011)
+
+  * Bugfix: El::Apache::Request::endpoint crashes when no headers passed in 
+    request
+  * Bugfix: some error usecase of HTTP params-in-body usage not handled 
+    properly
+  * Bugfix: python related initialization procedure were crashing if some 
+    object not initialized
+  * El::String::Manip::Template: Variables interface enriched
+
+Changes with Elements 1.4.97.0 (4 March 2011)
+
+  * Bugfix: inconsistency in endpoint host & port calculation
+  * El::String::Manip::utf8_valid can now optionally checks for XML 1.0 
+    compliance
+  * CRC template made inline
+  * eng, ger, rus ext dicts updated
+  * Recognize webalta as a search engine (NG-99)
+  * xml-strict encoding supported in TSP
+
+Changes with Elements 1.4.96.0 (24 February 2011)
+
+  * Bugfix: Not possible to write binary strings with 
+    request.out.stream.prn (EL-20
+  * Bugfix: El::MySQL::ConnectionPoolFactory incremented 
+    used_connections_ counter event when fail to create new connection (EL-19)
+  * Copyright note updated
+  * news_item word added to loc/.../words.loc files
+  
+Changes with Elements 1.4.95.0 (11 February 2011)
+
+  * Another El::String::Manip::replace implemented
+  * PSP_CanonicalEndpoint directive implemented (EL-18)
+  * Invented cache-control header usage for PSP cache entry
+  * Invented etag for PSP cache entry
+
+Changes with Elements 1.4.94.0 (31 January 2011)
+
+  * Bugfix: wrong handling errors in PSP when some data written to stream
+  * GZip stream implemented
+  * Apache::Request::deflate implemented
+  * PSP request caching implemented
+
+Changes with Elements 1.4.93.0 (18 January 2011)
+
+  * Redirect invented to fix lang params in PSP
+
+Changes with Elements 1.4.92.0 (12 January 2011)
+
+  * Bugfix: Crash in ZLib-related code (EL-15)
+  * Bugfix: El::Net::HTTP::Session::test_completion not tolerant to peer 
+    close (EL-16)
+
+Changes with Elements 1.4.91.0 (08 January 2011)
+
+  * Minor optimization
+
+Changes with Elements 1.4.90.0 (22 December 2010)
+
+  * PSP language selection do not consider presense of search query but 
+    just fact of search engine referer
+  * rus.ext, eng.ext dicts updated
+
+Changes with Elements 1.4.89.0 (20 December 2010)
+
+  * Xerces EntityResolver implemented
+
+Changes with Elements 1.4.88.0 (13 December 2010)
+
+  * 'message' word multiplicity loalization invented
+  * JS_EscapeMarker invented
+
+Changes with Elements 1.4.87.0 (10 December 2010)
+
+  * Error shown when enabled service is not assigned to host made fatal in 
+    ElStart
+
+Changes with Elements 1.4.86.0 (06 December 2010)
+
+  * rus.ext, eng.ext updated
+  * Country Hash functor invented
+
+Changes with Elements 1.4.85.0 (29 November 2010)
+
+  * Size type defined in El::Hash::Map
+  * eng.ext, rus.ext updated
+
+Changes with Elements 1.4.84.0 (19 November 2010)
+
+  * Bugfix: El::MySQL enabled applications could leak on per-thread basis 
+    (EL-13)
+  * Bugfix: UI language calculation do not work properly when url and param 
+    languages spec present simultaneously (EL-14)
+  * UI language calculation do not work properly (NG-65)
+
+Changes with Elements 1.4.83.0 (16 November 2010)
+
+  * El::ServiceBase couldn't be started after stopped (EL-12)
+
+Changes with Elements 1.4.82.0 (11 November 2010)
+
+  * eng.ext, rus.ext updated
+
+Changes with Elements 1.4.81.0 (9 November 2010)
+
+  * search.qip.ru recognized as a search site now (NG-51)
+  * No respect to url-contained lang settings when navigate from known 
+    search engine (NG-24)
+
+Changes with Elements 1.4.80.0 (2 November 2010)
+
+  * El::Net::HTTP::URL constructor improperly treats spaces (EL-10)
+  * Bugfix: unknown ElStart params starting with -- were threated as hostnames
+  * Support environment variable substitution in cluster definitions for 
+    ElStart utility (EL-9)
+
+Changes with Elements 1.4.79.0 (18 October 2010)
+
+  * Bugfix: HTML parser were not skipping content of <style> tags (EL-8)
+  * Bugfix: Waiting for service to complete with mutex write locked (EL-7)
+  * Bugfix: El::String::Manip::utf16_to_wchar always produce empty string 
+    (EL-6)
+
+Changes with Elements 1.4.78.0 (4 October 2010)
+
+  * CookieSetter constructor cut off port from domain if present (EL-5)
+
+Changes with Elements 1.4.77.0 (27 September 2010)
+
+  * Bugfixes: HTML parser skips now content of <textarea> tag and 
+    supports <?xml tag
+  * eng.ext, rus.ext dicts updated
+
+Changes with Elements 1.4.76.0 (20 September 2010)
+
+  * Bugfix: when one of params passed in wrong mime-url-encoding PSP module 
+    handling fails (EL-1)
+  * Support ask.com in El::Net::HTTP:: search_info utility function (EL-2)
+
+Changes with Elements 1.4.75.0 (2 September 2010)
+
+  * Bugfix: ProcessPool have unexpectedly terminated process controling 
+    thread in case of task timeout
+  * Ability to restrict ProcessPool task result size invented
+  * rus.ext, eng.ext dicts updated
+
+Changes with Elements 1.4.74.0 (25 August 2010)
+
+  * El::Net::HTTP::Python::search_info utility implemented
+  * Dense string format supported for El::Luid
+  * crawler language rule supported for PSP_LangCalc config option
+  * eng.ext, rus.ext updated
+
+Changes with Elements 1.4.73.0 (12 August 2010)
+
+  * El::Service::ProcessPool implemented
+
+Changes with Elements 1.4.72.0 (5 August 2010)
+
+  * Bugfix: repeatable guids could be generated by separate processes on 
+    the same machine
+  * TokyoCabinet C++ wrapper implemented
+  * BufferPtr implemented
+
+Changes with Elements 1.4.71.0 (30 July 2010)
+
+  * rus.ext, eng.ext updated
+
+Changes with Elements 1.4.70.0 (19 July 2010)
+
+  * Number of utility functions mover from PSP to Net::HTTP
+  * El::Python::Guid implemented
+  * read/write string buff methods for binary stream implemented
+
+Changes with Elements 1.4.69.0 (2 July 2010)
+
+  * rum, rum.stp updated
+
+Changes with Elements 1.4.68.0 (1 July 2010)
+
+  * rus.stp, rus.ext updated
+  * Hyphens normalization invented in El::String::Unicode::to_uniform
+  * Slovak, Romanian languages supported
+  * Subpath handling supported in PSP
+
+Changes with Elements 1.4.67.0 (24 June 2010)
+
+  * Bugfix: Light HTML parser were not trimming image alt text
+  * Lax mode implemented in abs_url function
+  * LightArray and pyton sequence interfaces slightly extended
+
+Changes with Elements 1.4.66.0 (18 June 2010)
+
+  * Bugfix: El::Dictionary::Morphology::pseudo_id were unexpectedly 
+    generating 64-bit identifier under 64 bit platform
+
+Changes with Elements 1.4.65.0 (17 June 2010)
+
+  * default.config.t template CPP processing invented
+  * eng.ext, rus.ext updated
+
+Changes with Elements 1.4.64.0 (15 June 2010)
+
+  * chi, jpn, kor, rus updated
+  * Now 64-bit Elements can be built
+
+Changes with Elements 1.4.63.0 (28 May 2010)
+
+  * rus.ext, eng.ext updated
+  * Moving to fixed size types where required completed
+
+Changes with Elements 1.4.62.0 (24 May 2010)
+
+  * rus.ext updated
+  * Moving to fixed size types where required - step 2
+
+Changes with Elements 1.4.61.0 (19 May 2010)
+
+  * Moving to fixed size types where required - step 1
+  * eng.ext, rus.ext updated
+
+Changes with Elements 1.4.60.0 (14 May 2010)
+
+  * Adopted default.config for MICO
+  * el.psp.feed_reader implemented
+  * Some unused classes moved to archieve
+  * Some classes moved to use fixed size int types
+  * LightArray refactored to use iterators
+
+Changes with Elements 1.4.59.0 (28 Apr 2010)
+
+  * Bugfix: El::Corba::SmartRef were blocking concurrent threads on 
+    single mutex in object call
+
+Changes with Elements 1.4.58.0 (27 Apr 2010)
+
+  * Bugfix: new / delete [] mismatch fixed in El::XML::InputStream
+  * eng.ext, rus.ext updated
+
+Changes with Elements 1.4.57.0 (26 Apr 2010)
+
+  * Bugfix: El::Corba::SmartRef::object had no CORBA::SystemException 
+    specification
+  * ORBacus corba adapter destroy ORB in destructor
+
+Changes with Elements 1.4.56.0 (23 Apr 2010)
+
+  * eng.ext, rus.ext updated
+  * ORB usage unification implemented
+
+Changes with Elements 1.4.55.0 (19 Apr 2010)
+
+  * eng.ext, rus.ext updated
+  * ORB usage unification partially implemented
+
+Changes with Elements 1.4.54.0 (9 Apr 2010)
+
+  * Bugfix: locale language were not calculated properly in absense of 
+    Accept-Language header
+  * eng.ext, rus.ext updated
+  * ORB usage unification - step 1
+
+Changes with Elements 1.4.53.0 (5 Apr 2010)
+
+  * eng.ext, rus.ext updated
+  * Google Chrome browser supported in el.psp.browser
+
+Changes with Elements 1.4.52.0 (1 Apr 2010)
+
+  * eng.ext, rus.ext updated
+  * el.psp.crawler function implemented
+  * Bufix: default.config were not reflected latest OSBE changes
+
+Changes with Elements 1.4.51.0 (26 Mar 2010)
+
+  * Migration to latest xerces, xsd and osbe
+  * eng.ext, rus.ext updated
+  * HTTP::Session::test_completion do not make any checks except for zipped 
+    streams except deflation specific ones
+
+Changes with Elements 1.4.50.0 (12 Mar 2010)
+
+  * eng.ext, rus.ext updated
+  * Country, Lang nonexisting static member exposed to Python
+  
+Changes with Elements 1.4.49.0 (2 Mar 2010)
+
+  * Lang detection changes
+  * eng.ext, rus.ext, por.ext, por.stp updated
+  * -pthread -fPIC -DPIC compilation flags added
+
+Changes with Elements 1.4.48.0 (24 Feb 2010)
+
+  * Bugfix: test/UnicodeUniform added to SVN
+
+Changes with Elements 1.4.47.0 (24 Feb 2010)
+
+  * eng.ext, rus.ext updated
+  * dictionaries processed by new to_uniform implementation
+  * to_uniform rewritten to apply decomposition to wide set of chars
+  * Bugfix: content of <script> tag is now suppressed by 
+    HTML::LightParser::parse
+
+Changes with Elements 1.4.46.0 (17 Feb 2010)
+ 
+  * El::Net::HTTP::Url class made anchor aware
+
+Changes with Elements 1.4.45.0 (15 Feb 2010)
+ 
+  * Locale struct implemented
+  * Country invented in AcceptLanguage item
+  * Dumping malloc info utility imlemented
+  * rus.ext, rus.stp, eng.ext updated
+
+Changes with Elements 1.4.44.0 (10 Feb 2010)
+ 
+  * El::Apache::Request::endpoint were not working properly for default 
+    port (which were 0)
+
+Changes with Elements 1.4.43.0 (9 Feb 2010)
+ 
+  * El::Apache::Request::endpoint made more intellectual
+  * eng.ext updated
+
+Changes with Elements 1.4.42.0 (8 Feb 2010)
+ 
+  * Bugfix: ElStart status output were not synchronized between different 
+    threads
+
+Changes with Elements 1.4.41.0 (8 Feb 2010)
+
+  * rus.ext dictionary updated
+  * -m32 build option added to compiler and ld flags
+
+Changes with Elements 1.4.40.0 (26 Jan 2010)
+
+  * Bugfix: GUID generator could produce same values in concurrent threads
+  * El::LightArray iterators, begin/end methods invented
+
+Changes with Elements 1.4.39.0 (20 Jan 2010)
+
+  * Bugfix: Guid::generate were not thread safe, now process safe
+
+Changes with Elements 1.4.38.0 (20 Jan 2010)
+
+  * eng.ext dict updated
+
+Changes with Elements 1.4.37.0 (14 Jan 2010)
+
+  * If Apache module can't be initialized parent process is terminated
+  * Bugfix: rus.ext dict updated but rus dict.mrf is not rebuild
+
+Changes with Elements 1.4.36.0 (13 Jan 2010)
+
+  * rus.ext dict updated
+  * Bugfix: one of CJK code diapasons fixed
+  * Text language detection improvement (less trust to default supported 
+    language)
+
+Changes with Elements 1.4.35.0 (11 Jan 2010)
+
+  * El::Country::lang method invented (returns official country language)
+  * jpn, chi, rus.ext, eng.ext dicts updated
+  * Sources copyright notice updated
+  * XML::InputSource can be now configured with a charset
+  * release method implemented in shared string ptr class
+
+Changes with Elements 1.4.34.0 (25 Dec 2009)
+
+  * rus.ext, rus.stp, eng.ext, spa, spa.stp, ita, por dictionaries upgraded
+
+Changes with Elements 1.4.33.0 (21 Dec 2009)
+
+  * eng & rus stop words and extension dictionaries upgraded
+
+Changes with Elements 1.4.32.0 (11 Dec 2009)
+
+  * ProcessCtl calls shutdown(1) again
+  * Bugfix: ElStart status operation worked improperly on several hosts
+  * SharedStringManager optimization: moved from bucket brigades to raw 
+    sparse map
+  * Language detection improvement
+
+Changes with Elements 1.4.31.0 (30 Nov 2009)
+
+  * Surrogate morphological token type invented
+  * Dict hash calculation consideres stop word ids now
+  * eng and rus stp and ext dicts upgraded
+
+Changes with Elements 1.4.30.0 (25 Nov 2009)
+
+  * Bugfix: dictionary didn't allow lemmas with more than 256 word forms
+  * Bugfix: some unicode characters were not properly supported
+  * Unicode characters el-categories letter, number, interword, internumber 
+    invented
+  * Stop word dictionaries added for all supported languages
+  * text language detection made more robust and less depending from 
+    language hint
+
+Changes with Elements 1.4.29.0 (16 Nov 2009)
+
+  * Bugfix: removal of unused var in utf8_valid method
+
+Changes with Elements 1.4.28.0 (13 Nov 2009)
+
+  * rus, eng extension dictionaries updated
+  * El::String::Manip::utf8_valid function implemented
+
+Changes with Elements 1.4.27.0 (11 Nov 2009)
+
+  * rus, eng extension dictionaries and spa, ita, por main dictionaries updated
+  * Shared string manager uses sparse_hash_map instead of hash_map now for 
+    backets_ member
+  * add_ref, remove methods aded to shared string pointer struct
+  * Word forms guess implemented
+  * El::LightSet, El::Allocator, El::Stat::Counter implemented
+  * Orb get shutdown asyncrhronously in ProcessControl framework
+  * dump method implemented in SharedString manager class
+  * Buxfix: El::Lang::l2_code could return 0 which were not expected by 
+    some modules
+
+Changes with Elements 1.4.26.0 (26 Oct 2009)
+
+  * Bugfix: Request.secure() method were ommited in El/PSP/Types.pid
+
+Changes with Elements 1.4.25.0 (23 Oct 2009)
+
+  * Word manager now returns lemmas in order of decreasing language popularity.
+  * Bugfix: word manager changed to use utf8_to_uniform in get_lemmas to be 
+    consistent with dictionary generating tool.
+
+Changes with Elements 1.4.24.0 (20 Oct 2009)
+
+  * Russian, English dictionary extensions added.
+  * Dictionary convertor reads source dictionary from std input now.
+  * Dictionary convertor convert words to uniform representation.
+  * Dictionary convertor is now skipping comments (lines starting with #) 
+    and empty lines
+
+Changes with Elements 1.4.23.0 (16 Oct 2009)
+
+  * Bugfix: unicode encoding suffix was not allowed in content type header 
+    value for mime url encoded form params
+
+Changes with Elements 1.4.22.0 (12 Oct 2009)
+
+  * operator == implemented in LighArray class
+  * operator > implemented in SharedStringPtr class
+  * New version of dictionaries: spa, ita, por
+
+Changes with Elements 1.4.21.0 (1 Oct 2009)
+
+  * El::String::Manip::xml_decode overload implemented
+
+Changes with Elements 1.4.20.0 (28 Sep 2009)
+
+  * El::LightArray::init optimized
+  * El::MySQL::Connection::insert_id implemented
+
+Changes with Elements 1.4.19.0 (2 Sep 2009)
+
+  * Bugfix: convertor didn't skip information line in source mrf-file
+
+Changes with Elements 1.4.18.0 (29 Jul 2009)
+
+  * Portuguese, Italian and Spanish morpho-dictionaries added
+  * El::Apache::Request::secure method implemented (also available for PSP)
+
+Changes with Elements 1.4.17.0 (9 Jul 2009)
+
+  * ElStart retry period doubles each time per service
+  * Added posibility to configure logger for PSP module
+
+Changes with Elements 1.4.16.0 (1 Jul 2009)
+
+  * Made El::Net::HTTP::URL::URL 'improving' url by properly encoding some 
+    unexpected characters (space, non ascii, ...)
+
+Changes with Elements 1.4.15.0 (24 Jun 2009)
+
+  * Made ElProbeWEB.sh to work with HTTPS
+  * ElStart modifications:
+    * list (start|stop|status) command invented
+    * operations allowed on service groups
+    * services can be disabled on config.xml level
+
+Changes with Elements 1.4.14.0 (8 Jun 2009)
+
+  * Bugfix in CORBA::Transport::Entity template
+  * El::DB::String::operator[] added
+
+Changes with Elements 1.4.13.0 (1 Jun 2009)
+
+  * no_realloc param invented in El::LightArray::resize
+  * Minor refactorig of El::MySQL::DB
+  * El::FileSystem::remove_directory implemented
+  * object_timeout invented for El::Cache::FileCache
+  * El::Net::HTTP::MimeTypeMap implemented
+  * El::Moment::dense_format made to be more flexible
+  * Implemented SharedStringManager::info method
+  * Bugfix: LangDetection memory leak eliminated
+
+Changes with Elements 1.4.12.0 (18 May 2009)
+
+  * El::String::Unicode::CharTable implemented
+  * Tools/UnicodeDataProcessor added
+
+Changes with Elements 1.4.11.0 (14 May 2009)
+
+  * El::Dictionary::Morphology::WordInfoManager::get_lemmas is now 
+    case insensitive
+  * El::String::Manip::is_stop(char chr) bugfix
+
+Changes with Elements 1.4.10.0 (13 May 2009)
+
+  * Word norm forms language detection implemented
+  * Unknown words language detection invented
+  * HashMap serialization bug-fix
+  * Bugfix: chn was using insted of chi for Chinese language reference
+  * Lemma support added to El::Dictionary::Morphology::WordInfoManager
+
+Changes with Elements 1.4.9.0 (28 Apr 2009)
+
+  * chn, jpn, kor dictionaries updated again
+
+Changes with Elements 1.4.8.0 (28 Apr 2009)
+
+  * chn, jpn, kor dictionaries updated
+
+Changes with Elements 1.4.7.0 (22 Apr 2009)
+
+  * SharedStringConstPtr::swap method implemented
+  * ArrayPtr::out method implemented
+  * dense mode can now be switched off for SharedStringManager
+  * SharedStringManager: adding string optimized
+  * wide character version of El::String::Manip::replace implemented
+  * El::Moment::set_iso8601 bugfix
+
+Changes with Elements 1.4.6.0 (14 Apr 2009)
+
+  * Virtual memory calculation utility fix
+
+Changes with Elements 1.4.5.0 (10 Apr 2009)
+
+  * Virtual memory calculation utility function implemented
+
+Changes with Elements 1.4.4.0 (9 Apr 2009)
+
+  * rus, chn, jpn and kor dictionaries updated
+  * Dictionary conversion tool implemented
+
+Changes with Elements 1.4.3.0 (30 Mar 2009)
+
+  * El::Net::HTTP::URL::URL replaces ' ' with '+'
+  * AddressInfo::country returns now Country::null when country code 
+    is not recognized (instead of throwing exception)
+
+Changes with Elements 1.4.2.0 (23 Mar 2009)
+
+  * PSP module sets now en_US.utf8 locale to allow utf8/unicode 
+    conversions to work correctly
+  * Get rid of ACE thread management functions in ServiceBase class. 
+    Now stack size for workers set correctly.
+
+Changes with Elements 1.4.1.0 (19 Mar 2009)
+
+  * sort method invented in LightArray
+  * Crash and mem-leak fixed in PSP module
+  * Korean, Japanese and Chinese support added to dictionary
+  * Now UUID generator create state files with r/w access for 
+    everybody and report error when writing fails
+  * El::String::Manip::Transcoder class invented
+  * AOT Convertor compilation is disabled by default
+
+Changes with Elements 1.0.4.1
+
+  * Binary Streams refactored.
+  * El::Country constructor recognizes 1-st level county-domain parameter.
+
+Changes with Elements 1.0.4.0
+
+  * NoCopy invented
+
+Changes with Elements 1.0.3.0
+
+  * SetMatcher class implemented
+
+Changes with Elements 1.0.2.1 (6 Aug 2007)
+
+  * Speedup remove and add_ref methods of El::String::SharedStringManager.
+
+Changes with Elements 1.0.2.0 (31 July 2007)
+
+  * Implementation of El::String::SharedStringManager and 
+    El::String::SharedStringConstPtr classes.
+
+Changes with Elements 1.0.1.0
+
+   * When build vocabulary: if one lemma is a subset of the other - skip it.
+   * When searching word in english dictionary consider 's suffix.

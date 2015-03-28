@@ -1,0 +1,26 @@
+# @file   Makefile.in
+# @author Karen Aroutiounov
+# $Id:$
+
+include Common.pre.rules
+include $(osbe_builddir)/config/CXX/CXX.pre.rules
+
+include $(top_builddir)/config/El/Elements.so.pre.rules
+
+sources  := Application.cpp
+target   := ElTestStringManip
+
+define check_commands
+  echo "Running ElTestStringManip ..."; \
+  ElTestCRC; result=$$?; \
+  if test $$result -eq 0; then \
+    echo "done"; \
+  else \
+    echo "failed"; \
+  fi
+endef
+
+include $(osbe_builddir)/config/CXX/Ex.post.rules
+include $(osbe_builddir)/config/Check.post.rules
+
+

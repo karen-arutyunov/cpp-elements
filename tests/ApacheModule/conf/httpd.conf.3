@@ -1,0 +1,73 @@
+
+Listen 7190
+
+Timeout 300
+
+KeepAlive Off
+
+# worker MPM
+# StartServers: initial number of server processes to start
+# MaxClients: maximum number of simultaneous client connections
+# MinSpareThreads: minimum number of worker threads which are kept spare
+# MaxSpareThreads: maximum number of worker threads which are kept spare
+# ThreadsPerChild: constant number of worker threads in each server process
+# MaxRequestsPerChild: maximum number of requests a server process serves
+
+ServerLimit         20
+StartServers         3
+MaxClients        1000
+MinSpareThreads     50
+MaxSpareThreads   1000   
+ThreadsPerChild     50
+MaxRequestsPerChild  0
+
+#ServerLimit          1
+#StartServers         1
+#MaxClients           3
+#MinSpareThreads      1
+#MaxSpareThreads      3   
+#ThreadsPerChild      3
+#MaxRequestsPerChild  0
+
+User karen
+Group users
+
+ServerAdmin karen@ocslab.com
+ServerName localhost:7190
+
+LoadFile /home/karen/projects/Elements/build/lib/libElements.so 
+LoadModule test_module /home/karen/projects/Elements/build/lib/libElTestApacheModule.so
+
+Arg1 AA "BBB CCCC"
+#Arg2 AA1 "BBB2 CCCC3"
+
+DocumentRoot "/home/karen/projects/Elements/tests/ApacheModule/htdocs"
+CoreDumpDirectory "/home/karen/projects/Elements/tests/ApacheModule"
+
+ErrorLog logs/error_log
+LogLevel warn
+
+#CustomLog logs/access_log common
+#CustomLog logs/referer_log referer
+#CustomLog logs/agent_log agent
+# or
+#CustomLog logs/access_log combined
+
+<Location /service>
+  SetHandler test_module
+</Location>
+
+#TypesConfig $(SITE_CONFIG_ROOT)/conf/mime.types
+DefaultType text/plain
+
+ServerTokens Prod
+ServerSignature Off
+
+# ExtendedStatus On
+
+<Location /server-status>
+  SetHandler server-status
+#  Order Deny,Allow
+#  Allow from all
+#  Allow from .foo.com
+</Location>

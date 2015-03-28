@@ -1,0 +1,17 @@
+request = context.request
+loc, prn, = context.localization.get, request.output.stream.prn
+
+prn(
+R'''<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item type="id-pefix" value="&lt;tr>&lt;td class='item_id'>"/>
+  <item type="id-suffix" value="&lt;/td>&lt;td>"/>
+  <item type="value-suffix" value="&lt;/td>&lt;/tr>"/>
+
+  <item type="output" value="&lt;table class='items_table'>"/>
+  <item id="atom" value="''', loc("atom"), R'''"/>
+  <item id="rdf" value="''', loc("rdf"), R'''"/>
+  <item id="rss" value="''', loc("rss"), R'''"/>
+  <item type="output" value="&lt;/table>"/>
+</items>
+''')

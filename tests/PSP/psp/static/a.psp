@@ -1,0 +1,32 @@
+request = context.request
+loc, prn = context.localization.get, request.output.stream.prn
+headers = request.input.headers()
+cookies = request.input.cookies()
+
+try:
+  logger = context.cache["logger"]
+except:
+  logger = el.psp.Logger(10, "*")
+  context.cache["logger"] = logger
+
+browser = el.psp.browser(headers.find("User-Agent"))
+os = el.psp.os(headers.find("User-Agent"))
+
+c = el.net.http.CookieSetter("lang", "af", el.Moment(110, 1, 1))
+request.output.send_cookie(c)
+
+prn(
+
+'''<html>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<body>''', psp_test.echo("lalala"), ' ',
+
+loc('CAR'),
+
+"  -", browser, "/", os, "-  ", 
+cookies.most_specific("Lang"), "/", cookies.most_specific("aa"),
+
+'''</body>
+</html>''')
+
+logger.trace(el.logging.HIGH, "ASP", "AAA")

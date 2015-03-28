@@ -1,0 +1,6 @@
+hi,
+
+upsa.ocslab.com:/u02/rpm/RedHat3/RPMS.redhat/{ethereal-0.10.14-1.EL3.1.i386.rpm,ethereal-gnome-0.10.14-1.EL3.1.i386.rpm}
+rpm -Uvh ethereal-0.10.14-1.EL3.1.i386.rpm ethereal-gnome-0.10.14-1.EL3.1.i386.rpm
+
+serge

@@ -1,0 +1,45 @@
+# @file   Makefile.cpp.mk.in
+# @author Karen Aroutiounov
+# $Id:$
+
+include Common.pre.rules
+include $(osbe_builddir)/config/CXX/CXX.pre.rules
+
+include $(osbe_builddir)/config/CXX/External/ACE.pre.rules
+include $(osbe_builddir)/config/CXX/External/ZLib.pre.rules
+include $(osbe_builddir)/config/CXX/External/IDN.pre.rules
+include $(osbe_builddir)/config/CXX/External/MD5.pre.rules
+include $(osbe_builddir)/config/CXX/External/UUID.pre.rules
+include $(osbe_builddir)/config/CXX/External/Google.pre.rules
+include $(osbe_builddir)/config/CXX/External/DL.pre.rules
+
+sources  := Moment.cpp \
+            Lang.cpp \
+            Country.cpp \
+            Locale.cpp \
+            String/SharedString.cpp \
+            String/LightString.cpp \
+            String/StringPtr.cpp \
+            String/Manip.cpp \
+            String/ListParser.cpp \
+            String/Template.cpp \
+            String/Unicode.cpp \
+            Compress/ZLib.cpp \
+            Compress/GZip.cpp \
+            Service/ThreadPool.cpp \
+            Service/ProcessPool.cpp \
+            Service/Timer.cpp \
+            Guid.cpp \
+            Luid.cpp \
+            Utility.cpp \
+            Logging/LoggerBase.cpp \
+            Logging/FileLogger.cpp \
+            Cache/ObjectCache.cpp \
+            Cache/EncodingAwareLocalizedTemplate.cpp \
+            FileSystem.cpp \
+            Image/ImageInfo.cpp
+
+includes := .
+target   := Elements
+
+include $(osbe_builddir)/config/CXX/So.post.rules

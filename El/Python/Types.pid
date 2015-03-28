@@ -1,0 +1,209 @@
+module el
+{
+  type TimeValue
+  {
+    TimeValue(unsigned long sec = 0, unsigned long usec = 0);
+
+    void sec(unsigned long value);
+    unsigned long sec();
+
+    void msec(unsigned long value);
+    unsigned long msec();
+
+    void usec(unsigned long value);
+    unsigned long usec();
+  };
+
+  type Guid
+  {
+    Guid(string value);
+    Guid();
+
+    void generate();
+    string string(long format= ('GF_CLASSIC') {'GF_CLASSIC','GF_DENSE'});
+
+    static Guid null;
+    static unsigned long GF_CLASSIC;
+    static unsigned long GF_DENSE;
+  };
+
+  type Moment
+  {
+    Moment(unsigned long year= (0), 
+           unsigned long month= (0), 
+           unsigned long day= (0), 
+           unsigned long hour= (0), 
+           unsigned long minute= (0),
+           unsigned long second= (0), 
+           unsigned long usec= (0), 
+           string tz= ('GMT') {'GMT','LOCAL'});
+
+    Moment(TimeValie time, 
+           string tz= ('GMT') {'GMT','LOCAL'});
+
+    Moment(string time,
+           string tm_format= ('ISO_8601') 'ISO_8601','RFC_0822'})
+           string tz= ('GMT') {'GMT','LOCAL'});
+
+    TimeValue time_value();
+
+    string iso8601(bool timezone (True));
+    string rfc0822(bool timezone (True), bool usec (False));
+
+    // yyyymmdd.hhmmssuuuuuu format
+    string dense_format();
+
+    static Moment null;
+  };
+
+  type Lang
+  {
+    Lang(string lang (0));
+
+    unsigned long el_code();
+    string l2_code(boolean zz (False));
+    string l3_code(boolean zzz (False));
+    unsigned long num_code();
+    string name();
+
+    // Returns country in <int code> (<l3 code>, <name>) form
+    string description();
+
+    static Lang null;
+    static Sequence all; // Contains all Lang objects
+  };
+
+  type Country
+  {
+    Country(string country (0));
+
+    unsigned long el_code();
+    string l2_code(boolean zz (False));
+    string l3_code(boolean zzz (False));
+    unsigned long num_code();
+    string name();
+
+    // Returns country in <int code> (<l3 code>, <name>) form
+    string description();
+
+    static Country null;
+    static Sequence all; // Contains all Country objects
+  };
+
+  type Locale
+  {
+    Locale(Lang l(0), Country c(0));
+
+    Language lang;
+    Country country;
+  };
+
+  type Sequence
+  {
+    // Fully implements Python sequence protocol 
+    unsigned long size();
+
+    Object append(Object item);
+    void erase(unsigned long index);
+    unsigned long index(Object item);
+  };
+
+  type Map
+  {
+    // Fully implements Python map protocol 
+    unsigned long size();
+    list keys();
+  };
+
+  type NameValueMap : el.Map
+  {
+    NameValueMap(string value, 
+                 string nvp_separator(","), 
+                 string nv_separator("="));
+
+    string string();
+    boolean present(string key);
+    Object value(string key, Object default_value(""));
+  };
+
+  el.TimeValue gettimeofday();
+  void exit(Object value(Py_None));
+
+  module string
+  {
+    module manip
+    {
+// String compliance flags
+      UAC_XML_1_0 = 0x1;
+
+      boolean utf8_valid(string str, unsigned long compliance_flags (0));
+
+      string mime_url_encode(string src);
+      string mime_url_decode(string src);
+
+// XML-encode flags
+      unsigned long XE_TEXT_ENCODING = 0x1;
+      unsigned long XE_ATTRIBUTE_ENCODING = 0x2;
+      unsigned long XE_PRESERVE_UTF8 = 0x4;
+      unsigned long XE_FORCE_NUMERIC_ENCODING = 0x8;
+
+      string xml_encode(string src, unsigned long flags);
+      string xml_decode(string src);
+
+      unsigned long base64_to_ulong(string src);
+
+      string suppress(string src, string sup_chars); 
+      string truncate(string text, unsigned long max_len);
+      string js_escape(string src);
+    }
+
+    module template
+    {
+      type Parser
+      {
+        Parser(string text, string left_marker, string right_marker);
+        string instantiate(0bject map, boolean lax);
+      }
+    }
+  }
+
+  module logging
+  {
+// Severity values
+    long EMERGENCY = 0;
+    long ALERT = 1;
+    long ERROR = 2;
+    long CRITICAL = 3;
+    long WARNING = 4;
+    long NOTICE = 5;
+    long INFO = 6;
+    long DEBUG = 7;
+    long TRACE = 8;
+
+// Trace levels
+    long LOW = 0;
+    long MIDDLE = 0;
+    long HIGH = 0;
+
+    type Logger
+    {
+      void log(unsigned long severity, string aspect, Object text, ...);
+      void trace(unsigned long trace_level, string aspect, Object text, ...);
+
+      void emergency(string aspect, Object text, ...);
+      void alert(string aspect, Object text, ...);
+      void error(string aspect, Object text, ...);
+      void critical(string aspect, Object text, ...);
+      void warning(string aspect, Object text, ...);
+      void notice(string aspect, Object text, ...);
+      void info(string aspect, Object text, ...);
+      void debug(string aspect, Object text, ...);
+
+      boolean will_log(unsigned long severity);
+      boolean will_trace(unsigned long trace_level);
+
+      unsigned long level;
+      string aspects;
+    };
+  }
+}

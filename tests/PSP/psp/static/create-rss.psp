@@ -1,0 +1,60 @@
+request, conf = context.request, context.config.get
+loc, prn, = context.localization.get, request.output.stream.prn
+lang, param = request.input.lang.l3_code(), request.input.parameters().find
+
+prn(
+
+R'''<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>''', loc("PAGE_TITLE"), R'''</title>
+<link rel="stylesheet" type="text/css" href="/fixed/css/create-rss.css" media="all" />
+<script src="/static/js/elements.js" type="text/javascript"></script>
+<script src="/static/js/''', lang, R'''/crss.js" type="text/javascript"></script>
+</head>
+
+<body onload="pm.onload()">
+
+<form id="f">
+<table id="skeleton">
+
+  <tr><td id="topbar">
+
+    <table>
+    <tr><td id="page_name">''', loc("PAGE_NAME"), R''' </td>
+    <td id="right_menu"><a href="/''', lang, R'''?q=''', param("q"), 
+R'''&amp;p=''', param("p"), R'''&amp;c=''', param("c"), R'''&amp;i=''', 
+param("i"), R'''&amp;l=''', param("l"), R'''">''', loc("NEW_SEARCH"), 
+R'''</a></td>
+    </tr>
+  </table>
+
+  </td></tr>
+
+  <tr><td id="main_area" align="center" valign="top">
+    <table id="msg_count">
+    <tr><td>
+    ''', loc("ITEMS_COUNT"), R''' 
+    <INPUT type="text" value="20" name="mc" id="mc" maxlength="3"
+           onkeypress="return pm.on_key_press(event)" />
+    <INPUT type="hidden" value="http://''', conf("endpoint"), R'''/search/''', 
+lang, R'''?q=''', param("q"), R'''&t=r&n=''', param("n"), 
+R'''&y=''', param("y"), R'''&i=''', param("i"), R'''&e=''', 
+param("e"), R'''&u=''', param("u"), R'''&a=''', param("a"), R'''" 
+           name="rq" id="rq"/>
+    </td></tr>
+<!--    <tr><td id="d"></td></tr> -->
+    <tr><td id="o"></td></tr>
+    </table>
+  </td></tr>
+
+  <tr><td id="copyright" valign="bottom">''', loc("COPYRIGHT"), 
+R''' <a href="/static/''', lang, R'''/contact">''', loc("CONTACT"), 
+R'''</a></td></tr>
+
+</table>
+</form>
+
+</body>
+</html>
+''')

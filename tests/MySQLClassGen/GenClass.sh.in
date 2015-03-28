@@ -1,0 +1,32 @@
+#!/bin/sh
+
+DB_CLIENT="ng-mysql"
+DB_NAME="test"
+DB_USER=root
+DB_SOCKET=$MYSQL_SOCKET
+SRC_DIR=@srcdir@
+BIN_DIR=@top_builddir@bin
+LIB_DIR=@top_builddir@lib
+
+LD_LIBRARY_PATH=$LIB_DIR:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH
+
+echo "Generating classes for test.AllTypes DB table ..."
+
+$BIN_DIR/MySQLClassGen gen \
+class="Namespace1::Namespace2::Record" \
+query='select * from AllTypes' \
+class="Namespace1::Namespace2::Record2" \
+query='select id, url from AllTypes' \
+unix_socket="$DB_SOCKET" \
+user=$DB_USER db=$DB_NAME > $SRC_DIR/Record.hpp
+
+result=$?
+
+if test $result -eq 0; then
+  echo "done"
+else
+  echo "failed"
+fi
+
+exit $result

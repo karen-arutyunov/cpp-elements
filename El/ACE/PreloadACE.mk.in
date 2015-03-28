@@ -1,0 +1,8 @@
+include Common.pre.rules
+include $(osbe_builddir)/config/CXX/CXX.pre.rules
+
+target := ElPreloadACE
+
+sources := PreloadACE.cpp
+
+include $(osbe_builddir)/config/CXX/So.post.rules

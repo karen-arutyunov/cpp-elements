@@ -1,0 +1,328 @@
+request = context.request
+loc, prn, = context.localization.get, request.output.stream.prn
+lm = el.psp.LocalizationMarker()
+
+prn(
+R'''<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item type="id-pefix" value="&lt;table class='item_table'>&lt;tr>&lt;td class='item_id' valign='top'>"/>
+  <item type="id-suffix" value="&lt;/td>&lt;td>"/>
+  <item type="value-suffix" value="&lt;/td>&lt;/tr>&lt;/table>"/>
+
+  <item type="output" value="&lt;table class='items_table'>&lt;tr>&lt;td colspan='3' class='items_header'>"/>
+  <item type="output" value="A - B - C &lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td valign='top' class='item_col'>"/>
+  <item id="ABW" value="''', lm, "ABW", R'''"/>
+  <item id="AFG" value="''', lm, "AFG", R'''"/>
+  <item id="AGO" value="''', lm, "AGO", R'''"/>
+  <item id="AIA" value="''', lm, "AIA", R'''"/>
+  <item id="ALB" value="''', lm, "ALB", R'''"/>
+  <item id="ANT" value="''', lm, "ANT", R'''"/>
+  <item id="AND" value="''', lm, "AND", R'''"/>
+  <item id="ARG" value="''', lm, "ARG", R'''"/>
+  <item id="ARM" value="''', lm, "ARM", R'''"/>
+  <item id="ASM" value="''', lm, "ASM", R'''"/>
+  <item id="ATF" value="''', lm, "ATF", R'''"/>
+  <item id="ATG" value="''', lm, "ATG", R'''"/>
+  <item id="AUS" value="''', lm, "AUS", R'''"/>
+  <item id="AUT" value="''', lm, "AUT", R'''"/>
+  <item id="AZE" value="''', lm, "AZE", R'''"/>
+  <item id="ARE" value="''', lm, "ARE", R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="BDI" value="''', lm, "BDI", R'''"/>
+  <item id="BEL" value="''', lm, "BEL", R'''"/>
+  <item id="BEN" value="''', lm, "BEN", R'''"/>
+  <item id="BGD" value="''', lm, "BGD", R'''"/>
+  <item id="BFA" value="''', lm, "BFA", R'''"/>
+  <item id="BGR" value="''', lm, "BGR", R'''"/>
+  <item id="BHS" value="''', lm, "BHS", R'''"/>
+  <item id="BHR" value="''', lm, "BHR", R'''"/>
+  <item id="BIH" value="''', lm, "BIH", R'''"/>
+  <item id="BLR" value="''', lm, "BLR", R'''"/>
+  <item id="BLZ" value="''', lm, "BLZ", R'''"/>
+  <item id="BMU" value="''', lm, "BMU", R'''"/>
+  <item id="BOL" value="''', lm, "BOL", R'''"/>
+  <item id="BRA" value="''', lm, "BRA", R'''"/>
+  <item id="BRB" value="''', lm, "BRB", R'''"/>
+  <item id="BRN" value="''', lm, "BRN", R'''"/>
+  <item id="BTN" value="''', lm, "BTN", R'''"/>
+  <item id="BVT" value="''', lm, "BVT", R'''"/>
+  <item id="BWA" value="''', lm, "BWA", R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="CAF" value="''', lm, "CAF", R'''"/>
+  <item id="CAN" value="''', lm, "CAN", R'''"/>
+  <item id="CCK" value="''', lm, "CCK", R'''"/>
+  <item id="CHE" value="''', lm, "CHE", R'''"/>
+  <item id="CHL" value="''', lm, "CHL", R'''"/>
+  <item id="CHN" value="''', lm, "CHN", R'''"/>
+  <item id="CIV" value="''', lm, "CIV", R'''"/>
+  <item id="CMR" value="''', lm, "CMR", R'''"/>
+  <item id="COD" value="''', lm, "COD", R'''"/>
+  <item id="COG" value="''', lm, "COG", R'''"/>
+  <item id="COK" value="''', lm, "COK", R'''"/>
+  <item id="COL" value="''', lm, "COL", R'''"/>
+  <item id="COM" value="''', lm, "COM", R'''"/>
+  <item id="CPV" value="''', lm, "CPV", R'''"/>
+  <item id="CRI" value="''', lm, "CRI", R'''"/>
+  <item id="CUB" value="''', lm, "CUB", R'''"/>
+  <item id="CXR" value="''', lm, "CXR", R'''"/>
+  <item id="CYM" value="''', lm, "CYM", R'''"/>
+  <item id="CYP" value="''', lm, "CYP", R'''"/>
+  <item id="CZE" value="''', lm, "CZE", R'''"/>
+  <item type="output" value="&lt;/td>&lt;/tr>"/>
+''')
+
+prn(
+'''  <item type="output" value="&lt;tr>&lt;td colspan='3' class='items_header'>"/>
+  <item type="output" value="D - E - F &lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td valign='top' class='item_col'>"/>
+  <item id="DEU" value="''', lm, "DEU", R'''"/>
+  <item id="DJI" value="''', lm, "DJI", R'''"/>
+  <item id="DNK" value="''', lm, "DNK", R'''"/>
+  <item id="DMA" value="''', lm, "DMA", R'''"/>
+  <item id="DOM" value="''', lm, "DOM", R'''"/>
+  <item id="DZA" value="''', lm, "DZA", R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="ECU" value="''', lm, "ECU", R'''"/>
+  <item id="EGY" value="''', lm, "EGY", R'''"/>
+  <item id="ERI" value="''', lm, "ERI", R'''"/>
+  <item id="ESH" value="''', lm, "ESH", R'''"/>
+  <item id="ESP" value="''', lm, "ESP", R'''"/>
+  <item id="EST" value="''', lm, "EST", R'''"/>
+  <item id="ETH" value="''', lm, "ETH", R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="FIN" value="''', lm, "FIN", R'''"/>
+  <item id="FJI" value="''', lm, "FJI", R'''"/>
+  <item id="FLK" value="''', lm, "FLK", R'''"/>
+  <item id="FRA" value="''', lm, "FRA", R'''"/>
+  <item id="FRO" value="''', lm, "FRO", R'''"/>
+  <item id="FSM" value="''', lm, "FSM", R'''"/>
+  <item type="output" value="&lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td colspan='3' class='items_header'>"/>
+  <item type="output" value="G - H - I &lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td valign='top' class='item_col'>"/>
+  <item id="GAB" value="''', lm, "GAB", R'''"/>
+  <item id="GBR" value="''', lm, "GBR", R'''"/>
+  <item id="GEO" value="''', lm, "GEO", R'''"/>
+  <item id="GHA" value="''', lm, "GHA", R'''"/>
+  <item id="GIB" value="''', lm, "GIB", R'''"/>
+  <item id="GIN" value="''', lm, "GIN", R'''"/>
+  <item id="GLP" value="''', lm, "GLP", R'''"/>
+  <item id="GMB" value="''', lm, "GMB", R'''"/>
+  <item id="GNB" value="''', lm, "GNB", R'''"/>
+  <item id="GNQ" value="''', lm, "GNQ", R'''"/>
+  <item id="GRC" value="''', lm, "GRC", R'''"/>
+  <item id="GRD" value="''', lm, "GRD", R'''"/>
+  <item id="GRL" value="''', lm, "GRL", R'''"/>
+  <item id="GTM" value="''', lm, "GTM", R'''"/>
+  <item id="GUF" value="''', lm, "GUF", R'''"/>
+  <item id="GUM" value="''', lm, "GUM", R'''"/>
+  <item id="GUY" value="''', lm, "GUY", R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="HKG" value="''', lm, "HKG", R'''"/>
+  <item id="HMD" value="''', lm, "HMD", R'''"/>
+  <item id="HND" value="''', lm, "HND", R'''"/>
+  <item id="HRV" value="''', lm, "HRV", R'''"/>
+  <item id="HTI" value="''', lm, "HTI", R'''"/>
+  <item id="HUN" value="''', lm, "HUN", R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="IDN" value="''', lm, "IDN", R'''"/>
+  <item id="IND" value="''', lm, "IND", R'''"/>
+  <item id="IOT" value="''', lm, "IOT", R'''"/>
+  <item id="IRL" value="''', lm, "IRL", R'''"/>
+  <item id="IRN" value="''', lm, "IRN", R'''"/>
+  <item id="IRQ" value="''', lm, "IRQ", R'''"/>
+  <item id="ISL" value="''', lm, "ISL", R'''"/>
+  <item id="ISR" value="''', lm, "ISR", R'''"/>
+  <item id="ITA" value="''', lm, "ITA", R'''"/>
+  <item type="output" value="&lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td colspan='3' class='items_header'>"/>
+  <item type="output" value="J - K - L &lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td valign='top' class='item_col'>"/>
+  <item id="JAM" value="''', lm, "JAM", R'''"/>
+  <item id="JOR" value="''', lm, "JOR", R'''"/>
+  <item id="JPN" value="''', lm, "JPN", R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="KAZ" value="''', lm, "KAZ", R'''"/>
+  <item id="KEN" value="''', lm, "KEN", R'''"/>
+  <item id="KGZ" value="''', lm, "KGZ", R'''"/>
+  <item id="KHM" value="''', lm, "KHM", R'''"/>
+  <item id="KIR" value="''', lm, "KIR", R'''"/>
+  <item id="KNA" value="''', lm, "KNA", R'''"/>
+  <item id="KOR" value="''', lm, "KOR", R'''"/>
+  <item id="KWT" value="''', lm, "KWT", R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="LAO" value="''', lm, "LAO", R'''"/>
+  <item id="LBN" value="''', lm, "LBN", R'''"/>
+  <item id="LBR" value="''', lm, "LBR", R'''"/>
+  <item id="LBY" value="''', lm, "LBY", R'''"/>
+  <item id="LCA" value="''', lm, "LCA", R'''"/>
+  <item id="LIE" value="''', lm, "LIE", R'''"/>
+  <item id="LKA" value="''', lm, "LKA", R'''"/>
+  <item id="LSO" value="''', lm, "LSO", R'''"/>
+  <item id="LTU" value="''', lm, "LTU", R'''"/>
+  <item id="LUX" value="''', lm, "LUX", R'''"/>
+  <item id="LVA" value="''', lm, "LVA", R'''"/>
+''')
+
+prn(
+'''  <item type="output" value="&lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td colspan='3' class='items_header'>"/>
+  <item type="output" value="M - N - O &lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td valign='top' class='item_col'>"/>
+  <item id="MAC" value="''', lm, "MAC", R'''"/>
+  <item id="MAR" value="''', lm, "MAR", R'''"/>
+  <item id="MCO" value="''', lm, "MCO", R'''"/>
+  <item id="MDA" value="''', lm, "MDA", R'''"/>
+  <item id="MDG" value="''', lm, "MDG", R'''"/>
+  <item id="MDV" value="''', lm, "MDV", R'''"/>
+  <item id="MEX" value="''', lm, "MEX", R'''"/>
+  <item id="MHL" value="''', lm, "MHL", R'''"/>
+  <item id="MKD" value="''', lm, "MKD", R'''"/>
+  <item id="MLI" value="''', lm, "MLI", R'''"/>
+  <item id="MLT" value="''', lm, "MLT", R'''"/>
+  <item id="MMR" value="''', lm, "MMR", R'''"/>
+  <item id="MNG" value="''', lm, "MNG", R'''"/>
+  <item id="MNP" value="''', lm, "MNP", R'''"/>
+  <item id="MOZ" value="''', lm, "MOZ", R'''"/>
+  <item id="MRT" value="''', lm, "MRT", R'''"/>
+  <item id="MSR" value="''', lm, "MSR", R'''"/>
+  <item id="MTQ" value="''', lm, "MTQ", R'''"/>
+  <item id="MUS" value="''', lm, "MUS", R'''"/>
+  <item id="MWI" value="''', lm, "MWI", R'''"/>
+  <item id="MYS" value="''', lm, "MYS", R'''"/>
+  <item id="MYT" value="''', lm, "MYT", R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="NAM" value="''', lm, "NAM", R'''"/>
+  <item id="NER" value="''', lm, "NER", R'''"/>
+  <item id="NCL" value="''', lm, "NCL", R'''"/>
+  <item id="NFK" value="''', lm, "NFK", R'''"/>
+  <item id="NGA" value="''', lm, "NGA", R'''"/>
+  <item id="NIC" value="''', lm, "NIC", R'''"/>
+  <item id="NIU" value="''', lm, "NIU", R'''"/>
+  <item id="NLD" value="''', lm, "NLD", R'''"/>
+  <item id="NOR" value="''', lm, "NOR", R'''"/>
+  <item id="NPL" value="''', lm, "NPL", R'''"/>
+  <item id="NRU" value="''', lm, "NRU", R'''"/>
+  <item id="NZL" value="''', lm, "NZL", R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="OMN" value="''', lm, "OMN", R'''"/>
+  <item type="output" value="&lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td colspan='3' class='items_header'>"/>
+  <item type="output" value="P - Q - R &lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td valign='top' class='item_col'>"/>
+  <item id="PAK" value="''', lm, "PAK", R'''"/>
+  <item id="PAN" value="''', lm, "PAN", R'''"/>
+  <item id="PCN" value="''', lm, "PCN", R'''"/>
+  <item id="PER" value="''', lm, "PER", R'''"/>
+  <item id="PHL" value="''', lm, "PHL", R'''"/>
+  <item id="PLW" value="''', lm, "PLW", R'''"/>
+  <item id="PNG" value="''', lm, "PNG", R'''"/>
+  <item id="POL" value="''', lm, "POL", R'''"/>
+  <item id="PRI" value="''', lm, "PRI", R'''"/>
+  <item id="PRK" value="''', lm, "PRK", R'''"/>
+  <item id="PRT" value="''', lm, "PRT", R'''"/>
+  <item id="PRY" value="''', lm, "PRY", R'''"/>
+  <item id="PSE" value="''', lm, "PSE", R'''"/>
+  <item id="PYF" value="''', lm, "PYF", R'''"/>
+''')
+
+prn(
+'''  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="QAT" value="''', lm, "QAT", R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="REU" value="''', lm, "REU", R'''"/>
+  <item id="ROU" value="''', lm, "ROU", R'''"/>
+  <item id="RUS" value="''', lm, "RUS", R'''"/>
+  <item id="RWA" value="''', lm, "RWA", R'''"/>
+  <item type="output" value="&lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td colspan='3' class='items_header'>"/>
+  <item type="output" value="S - T - U &lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td valign='top' class='item_col'>"/>
+  <item id="SAU" value="''', lm, "SAU", R'''"/>
+  <item id="SCG" value="''', lm, "SCG", R'''"/>
+  <item id="SDN" value="''', lm, "SDN", R'''"/>
+  <item id="SEN" value="''', lm, "SEN", R'''"/>
+  <item id="SGP" value="''', lm, "SGP", R'''"/>
+  <item id="SGS" value="''', lm, "SGS", R'''"/>
+  <item id="SHN" value="''', lm, "SHN", R'''"/>
+  <item id="SJM" value="''', lm, "SJM", R'''"/>
+  <item id="SLB" value="''', lm, "SLB", R'''"/>
+  <item id="SLE" value="''', lm, "SLE", R'''"/>
+  <item id="SLV" value="''', lm, "SLV", R'''"/>
+  <item id="SMR" value="''', lm, "SMR", R'''"/>
+  <item id="SOM" value="''', lm, "SOM", R'''"/>
+  <item id="SPM" value="''', lm, "SPM", R'''"/>
+  <item id="STP" value="''', lm, "STP", R'''"/>
+  <item id="SUR" value="''', lm, "SUR", R'''"/>
+  <item id="SVK" value="''', lm, "SVK", R'''"/>
+  <item id="SVN" value="''', lm, "SVN", R'''"/>
+  <item id="SWE" value="''', lm, "SWE", R'''"/>
+  <item id="SWZ" value="''', lm, "SWZ", R'''"/>
+  <item id="SYC" value="''', lm, "SYC", R'''"/>
+  <item id="SYR" value="''', lm, "SYR", R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="TCA" value="''', lm, "TCA", R'''"/>
+  <item id="TCD" value="''', lm, "TCD", R'''"/>
+  <item id="TGO" value="''', lm, "TGO", R'''"/>
+  <item id="THA" value="''', lm, "THA", R'''"/>
+  <item id="TJK" value="''', lm, "TJK", R'''"/>
+  <item id="TKL" value="''', lm, "TKL", R'''"/>
+  <item id="TKM" value="''', lm, "TKM", R'''"/>
+  <item id="TLS" value="''', lm, "TLS", R'''"/>
+  <item id="TON" value="''', lm, "TON", R'''"/>
+  <item id="TUR" value="''', lm, "TUR", R'''"/>
+  <item id="TTO" value="''', lm, "TTO", R'''"/>
+  <item id="TUN" value="''', lm, "TUN", R'''"/>
+  <item id="TUV" value="''', lm, "TUV", R'''"/>
+  <item id="TWN" value="''', lm, "TWN", R'''"/>
+  <item id="TZA" value="''', lm, "TZA", R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="UGA" value="''', lm, "UGA", R'''"/>
+  <item id="UKR" value="''', lm, "UKR", R'''"/>
+  <item id="UMI" value="''', lm, "UMI", R'''"/>
+  <item id="URY" value="''', lm, "URY", R'''"/>
+  <item id="USA" value="''', lm, "USA", R'''"/>
+  <item id="UZB" value="''', lm, "UZB", R'''"/>
+  <item type="output" value="&lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td colspan='3' class='items_header'>"/>
+  <item type="output" value="V - W - X &lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td valign='top' class='item_col'>"/>
+  <item id="VAT" value="''', lm, "VAT", R'''"/>
+  <item id="VCT" value="''', lm, "VCT", R'''"/>
+  <item id="VEN" value="''', lm, "VEN", R'''"/>
+  <item id="VGB" value="''', lm, "VGB", R'''"/>
+  <item id="VIR" value="''', lm, "VIR", R'''"/>
+  <item id="VNM" value="''', lm, "VNM", R'''"/>
+  <item id="VUT" value="''', lm, "VUT", R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="WSM" value="''', lm, "WSM", R'''"/>
+  <item id="WLF" value="''', lm, "WLF", R'''"/>
+  <item type="output" value="&lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td colspan='3' class='items_header'>"/>
+  <item type="output" value="Y - Z &lt;/td>&lt;/tr>"/>
+  <item type="output" value="&lt;tr>&lt;td valign='top' class='item_col'>"/>
+  <item id="YEM" value="''', lm, "YEM", R'''"/>
+  <item type="output" value="&lt;/td>"/>
+  <item type="output" value="&lt;td valign='top' class='item_col'>"/>
+  <item id="ZAF" value="''', lm, "ZAF", R'''"/>
+  <item id="ZMB" value="''', lm, "ZMB", R'''"/>
+  <item id="ZWE" value="''', lm, "ZWE", R'''"/>
+
+</items>
+''')

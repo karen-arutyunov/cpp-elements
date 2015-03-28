@@ -1,0 +1,25 @@
+# @file   Makefile.in
+# @author Karen Aroutiounov
+# $Id:$
+
+include Common.pre.rules
+include $(osbe_builddir)/config/CXX/CXX.pre.rules
+
+include $(osbe_builddir)/config/CXX/External/Python.pre.rules
+include $(osbe_builddir)/config/CXX/External/ACE.pre.rules
+include $(osbe_builddir)/config/CXX/External/LibXML.pre.rules
+
+include $(top_builddir)/config/El/Elements.so.pre.rules
+include $(top_builddir)/config/El/Python/ElPython.so.pre.rules
+include $(top_builddir)/config/El/Net/ElNet.so.pre.rules
+
+sources  := Use.cpp \
+            HTMLParser.cpp \
+            Traverser.cpp \
+            Python/HTMLParser.cpp \
+            Python/Node.cpp
+
+includes := .
+target   := ElLibXML
+
+include $(osbe_builddir)/config/CXX/So.post.rules

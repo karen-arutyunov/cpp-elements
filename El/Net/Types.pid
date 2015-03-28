@@ -1,0 +1,104 @@
+include <El/Python/Types.pid>
+
+module el.net
+{
+  type
+  {
+    IpMask(string mask (""));
+
+    unsigned long mask;
+    unsigned long subnet;
+
+    boolean match(string ip);
+  };
+
+  module http
+  {
+    type CookieSetter
+    {
+      CookieSetter(string name=,
+                   string value= (0),
+                   el.moment expiration= (0),
+                   string path= (0),
+                   string domain= (0),
+                   bool secure= (False));
+
+      string string();
+    };
+
+    type Cookie
+    {
+      Cookie(string name=, string value= (0));
+
+      string name;
+      string value;
+    };
+
+    type CookieSeq : el.Sequence
+    {
+      Object find(string name, string default_value (""));
+    }
+
+    type Header
+    {
+      Header(string name=,
+             string value= (0));
+
+      string name;
+      string value;
+    };
+
+    type HeaderSeq : el.Sequence
+    {
+      Object find(string name, string default_value (""));
+    }
+
+    type Param
+    {
+      Param(string name=,
+             string value= (0));
+
+      string name;
+      string value;
+    };
+
+    type ParamSeq : el.Sequence
+    {
+      Object find(string name, string default_value (""));
+    }
+
+    type AcceptLanguage
+    {
+      AcceptLanguage(el.Lang language=,
+                     string subtag= (""),
+                     float qvalue= (0));
+
+      el.Lang language;
+      el.Country country;
+      string subtag;
+      float qvalue;
+    };
+
+    type AcceptLanguageSeq : el.Sequence
+    {
+    };
+
+    type SearchInfo
+    {
+      SearchInfo(string engine, string query= (0), string image= (0));
+
+      string engine;
+      string query;
+      string image;
+    };
+
+    type RequestParams
+    {
+      string user_agent;
+      string referer;
+      unsigned long timeout;
+      unsigned long redirects_to_follow;
+      unsigned long recv_buffer_size;
+    };
+  }
+}

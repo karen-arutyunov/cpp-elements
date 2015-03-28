@@ -1,0 +1,165 @@
+include <El/Python/Types.pid>
+include <El/Net/Types.pid>
+
+module el.psp
+{
+  // After argument of this type RequestOutStream.prn treats string object
+  // as a localization id and prints corresponding localized string
+  type LocalizationMarker {};
+
+  // After argument of this type RequestOutStream.prn prints numeric object
+  // in hexdecimal representation
+  type HexMarker {};
+
+  // After argument of this type RequestOutStream.prn prints numeric object
+  // in decimal representation
+  type DecMarker {};
+
+  // After argument of this type RequestOutStream.prn prints hexdecimal numbers
+  // in uppercase
+  type UppercaseMarker {};
+
+  // Resets effect of UppercaseMarker
+  type NouppercaseMarker {};
+
+  // After argument of this type RequestOutStream.prn perform JavaScript 
+  // string escaping of all printes string
+  type JS_EscapeMarker {};
+
+  // Resets effect of JS_EscapeMarker
+  type NoJS_EscapeMarker {};
+
+  // Being returned by PSP-script informs PSP-engine to pass request processing
+  // to PSP-script or PSP-template specified in dest_path argument.
+  // Object passed in parameters argument will be assigned to forward_params
+  // member of el.psp.Context structure.
+  type Forward
+  {
+    Forward(string dest_path, Object parameters (0));
+  };
+
+  type RequestOutStream
+  {
+    void printf(string format, Object o1, ...);
+
+    //
+    // Parameters for method can be objects:
+    // * el.psp.LocalizationMarker followed by string identifying localized 
+    //   string
+    // * HexMarker meaning the subsequent numeric objects will be outputted in 
+    //   hex format
+    // * DecMarker meaning the subsequent numeric objects will be outputted in 
+    //   hex format
+    // * UppercaseMarker meaning the subsequent objects string representation 
+    //   will be outputted uppercased
+    // * NouppercaseMarker - resets UppercaseMarker marker effect
+    // * Object of el.string.template.Parser (template) type followed map 
+    //   object (template instantiation variables). Tempate will be 
+    //   instantiated into output using variables specified
+    // * string object
+    // * any object implementing tp_str method
+    //
+    void prn(Object o1, ...);
+  };
+
+  type RequestIn
+  {
+    HeaderSeq headers();
+    ParamSeq parameters();
+    CookieSeq cookies();
+    AcceptLanguageSeq accept_languages();
+
+    el.Lang lang;
+    el.Locale locale(el.Lang language(0), el.Country country(0));
+  };
+
+  type RequestOut
+  {
+    RequestOutStream stream;
+
+    void content_type(string type);
+    void send_header(string name, string value);
+    void send_cookie(el.net.http.CookieSetter cookie_setter);
+  };
+
+  type Config : el.Map
+  {
+    Object get(string full_name, Object default_value)
+  };
+
+  type Localization
+  {
+    Object get(string id, string def_val = 0)
+  };
+
+  type Logger : el.logging.Logger
+  {
+    // Implements frontend for psp singleton-logger
+    // Each instance of psp.Logger has own log level, aspects, formatter, ...
+
+    Logger(long log_level = DEBUG, string aspects = "*");
+  };
+
+  type CacheEntry
+  {
+    void timeout(ulong value);
+    void unused_timeout(ulong value);
+    void etag(string value);
+  };
+
+  type Request
+  {
+    RequestIn input;
+    RequestOut output;
+    Object cache_entry; // can be None or object of CacheEntry type
+
+    string unparsed_uri();
+    string uri();
+    string args();
+    string remote_ip();
+    string host();
+    string endpoint();
+    string method();
+    int method_number();
+    int port();
+    el.TimeValue time();
+    boole secure();
+  };
+
+  type Context
+  {
+    Request request;
+    Config config;
+    Localization localization;
+    PyDict_Type cache; // is recreated on every code recompilation
+    Object forward_params;
+
+    // script execution number after last code recompilation
+    unsigned long long run_number; 
+
+    // Defines variable static for the code until code recompilation
+    void define_static(string var_name, Object variable);
+
+    // Sets new language for request processing context
+    void language(el.Lang lang);
+
+    // Valid UI language for the specified one
+    el.Lang valid_language(el.Lang lang);
+
+    // Gets localization map for module
+    Localization get_localization(string filename);
+  };
+
+  Context context;
+
+  string browser(string user_agent);
+  string feed_reader(string user_agent);
+  string crawler(string user_agent);
+  string computer(string user_agent);
+  string tab(string user_agent);
+  string phone(string user_agent);
+  string os(string user_agent);
+
+  // returns el.net.http.SearchInfo or None
+  Object search_info(string url);
+}

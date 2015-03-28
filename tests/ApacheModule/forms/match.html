@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Channel Match Test</title>
+<link href="/css/main.css" rel="stylesheet" type="text/css"/>
+<script>
+<!--
+function Check(form) 
+{
+  if(!form.referer.value &&
+     !form.context_kw.value &&
+     !form.search_tr.value &&
+     !form.referer_kw.value &&
+     !form.uid.value) {
+    alert("Params is empty!");
+    return false;
+  }
+
+  return true;
+} 
+//-->
+</script>
+</head>
+<body>
+
+<p class='title'>Channel Match Test<hr/></p>
+
+
+
+<form name="MainForm" method="post" onSubmit="return Check(this)">
+<input type="hidden" name="Action" value=1 />
+<input type="hidden" name="pageid" value="30" />
+
+<table border=0 class='cell' cellspacing=2 cellpadding=2>
+<tr>
+  <td><b>URL:</b></td>
+  <td><input type='text' name='referer' value="" class='control' style='width: 400px'/></td>
+</tr>
+<tr>
+  <td><b>Context Keywords:</b></td>
+  <td><input type='text' name='context_kw' value="" class='control' style='width: 400px'/></td>
+</tr>
+<tr>
+  <td><b>Search:</b></td>
+  <td><input type='text' name='search_tr' value="" class='control' style='width: 400px'/></td>
+</tr>
+<tr>
+  <td><b>Keywords:</b></td>
+  <td><input type='text' name='referer_kw' value="" class='control' style='width: 400px'/></td>
+</tr>
+<tr>
+  <td><b>UID:</b></td>
+  <td><input type='text' name='uid' value="" class='control' style='width: 400px'/></td>
+</tr>
+<tr><td colspan=2 align='right'><input type="submit" class="control" value="Submit"></td></tr>
+</table>
+
+</form>
+
+<br>
+
+
+
+
+</body>
+</html>
+

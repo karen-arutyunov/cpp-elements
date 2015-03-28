@@ -1,0 +1,19 @@
+# @file   Makefile.in
+# @author Karen Aroutiounov
+# $Id:$
+
+include Common.pre.rules
+include $(osbe_builddir)/config/CXX/CXX.pre.rules
+
+include $(osbe_builddir)/config/CXX/External/Python.pre.rules
+include $(osbe_builddir)/config/CXX/External/ACE.pre.rules
+
+include $(top_builddir)/config/El/Elements.so.pre.rules
+include $(top_builddir)/config/El/Python/ElPython.so.pre.rules
+
+sources  := InterceptorImpl.cpp
+
+includes := .
+target   := ElPythonInterceptor
+
+include $(osbe_builddir)/config/CXX/So.post.rules

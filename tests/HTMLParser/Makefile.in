@@ -1,0 +1,31 @@
+# @file   Makefile.in
+# @author Karen Aroutiounov
+# $Id:$
+
+include Common.pre.rules
+include $(osbe_builddir)/config/CXX/CXX.pre.rules
+
+include $(osbe_builddir)/config/CXX/External/Python.pre.rules
+include $(osbe_builddir)/config/CXX/External/ACE.pre.rules
+include $(osbe_builddir)/config/CXX/External/LibXML.pre.rules
+
+include $(top_builddir)/config/El/Elements.so.pre.rules
+include $(top_builddir)/config/El/Net/ElNet.so.pre.rules
+include $(top_builddir)/config/El/LibXML/ElLibXML.so.pre.rules
+
+sources  := HTMLParserMain.cpp
+target   := ElTestHTMLParser
+
+define check_commands
+  echo "Running ElTestHTMLParser ..."; \
+  ElTestHTMLParser --uri=http://www.newsfiber.com/ --threads=10 --iterations=10 --max-size=100000; \
+  result=$$?; \
+  if test $$result -eq 0; then \
+    echo "done"; \
+  else \
+    echo "failed"; \
+  fi
+endef
+
+include $(osbe_builddir)/config/CXX/Ex.post.rules
+include $(osbe_builddir)/config/Check.post.rules

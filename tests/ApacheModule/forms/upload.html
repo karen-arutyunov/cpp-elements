@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Upload channel definitions</title>
+<link href="/css/main.css" rel="stylesheet" type="text/css"/>
+<script>
+<!--
+function Check(form) {
+  if(form.file.value.length < 3) {
+    alert('Please, select the file!');
+    form.file.select();
+    form.file.focus();
+    return false;
+  }
+  return true;
+}
+
+function Disable(id) {
+  var chk = document.getElementById(id);
+  if(chk.checked)
+    chk.checked = false;
+}
+
+function Help(url) {
+  var w = window.open(url,'Help',"width=730px,height=550px,top=100px,left=150px,menubar=no,status=no,resizable=yes,titlebar=no,location=no,scrollbars=yes,toolbar=no");
+  w.focus();
+}
+//-->
+</script>
+</head>
+<body>
+
+<table width='100%' class='cell' cellpadding=1 cellspacing=1>
+<tr><td class='title'>Upload channel definitions<hr/></td></tr>
+<tr>
+  <td valign='top'>
+  <form method='post' enctype='multipart/form-data' onSubmit='Check(this)'>
+  <input type='hidden' name='action' value='upload'/>
+  <input type='hidden' name='campaign_id' value=''/>
+
+  <table cellspacing=1 cellpadding=4 border=0 class='container' style='margin:0'>
+  <tr class='header'><td colspan=4>Upload channel definitions</td></tr>
+  <tr>
+    <td><b>File</b></td>
+    <td><input type='file' size=40 name='file'/></td>
+    <td align='right'><input type='submit' value='Upload'/></td>
+    <td><input type='button' value=' Help ' onClick="Help('help/upload.html')" /></td>
+  </tr>
+  <tr>
+    <td colspan=4>
+    <table border=0 cellspacing=0 cellpadding=2 class='container'>
+    <tr class='header'>
+      <td colspan=2><table class='cell' border=0 cellspacing=0 cellpadding=0><tr class='header'><td>CleanUp</td><td><input type='checkbox' name='cleanup' value=1 checked=true/></td></tr></table></td>
+    </tr>
+    <tr>
+      <td>
+        <table class='cell' border=0 cellspacing=0 cellpadding=2>
+        <tr>
+         <td>Convert soft triggers to hard ones</td><td><input type='checkbox' id='soft2hard' name='soft-to-hard' value=1 /></td>
+         <td>trigger max words</td><td><input type='text' size=10 name='soft-to-hard-max-words' value=3 /></td>
+        </tr>
+        <tr>
+         <td>Convert hard triggers to soft ones</td><td><input type='checkbox' id='hard2soft' name='hard-to-soft' value=1 /></td>
+         <td>trigger max words</td><td><input type='text' size=10 name='hard-to-soft-max-words' value=3 /></td>
+        </tr>
+        <tr>
+         <td>Remove super-phrases</td><td><input type='checkbox' name='remove-sup-phrases' value=1 /></td>
+         <td colspan=2>&nbsp;</td>
+        </tr>
+        <tr>
+         <td>Remove sub-urls</td><td><input type='checkbox' name='remove-suburls' value=1 /></td>
+         <td colspan=2>&nbsp;</td>
+        </tr>
+        <tr>
+         <td>Full log</td><td><input type='checkbox' name='full-log' value=1 /></td>
+         <td colspan=2>&nbsp;</td>
+        </tr>
+        </table>
+      </td>
+    </tr>
+    </table>
+    </td>
+  </tr>
+  </table>
+
+  </form>
+  </td>
+</tr>
+</table>
+
+</body>
+</html>

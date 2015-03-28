@@ -1,0 +1,256 @@
+PAGE_TITLE  News Fiber - Помощь в поиске
+PAGE_NAME   Помощь в поиске
+NEW_SEARCH  Новый поиск
+COPYRIGHT   Copyright &copy; 2007 Data Stream Navigations. Все права защищены.
+CONTACT        Обратная связь
+
+BASE_OPERATORS_HEADING Базовые операторы ALL, ANY, SITE, URL
+
+BASE_OPERATORS_INTRO \
+\
+News Fiber предоставляет <span class="op_form">базовые операторы</span> ALL, ANY, SITE, URL для поиска сообщений \
+по содержащимся в них словах, либо принадлежности к \
+определенным источникам новостей.
+
+ALL_SEARCH \
+\
+<span class="op_def">Оператор ALL</span> имеет форму <span class="op_form">ALL терм...</span>, где <span class="op_form">терм</span> является словом, либо фразой, \
+взятой в двойные или одинарные кавычки. Оператор вернет только те сообщения, \
+которые содержат все перечисленные термы. Указание имени оператора \
+не является обязательным. Если просто перечислить термы, \
+News Fiber "догадается", что перед ними предполагается слово ALL. Поиск \
+выполняется без учета регистра символов, поэтому поиски \
+<span class="inline_example">полет Луна</span> и <span class="inline_example">полет луна</span> дадут одинаковый результат. Поиск ведется \
+без учета форм слова, то есть поиски <span class="inline_example">победитель турнира</span> и <span class="inline_example">победители \
+турниров</span> совершенно идентичны. При поиске фраз News Fiber покажет \
+только сообщения, не содержащие знаков препинания между словами искомой фразы. \
+Есть различие в использовании двойных и одинарных кавычек. \
+Для фразы, взятой в двойные кавычки, содержащиеся в сообщении слова должны быть в той же форме, чтобы быть найденными. \
+При использовании одиночных кавычек форма слова не принимается во внимание. Так поиск 'космический челнок' обнаружит \
+все 3 фразы:<br>\
+... космический челнок Атлантис ... полеты космических челноков ... тополивный бак космического челнока ...<br>\
+в то время как поиск "космический челнок" обнаружит лишь первую фразу.
+
+ALL_SEARCH_SAMPLE_HEADER Примеры использования:
+
+ALL_SEARCH_SAMPLES \
+\
+ALL солнечная система<br>\
+"солнечная система" исследование<br>\
+астероид<br>\
+'космический челнок'
+
+ANY_SEARCH \
+\
+<span class="op_def">Оператор ANY</span> имеет форму <span class="op_form">ANY терм...</span>, и отличается от ALL \
+только тем, что находит сообщения, содержащие хотя бы один из \
+перечисленных термов.
+
+ANY_SEARCH_SAMPLE_HEADER Примеры использования:
+
+ANY_SEARCH_SAMPLES \
+\
+ANY астронавт "космический корабль" "прогресс М-60"</br>\
+ANY метеорит комета
+
+URL_SEARCH \
+\
+<span class="op_def">Оператор URL</span> имеет форму <span class="op_form">URL url источника...</span>, возвращая сообщения из \
+перечисленных источников.
+
+URL_SEARCH_SAMPLE_HEADER Примеры использования:
+
+URL_SEARCH_SAMPLES \
+\
+URL http://news.yandex.ru/computers.rss http://news.yandex.ru/software.rss<br>\
+URL http://rss.news.yahoo.com/rss/tech
+
+SITE_SEARCH \
+\
+<span class="op_def">Оператор SITE</span> имеет форму <span class="op_form">SITE сайт источника...</span>, возвращая \
+сообщения из источников, принадлежащих перечисленным сайтам.
+
+SITE_SEARCH_SAMPLE_HEADER Примеры использования:
+
+SITE_SEARCH_SAMPLES \
+\
+SITE news.yandex.ru rss.news.yahoo.com<br>\
+SITE www.prweb.com
+
+LOGIC_OPERATORS_HEADING Логические операторы AND, OR, EXCEPT
+
+LOGIC_OPERATORS_INTRO \
+\
+Помимо <span class="op_form">базовых операторов</span>, существуют <span class="op_form">логические операторы</span> AND, \
+OR, EXCEPT, позволяющие задавать более сложные запросы, так называемые \
+<span class="op_form">поисковые выражения</span>. Строго говоря, базовые операторы также \
+являются поисковыми выражениями, хотя и простейшими.
+
+AND_SEARCH \
+\
+<span class="op_def">Оператор AND</span> имеет форму <span class="op_form">поисковое выражение AND поисковое выражение</span>, возвращая только те сообщения, \
+которые были найдены и для левого, и для правого поисковых выражений.
+
+AND_SEARCH_SAMPLE_HEADER Примеры использования:
+
+AND_SEARCH_SAMPLES \
+\
+ANY метеорит комета AND SITE www.oko-planet.spb.ru<br>\
+ракета AND ANY космос байконур
+
+OR_SEARCH \
+\
+<span class="op_def">Оператор OR</span> имеет форму <span class="op_form">поисковое выражение OR поисковое выражение</span>, возвращая сообщения, найденные либо для левого, либо для правого поискового выражения.
+
+OR_SEARCH_SAMPLE_HEADER Примеры использования:
+
+OR_SEARCH_SAMPLES \
+\
+SITE news.yandex.ru OR URL http://anomalia.kulichki.ru/rss.xml<br>\
+исследование космос OR ANY астронавт скафандр "космический корабль"
+
+EXCEPT_SEARCH \
+\
+<span class="op_def">Оператор EXCEPT</span> имеет форму <span class="op_form">поисковое выражение EXCEPT поисковое выражение</span>, возвращая \
+только те сообщения, которые были найдены для левого поискового выражения, \
+но не найдены для правого.
+
+EXCEPT_SEARCH_SAMPLE_HEADER Примеры использования:
+
+EXCEPT_SEARCH_SAMPLES \
+\
+вирус EXCEPT ANY компьютер телефон программа<br>\
+SITE news.yandex.ru EXCEPT URL http://news.yandex.ru/society.rss
+
+LOGIC_OPERATORS_PRECEDENCE \
+\
+Поисковые выражения, содержащие не только базовые операторы, \
+называются </span>составными</span>. Такие выражения выполняются в порядке \
+убывания приоритетов операторов и слева направо для операторов \
+одинакового приоритета. Порядок выполнения поискового выражения можно \
+менять с помощью круглых скобок. \
+\
+AND и EXCEPT имеют одинаковый приоритет, более высокий, чем у оператора OR. \
+<div style="padding: 0.3em 0;">Поэтому выражение</div> \
+\
+<span class="inline_example">комета AND SITE www.oko-planet.spb.ru OR ракета AND ANY космос байконур</span>\
+\
+<div style="padding: 0.3em 0;">эквивалентно</div>\
+\
+<span class="inline_example">( комета AND SITE www.oko-planet.spb.ru ) OR ( ракета AND ANY космос байконур ).</span>
+
+RESTRICTING_OPERATORS_HEADING Ограничивающие операторы<br>COUNTRY, LANGUAGE, DOMAIN, FRESH, OUTDATED, FEED
+
+RESTRICTING_OPERATORS_INTRO \
+\
+Помимо <span class="op_form">базовых</span> и <span class="op_form">логических операторов</span> News Fiber предоставляет \
+<span class="op_form">ограничивающие операторы</span> COUNTRY, LANGUAGE, DOMAIN, FRESH, OUTDATED, FEED.
+
+COUNTRY_SEARCH \
+\
+<span class="op_def">Оператор COUNTRY</span> имеет 2 формы: <span class="op_form">поисковое выражение COUNTRY код страны...</span> и \
+<span class="op_form">поисковое выражение COUNTRY NOT код страны…</span>. Первая форма возвращает только те сообщения, которые были \
+найдены для поискового выражения слева и опубликованы источником, принадлежащим одной из \
+перечисленных справа стран. Вторая - те, что были найдены для \
+выражения слева и опубликованы источником, не принадлежащим ни одной из \
+перечисленных справа стран. \
+
+COUNTRY_SEARCH_SAMPLE_HEADER Примеры использования:
+
+COUNTRY_SEARCH_SAMPLES \
+\
+ipod OR itunes COUNTRY RUS<br>\
+запуск спутника COUNTRY NOT RUS UKR
+
+LANG_SEARCH \
+\
+<span class="op_def">Оператор LANGUAGE</span> имеет 2 формы: <span class="op_form">поисковое выражение LANGUAGE код языка...</span> и \
+<span class="op_form">поисковое выражение LANGUAGE NOT код языка...</span>. Первая форма возвращает только те сообщения, \
+которые были найдены для поискового выражения слева и написаны на одном из \
+перечисленных справа языков. Вторая - те, что были найдены для \
+выражения слева и написаны на языке отличном от любого из перечисленных \
+справа.
+
+LANG_SEARCH_SAMPLE_HEADER Примеры использования:
+
+LANG_SEARCH_SAMPLES \
+\
+ipod OR itunes LANGUAGE rus<br>\
+запуск спутника COUNTRY UKR LANGUAGE NOT rus eng
+
+DOMEN_SEARCH \
+\
+<span class="op_def">Оператор DOMAIN</span> также имеет 2 формы: <span class="op_form">поисковое выражение DOMAIN интернет-домен...</span> \
+и <span class="op_form">поисковое выражение DOMAIN NOT интернет-домен ...</span>. Первая форма возвращает только те \
+сообщения, которые были найдены для поискового выражения слева и опубликованы \
+источником в одном из перечисленных справа доменов. Вторая - те, что \
+были найдены для выражения слева и опубликованы источником, не принадлежащим ни \
+к одному из перечисленных справа доменов.
+
+DOMEN_SEARCH_SAMPLE_HEADER Примеры использования:
+
+DOMEN_SEARCH_SAMPLES \
+\
+ANY mac apple DOMAIN ru by<br>\
+ANY linux DOMAIN NOT microsoft.com
+
+FRESH_SEARCH \
+\
+<span class="op_def">Оператор FRESH</span> имеет форму <span class="op_form">поисковое выражение FRESH дни</span>, возвращая только те \
+сообщения, которые были найдены для поискового выражения слева, и возраст \
+которых меньше указанного справа количества дней.
+
+FRESH_SEARCH_SAMPLE_HEADER Примеры использования:
+
+FRESH_SEARCH_SAMPLES \
+\
+каспийский трубопровод FRESH 2<br>\
+( ANY nasa наса FRESH 2 COUNTRY RUS ) OR ( nasa COUNTRY USA FRESH 3 )
+
+OUTDATED_SEARCH \
+\
+<span class="op_def">Оператор OUTDATED</span> имеет форму <span class="op_form">поисковое выражение OUTDATED дни</span>, возвращая только те \
+сообщения, которые были найдены для поискового выражения слева, и возраст \
+которых не меньше указанного справа количества дней.
+
+OUTDATED_SEARCH_SAMPLE_HEADER Примеры использования:
+
+OUTDATED_SEARCH_SAMPLES \
+\
+\
+каспийский трубопровод OUTDATED 2<br>\
+( ANY nasa наса OUTDATED 2 COUNTRY RUS ) OR ( nasa COUNTRY USA OUTDATED 3 )
+
+FEED_SEARCH \
+\
+<span class="op_def">Оператор FEED</span> имеет 2 формы: \
+<span class="op_form">поисковое выражение FEED тип...</span> и <span class="op_form">поисковое выражение FEED NOT тип...</span>. \
+Первая форма возвращает только те сообщения, которые были найдены для \
+поискового выражения слева и опубликованы источником, одного из \
+перечисленных справа типов. Вторая - те, что были найдены для выражения \
+слева и опубликованы источником, тип которого отличен от любого из \
+перечисленных справа. News Fiber поддерживает источники 3-х видов: <a href="http://ru.wikipedia.org/wiki/RSS">rss</a>, \
+<a href="http://ru.wikipedia.org/wiki/RDF">rdf</a> and <a href="http://ru.wikipedia.org/wiki/Atom">atom</a>.
+
+FEED_SEARCH_SAMPLE_HEADER Примеры использования:
+
+FEED_SEARCH_SAMPLES \
+\
+искусство фотографии FEED rss rdf<br>\
+искусство фотографии FEED NOT rss
+
+RESTRICTING_OPERATORS_PRECEDENCE \
+\
+Все ограничивающие операторы имеют более низкий приоритет, чем все \
+остальные операторы.
+
+PROMPTING_HEADING Подсказка
+
+PROMPTING_DESC \
+\
+Если вы пишете составное поисковое выражение и испытываете \
+некоторые затруднения, нажмите комбинацию клавиш <span id="hk" class="op_def">Alt 1</span>, и News Fiber подскажет \
+вам варианты продолжения выражения с места курсора и даже продолжит \
+начатое специальное слово: оператор, код страны, языка, тип \
+источника. Если вы отправили поисковый запрос, сделав ошибку в \
+структуре выражения, News Fiber укажет место ошибки и пояснит, в чем она заключается.

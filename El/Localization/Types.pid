@@ -1,0 +1,11 @@
+module el.loc
+{
+  type Localizer
+  {
+    string plural(string word, unsigned long count, el.Lang language);
+    string language(el.Lang lang, el.Lang language);
+    string country(el.Country country, el.Lang language);
+  };
+
+  el.Localizer localizer();
+}

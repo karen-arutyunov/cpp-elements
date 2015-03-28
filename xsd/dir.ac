@@ -1,0 +1,6 @@
+# @file   Makefile.in
+# @author Pavel Gubin
+# $Id: $
+
+OSBE_CONFIG_FILE([Makefile])
+OSBE_CONFIG_FILE([Start.mk])

@@ -1,0 +1,10 @@
+# @file   dir.ac
+# @author Karen Aroutiounov
+# $Id:$
+
+OSBE_CONFIG_FILE([Makefile])
+OSBE_CONFIG_FILE([GenClass.sh])
+OSBE_CONFIG_FILE([Test.sh])
+
+OSBE_CONFIG_COMMANDS([chmod 777 GenClass.sh])
+OSBE_CONFIG_COMMANDS([chmod 777 Test.sh])

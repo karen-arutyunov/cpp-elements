@@ -1,0 +1,36 @@
+# @file   Makefile.in
+# @author Karen Aroutiounov
+# $Id:$
+
+include Common.pre.rules
+include $(osbe_builddir)/config/CXX/CXX.pre.rules
+
+include $(osbe_builddir)/config/CXX/External/Python.pre.rules
+include $(osbe_builddir)/config/CXX/External/ACE.pre.rules
+include $(osbe_builddir)/config/CXX/External/IDN.pre.rules
+
+include $(top_builddir)/config/El/Elements.so.pre.rules
+include $(top_builddir)/config/El/Python/ElPython.so.pre.rules
+
+sources  := URL.cpp \
+            Socket/Stream.cpp \
+            HTTP/Session.cpp \
+            HTTP/Headers.cpp \
+            HTTP/Cookies.cpp \
+            HTTP/URL.cpp \
+            HTTP/Utility.cpp \
+            HTTP/MimeTypeMap.cpp \
+            HTTP/Python/Cookies.cpp \
+            HTTP/Python/Params.cpp \
+            HTTP/Python/Utility.cpp \
+            HTTP/Robots.cpp \
+            Python/URL.cpp \
+            SMTP/Session.cpp
+
+includes := .
+target   := ElNet
+
+#CXX_FLAGS := -I/home/karen/projects/research/include/python2.4 $(CXX_FLAGS)
+#LD_FLAGS := -L/home/karen/projects/research/lib $(LD_FLAGS)
+
+include $(osbe_builddir)/config/CXX/So.post.rules

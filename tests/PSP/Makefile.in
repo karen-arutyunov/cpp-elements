@@ -1,0 +1,14 @@
+# @file   Makefile.in
+# @author Karen Aroutiounov
+# $Id:$
+
+include Common.pre.rules
+include $(osbe_builddir)/config/CXX/CXX.pre.rules
+
+include $(top_builddir)/config/El/Elements.so.pre.rules
+include $(top_builddir)/config/El/PSP/ElPSP.so.pre.rules
+
+sources  := PSPTest.cpp
+target   := ElTestPSP
+
+include $(osbe_builddir)/config/CXX/So.post.rules

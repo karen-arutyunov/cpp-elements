@@ -1,0 +1,26 @@
+# @file   Makefile.in
+# @author Karen Arutyunov
+# $Id:$
+
+include Common.pre.rules
+include $(osbe_builddir)/config/Install.pre.rules
+
+target_directory_list := El Tools tests xsd
+Tools: El xsd
+tests: El Tools
+
+define install_commands
+  echo "Installing Elements ..."
+  $(INSTALL_DIR) $(top_srcdir)/El $(destdir)$(includedir)/El "*.hpp *.ipp *.tpp" && \
+  $(INSTALL_DIR) $(top_builddir)/El $(destdir)$(includedir)/El "*.hpp *.ipp *.tpp" && \
+  $(INSTALL_DIR) $(top_srcdir)/xsd $(destdir)$(prefix)/xsd/El "*.xsd" && \
+  $(INSTALL_DIR) $(top_builddir)/lib $(destdir)$(libdir) && \
+  $(INSTALL_DIR) $(top_builddir)/bin $(destdir)$(bindir) && \
+  $(INSTALL_DIR) $(top_srcdir)/scripts $(destdir)$(bindir) "ElProbeWEB.sh" && \
+  $(INSTALL_DIR) $(top_srcdir)/loc $(destdir)$(sysconfdir)/El/loc "" -not \( -name ".svn" -prune \)
+  $(INSTALL_DIR) $(top_srcdir)/dict $(destdir)$(sysconfdir)/El/dict "" -not \( -name ".svn" -prune \)
+  gunzip -f $(destdir)$(sysconfdir)/El/dict/*.gz
+endef
+
+include $(osbe_builddir)/config/Direntry.post.rules
+include $(osbe_builddir)/config/Install.post.rules

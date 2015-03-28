@@ -1,0 +1,10 @@
+# Makefile.in
+# @author Karen Arutyunov
+# $Id:$
+
+include Common.pre.rules
+
+target_makefile_list := Application.cpp.mk Context.cpp.mk
+Application.cpp.mk : Context.cpp.mk
+
+include $(osbe_builddir)/config/Makentry.post.rules

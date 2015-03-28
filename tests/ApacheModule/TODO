@@ -1,0 +1,11 @@
++  1. Location handling.
++  2. Cookies support.
++  3. Benchmark -O3
++  4. error logging
++  5. Move to Elements lib.
++  6. Directive multiplicity
++- 7. HTTP Cookies (done with inbound cookies only)
++  8. Benchmark RSSFeed (600 r/s)
++  9. Move RSSFeed to El::Apache::Module
++ 10. Benchmark RSSFeed with El::Apache::Module
+  11. Directive arg validation.

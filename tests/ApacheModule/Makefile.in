@@ -1,0 +1,21 @@
+# @file   Makefile.in
+# @author Karen Aroutiounov
+# $Id:$
+
+include Common.pre.rules
+include $(osbe_builddir)/config/CXX/CXX.pre.rules
+include $(osbe_builddir)/config/CXX/Corba.pre.rules
+
+include $(top_builddir)/config/El/Elements.so.pre.rules
+include $(top_builddir)/config/El/Apache/ElApache.so.pre.rules
+
+sources  := TestModule.cpp
+
+corba_stub_idls := Transport.idl
+corba_includes := .
+corba_idl_includes := .
+
+target   := ElTestApacheModule
+
+include $(osbe_builddir)/config/CXX/Corba.post.rules
+include $(osbe_builddir)/config/CXX/So.post.rules

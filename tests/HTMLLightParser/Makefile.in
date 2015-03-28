@@ -1,0 +1,27 @@
+# @file   Makefile.in
+# @author Karen Aroutiounov
+# $Id:$
+
+include Common.pre.rules
+include $(osbe_builddir)/config/CXX/CXX.pre.rules
+
+include $(osbe_builddir)/config/CXX/External/ACE.pre.rules
+
+include $(top_builddir)/config/El/Elements.so.pre.rules
+include $(top_builddir)/config/El/HTML/ElHTML.so.pre.rules
+
+sources  := HTMLLightParserMain.cpp
+target   := ElTestHTMLLightParser
+
+define check_commands
+  echo "Running ElTestHTMLLightParser ..."; \
+  ElTestHTMLLightParser; result=$$?; \
+  if test $$result -eq 0; then \
+    echo "done"; \
+  else \
+    echo "failed"; \
+  fi
+endef
+
+include $(osbe_builddir)/config/CXX/Ex.post.rules
+include $(osbe_builddir)/config/Check.post.rules

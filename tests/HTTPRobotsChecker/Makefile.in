@@ -1,0 +1,28 @@
+# @file   Makefile.in
+# @author Karen Aroutiounov
+# $Id:$
+
+include Common.pre.rules
+include $(osbe_builddir)/config/CXX/CXX.pre.rules
+
+include $(osbe_builddir)/config/CXX/External/Python.pre.rules
+include $(osbe_builddir)/config/CXX/External/ACE.pre.rules
+
+include $(top_builddir)/config/El/Elements.so.pre.rules
+include $(top_builddir)/config/El/Net/ElNet.so.pre.rules
+
+sources  := HTTPRobotsCheckerMain.cpp
+target   := ElTestHTTPRobotsChecker
+
+define check_commands
+  echo "Running ElTestHTTPRobotsChecker ..."; \
+  ElTestHTTPRobotsChecker googlebot http://www.newsfiber.com/; result=$$?; \
+  if test $$result -eq 0; then \
+    echo "done"; \
+  else \
+    echo "failed"; \
+  fi
+endef
+
+include $(osbe_builddir)/config/CXX/Ex.post.rules
+include $(osbe_builddir)/config/Check.post.rules

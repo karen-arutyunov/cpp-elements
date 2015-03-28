@@ -1,0 +1,142 @@
+body
+{
+  font-family: Verdana, Tahoma, Geneva, Helvetica, Arial, Sans-serif;
+  background: rgb(233, 233, 240);
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+a
+{
+  text-decoration: none;
+}
+
+a:hover
+{
+  text-decoration: underline;
+}
+
+a:active
+{
+  text-decoration: underline;
+  color: red;
+}
+
+a:focus
+{
+  text-decoration: underline;
+  color: red;
+}
+
+#skeleton
+{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+#topbar
+{
+  background: rgb(224, 224, 255);
+  width: 100%;
+  height: 2em;
+  border-bottom: 1px solid rgb(0,0,80);
+  padding: 0;
+  margin: 0;
+}
+
+#topbar table
+{
+  width: 100%;
+}
+
+#tagline
+{
+  font-size: 80%;
+  text-align: left;
+  width: 50%;  
+  padding: 0.3em 0 0.5em 1em;
+}
+
+#menu
+{
+  font-size: 80%;
+  text-align: right;
+  width: 50%;  
+  padding: 0.3em 1em 0.5em 0;
+}
+
+#f
+{
+  margin: 0;
+}
+
+#search_box
+{
+  padding: 2em 0 0 0;
+  margin: 0;
+}
+
+#search_box_table
+{
+  font-size: 80%;
+  padding: 0;
+  margin: 0;
+}
+
+#search_button
+{
+  height: 100%;
+  padding: 1px 0 1px 0; 
+}
+
+#b
+{
+  font: 100% Verdana, Tahoma, Geneva, Helvetica, Arial, Sans-serif;
+  width: 5em; 
+  height: 94%;
+}
+
+#copyright
+{
+  font-size: 60%;
+  text-align: center;
+  height: 2em;
+  padding: 1em 0 2em 0;
+}
+
+#o
+{
+  font-size: 85%;
+}
+
+.error
+{
+  color: red;
+}
+
+.items_header
+{
+  border-bottom: 1px solid rgb(0,0,80);
+  padding: 0.7em 0 0 0;
+}
+
+.items_table
+{
+  font-size: 100%;
+  margin: 0.5em 0 0 0;
+}
+
+.item_table
+{
+  font-size: 100%;
+  width: 18em;
+}
+
+.item_id
+{
+  width: 2.3em;
+}

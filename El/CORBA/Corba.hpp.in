@@ -1,0 +1,280 @@
+/*
+ * Elements - useful abstractions library.
+ * Copyright (C) 2005-2010 Karen Arutyunov
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ */
+
+/**
+ * @file   Elements/El/CORBA/Corba.hpp.in
+ * @author Karen Arutyunov
+ * $Id:$
+ */
+
+#ifndef _ELEMENTS_EL_CORBA_CORBA_HPP_
+#define _ELEMENTS_EL_CORBA_CORBA_HPP_
+
+namespace El
+{
+  namespace Corba
+  {
+    class Adapter;
+  }
+}
+
+#include <El/CORBA/Adapter/@CXX_CORBA_ORB_ID@/Corba.hpp>
+
+#include <string>
+#include <memory>
+
+#include <ace/OS.h>
+#include <ace/Synch.h>
+#include <ace/Guard_T.h>
+
+namespace El
+{
+  namespace Corba
+  {
+    template<typename T>
+    class SmartRef
+    {
+    public:
+      
+      SmartRef() throw() {}
+
+      SmartRef(const char* ref, CORBA::ORB_ptr orb)
+        throw(Exception, El::Exception);
+      
+      SmartRef(const SmartRef<T>& val) throw(Exception, El::Exception);
+
+      SmartRef<T>& operator=(const SmartRef<T>& val)
+        throw(Exception, El::Exception);
+
+      T* object() const 
+        throw(Exception, CORBA::SystemException, El::Exception);
+
+      std::string reference() const throw();
+      bool empty() const throw();
+
+      CORBA::ORB_ptr orb() const throw() { return orb_.in(); }
+
+    private:
+      typedef ObjectVar<T> Var;
+      typedef SmartRef<T> RefType;
+
+    private:
+
+      RefType* clone() const throw();
+      
+      typedef ACE_RW_Thread_Mutex Mutex;
+      typedef ACE_Read_Guard<Mutex> ReadGuard;
+      typedef ACE_Write_Guard<Mutex> WriteGuard;
+      
+      mutable Mutex lock_;
+      mutable Var obj_;
+      std::string ref_;
+      CORBA::ORB_var orb_;
+    };
+
+    class Adapter
+    {
+    public:
+        
+      static OrbAdapter* orb_adapter(int argc, char** argv)
+        throw(Exception, CORBA::SystemException, El::Exception);
+
+      static void orb_adapter_cleanup() throw();
+
+    private:
+       
+      typedef ACE_Thread_Mutex Mutex;
+      typedef ACE_Guard<Mutex> Guard;
+
+      typedef std::auto_ptr<OrbAdapter> OrbAdapterPtr;
+      
+      static Mutex lock_;
+      static OrbAdapterPtr orb_adapter_;
+      static size_t ref_counter_;
+    };
+
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// Inlines
+///////////////////////////////////////////////////////////////////////////////
+
+namespace El
+{
+  namespace Corba
+  {
+    //
+    // SmartRef class
+    //
+    template<typename T>
+    SmartRef<T>::SmartRef(const char* ref, CORBA::ORB_ptr orb)
+      throw(Exception, El::Exception)
+        : ref_(ref ? ref: 0),
+          orb_(CORBA::ORB::_duplicate(orb))
+    {
+      try
+      {
+        CORBA::Object_var obj = orb_->string_to_object(ref_.c_str());
+
+        if(CORBA::is_nil(obj.in()))
+        {
+          std::ostringstream ostr;
+          ostr << "El::Corba::SmartRef::SmartRef: "
+            "string_to_object() gives nil reference for "
+               << ref_;
+      
+          throw Exception(ostr.str().c_str());
+        }
+ 
+        obj_ = T::_narrow(obj.in());
+
+        if(CORBA::is_nil(obj_.in()))
+        {
+          std::ostringstream ostr;
+        
+          ostr << "El::Corba::SmartRef::SmartRef: _narrow gives "
+                  "nil reference for " << ref_;
+        
+          throw Exception(ostr.str().c_str());
+        }
+      }
+      catch(const CORBA::SystemException& )
+      {
+        // Delay getting object reference till object() call
+      }
+    }
+
+    template<typename T>
+    SmartRef<T>::SmartRef(const SmartRef<T>& val)
+      throw(Exception, El::Exception)
+    {
+      std::auto_ptr<RefType> tmp(val.clone());
+        
+      WriteGuard guard(lock_);
+      
+      ref_ = tmp->ref_;
+      obj_ = tmp->obj_._retn();
+      orb_ = tmp->orb_._retn();
+    }
+
+    template<typename T>
+    SmartRef<T>*
+    SmartRef<T>::clone() const throw()
+    {
+      std::auto_ptr<RefType> tmp(new RefType());
+      
+      ReadGuard guard(lock_);
+      
+      tmp->ref_ = ref_;
+      tmp->obj_ = obj_;
+      tmp->orb_ = orb_;
+
+      return tmp.release();
+    }
+
+    template<typename T>
+    SmartRef<T>&
+    SmartRef<T>::operator=(const SmartRef<T>& val)
+      throw(Exception, El::Exception)
+    {
+      std::auto_ptr<RefType> tmp(val.clone());
+        
+      WriteGuard guard(lock_);
+      
+      ref_ = tmp->ref_;
+      obj_ = tmp->obj_._retn();
+      orb_ = tmp->orb_._retn();
+
+      return *this;
+    }
+
+    template<typename T>
+    bool
+    SmartRef<T>::empty() const throw()
+    {
+      ReadGuard guard(lock_);
+      return ref_.empty();
+    }
+
+    template<typename T>
+    std::string
+    SmartRef<T>::reference() const throw()
+    {
+      ReadGuard guard(lock_);
+      return ref_;
+    }
+
+    template<typename T>
+    T*
+    SmartRef<T>::object() const 
+      throw(Exception, CORBA::SystemException, El::Exception)
+    {
+      std::string ref;
+      CORBA::ORB_var orb;
+
+      {
+        ReadGuard guard(lock_);
+
+        if(!CORBA::is_nil(obj_.in()))
+        {
+          return T::_duplicate(obj_.in());
+        }
+
+        ref = ref_;
+        orb = orb_;
+      }
+
+      CORBA::Object_var obj = orb->string_to_object(ref.c_str());
+
+      if(CORBA::is_nil(obj.in()))
+      {
+        std::ostringstream ostr;
+        ostr << "El::Corba::SmartRef::object: "
+          "string_to_object() gives nil reference for "
+             << ref;
+      
+        throw Exception(ostr.str().c_str());
+      }
+
+      Var typed_obj = T::_narrow(obj.in());
+
+      if(CORBA::is_nil(typed_obj.in()))
+      {
+        std::ostringstream ostr;
+        
+        ostr << "El::Corba::SmartRef::object: _narrow gives nil reference for "
+             << ref;
+        
+        throw Exception(ostr.str().c_str());
+      }
+
+      WriteGuard guard(lock_);
+
+      if(CORBA::is_nil(obj_.in()) && ref == ref_)
+      {
+        obj_ = typed_obj._retn();
+      }
+
+      return T::_duplicate(obj_.in());
+    }    
+  }
+}
+
+#endif // _ELEMENTS_EL_CORBA_CORBA_HPP_

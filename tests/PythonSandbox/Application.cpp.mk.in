@@ -1,0 +1,35 @@
+# @file   Makefile.in
+# @author Karen Aroutiounov
+# $Id:$
+
+include Common.pre.rules
+include $(osbe_builddir)/config/CXX/CXX.pre.rules
+
+include $(osbe_builddir)/config/CXX/External/Python.pre.rules
+
+include $(top_builddir)/config/El/Elements.so.pre.rules
+include $(top_builddir)/config/El/Python/ElPython.so.pre.rules
+include $(top_builddir)/config/El/Python/ElPythonInterceptor.so.pre.rules
+include $(top_builddir)/config/El/Python/ElPythonSandboxService.so.pre.rules
+include $(top_builddir)/config/El/Net/ElNet.so.pre.rules
+
+include $(top_builddir)/config/tests/PythonSandbox/ElTestPythonSandboxContext.so.pre.rules
+
+sources  := Application.cpp
+target   := ElTestPythonSandbox
+
+#CXX_FLAGS := -I/home/karen/projects/research/include/python2.4 $(CXX_FLAGS)
+#LD_FLAGS := -L/home/karen/projects/research/lib $(LD_FLAGS)
+
+define check_commands
+  echo "Running ElTestPythonSandbox..."; \
+  ElTestPythonSandbox --file=$(top_srcdir)/tests/PythonSandbox/test.py; result=$$?; \
+  if test $$result -eq 0; then \
+    echo "done"; \
+  else \
+    echo "failed"; \
+  fi
+endef
+
+include $(osbe_builddir)/config/CXX/Ex.post.rules
+include $(osbe_builddir)/config/Check.post.rules

@@ -1,0 +1,25 @@
+# @file   Makefile.in
+# @author Karen Aroutiounov
+# $Id:$
+
+include Common.pre.rules
+include $(osbe_builddir)/config/CXX/CXX.pre.rules
+
+include $(top_builddir)/config/El/MySQL/ElMySQL.so.pre.rules
+
+sources  := Application.cpp
+target   := ElTestMySQLClassGen
+
+all: GenClass
+
+GenClass:
+	./GenClass.sh
+
+define check_commands
+  ./Test.sh
+endef
+
+include $(osbe_builddir)/config/CXX/Ex.post.rules
+include $(osbe_builddir)/config/Check.post.rules
+
+

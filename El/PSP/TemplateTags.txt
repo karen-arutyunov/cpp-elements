@@ -1,0 +1,17 @@
+Tags:
+
+<? loc[:ENCODING_VALUE] STRING_ID ?>    // 500 HTTP error code if not found
+<? lang[:ENCODING_VALUE] ?>
+<? param[:ENCODING_VALUE] PARAM_NAME ?> // empty if not found
+<? conf[:ENCODING_VALUE] OPTION_NAME ?> // 500 HTTP error code if not found
+<? browser[:ENCODING_VALUE] ?>
+<? os[:ENCODING_VALUE] ?>
+<? header[:ENCODING_VALUE] HEADER_NAME ?> // empty if not found
+<? cookie[:ENCODING_VALUE] COOKIE_NAME ?> // empty if not found
+<??> // "<?" string
+
+<? encoding:ENCODING_VALUE ?> // set default encoding (initially none)
+
+ENCODING_VALUE::= none|mime-url|xml|xml-strict
+
+xml-strict - same as xml but do not preserve utf-8 encoding
