@@ -1,3 +1,8 @@
+Changes with Elements 1.6.1.0 (28 March 2015)
+
+  * Big dict files gzipped
+  * Some redundant tracing removed
+
 Changes with Elements 1.6.0.0 (25 February 2015)
 
   * Add crawlers into DB
