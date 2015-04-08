@@ -1,1 +1,1 @@
-# cpp-elements
+# cpp-elements library
