@@ -1,0 +1,43 @@
+The  purpose of this document is to provide instructions for preparing a setup 
+that can be used to develop the Elements library. This setup can also be used 
+to support dependent projects being configured in a similar  way. By the time 
+of this writing the only dependent project is the NewsGate Server.
+
+We will assume that this and dependent projects reside in ~/projects directory.
+If that is not the case you need to adjust instructions accordingly. By now
+the development binary package (containing the reqired compile and runtime 
+dependencies for Elements) should be installed. [ What are the instructions for
+that package installation? Should we put it into the Elements source 
+directory? ]
+
+Clone the Elements and change the current directory to the project's one.
+
+$ mkdir ~/projects
+$ cd ~/projects
+$ git clone git@github.com:newsgate/Elements.git
+$ cd Elements
+
+Run OpenSBE script which creates configure script.
+
+$ osbe
+
+Create the build output directory as well as default.config file with the 
+compilation options that should be used for the build. You can use cpp 
+preprocessor to generate such a configuration file from default.config.t 
+template passing some controlling macros to the preprocessor (read comments in
+default.config.t for details). You can also adjust specific compile options
+in the generated configuration file.
+
+$ mkdir build
+$ cpp -DDEBUG -DARC_x86_64 -DORB_TAO  default.config.t > ./build/default.config
+
+Now you can generate Makefiles corresponding to your compile options.
+
+$ cd build
+$ ../configure --enable-no-questions=yes
+
+Finally compile and test the project. Use appropriate arguments for make 
+utility. Testing is a bit verbose and takes some time.
+
+$ make -j8
+$ make check
