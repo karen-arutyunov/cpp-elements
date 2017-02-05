@@ -149,7 +149,8 @@ namespace El
         try
         {
           socket_stream_ =
-            SocketStreamPtr(new Socket::Stream(send_timeout,
+            SocketStreamPtr(new Socket::Stream(url_->secure (),
+                                               send_timeout,
                                                recv_timeout,
                                                send_buffer_size,
                                                recv_buffer_size,
@@ -160,10 +161,9 @@ namespace El
           {
             interceptor_->socket_stream_created(*socket_stream_);
           }
-
             
-          socket_stream_->connect(url_->idn_host(),
-                                  url_->port(),
+          socket_stream_->connect(url_->idn_host (),
+                                  url_->port (),
                                   connect_timeout);
 
           connect_timeout_.reset(
@@ -226,13 +226,7 @@ namespace El
         std::string permanent_location;
         
         while(true)
-        {
-          if(url_->secure())
-          {
-            throw UnsupportedSchema("El::Net::HTTP::Session::send_request: "
-                                    "SSL is not supported at the moment");
-          }
-          
+        {          
           send_one_request(method, params, headers, body, body_len);
 
           if(follow_redirects == 0)

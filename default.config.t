@@ -220,7 +220,7 @@ external.lib.google.cxx.ar_files =
 external.lib.ace.root = /usr
 external.lib.ace.cxx.include = /usr/include
 external.lib.ace.cxx.lib = /usr/LIB_DIR
-external.lib.ace.cxx.so_files = ACE
+external.lib.ace.cxx.so_files = ACE ACE_SSL
 external.lib.ace.cxx.ar_files = 
 
 external.lib.xerces.root = /usr

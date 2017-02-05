@@ -20,6 +20,10 @@
 
 #include <ace/OS.h>
 #include <ace/SOCK_Stream.h>
+#include <ace/SOCK_Connector.h>
+
+#include <ace/SSL/SSL_SOCK_Stream.h>
+#include <ace/SSL/SSL_SOCK_Connector.h>
 
 #include <El/Exception.hpp>
 #include <El/ArrayPtr.hpp>
@@ -52,12 +56,113 @@ namespace El
 
         virtual ~Interceptor() throw() {}
       };
+
+      class Socket
+      {
+      public:
+        virtual ~Socket () {}
+
+        virtual int
+        connect (const ACE_Addr&, const ACE_Time_Value* = 0) = 0;
+        
+        virtual ssize_t
+        recv (void*, size_t, const ACE_Time_Value* = 0) const = 0;
+
+        virtual ssize_t
+        send (const void*, size_t, const ACE_Time_Value* = 0) const = 0;
+
+        virtual void
+        close () = 0;
+
+        virtual ACE_SOCK_Stream&
+        socket () = 0;
+      };
+
+      class PlainSocket: public Socket
+      {
+      public:
+        virtual ~PlainSocket () {}
+
+        virtual int
+        connect (const ACE_Addr& addr, const ACE_Time_Value* timeout = 0)
+        {
+          ACE_SOCK_Connector connector;
+          return connector.connect (socket_, addr, timeout);
+        }
+        
+        virtual ssize_t
+        recv (void *buf, size_t n, const ACE_Time_Value *timeout = 0) const
+        {
+          return socket_.recv (buf, n, timeout);
+        }
+
+        virtual ssize_t
+        send (const void* buf, size_t n, const ACE_Time_Value* timeout = 0) const
+        {
+          return socket_.send (buf, n, timeout);
+        }
+
+        virtual void
+        close ()
+        {
+          socket_.close ();
+        }
+        
+        virtual ACE_SOCK_Stream&
+        socket ()
+        {
+          return socket_;
+        }
+        
+      private:
+        ACE_SOCK_Stream socket_;
+      };
+      
+      class SSLSocket: public Socket
+      {
+      public:
+        virtual ~SSLSocket () {}
+
+        virtual int
+        connect (const ACE_Addr& addr, const ACE_Time_Value* timeout = 0)
+        {
+          ACE_SSL_SOCK_Connector connector;
+          return connector.connect (socket_, addr, timeout);
+        }
+        
+        virtual ssize_t
+        recv (void *buf, size_t n, const ACE_Time_Value *timeout = 0) const
+        {
+          return socket_.recv (buf, n, timeout);
+        }
+
+        virtual ssize_t
+        send (const void* buf, size_t n, const ACE_Time_Value* timeout = 0) const
+        {
+          return socket_.send (buf, n, timeout);
+        }
+
+        virtual void
+        close ()
+        {
+          socket_.close ();
+        }
+        
+        virtual ACE_SOCK_Stream&
+        socket ()
+        {
+          return socket_.peer ();
+        }
+        
+      private:
+        ACE_SSL_SOCK_Stream socket_;
+      };
       
       class StreamBuf
         : public std::basic_streambuf<char, std::char_traits<char> >
       {
       public:
-        StreamBuf(ACE_SOCK_Stream& socket,
+        StreamBuf(Socket& socket,
                   const ACE_Time_Value* send_timeout = 0,
                   const ACE_Time_Value* recv_timeout = 0,
                   size_t send_buffer_size = 1024,
@@ -115,7 +220,7 @@ namespace El
           throw(El::Exception);
         
       protected:
-        ACE_SOCK_Stream& socket_;
+        Socket& socket_;
         
         std::auto_ptr<ACE_Time_Value> send_timeout_;
         std::auto_ptr<ACE_Time_Value> recv_timeout_;
@@ -148,7 +253,7 @@ namespace El
         EL_EXCEPTION(Timeout, ::El::Net::Socket::Exception);
         
       public:
-        Stream(ACE_SOCK_Stream& sock_stream,
+        Stream(Socket& sock_stream,
                const ACE_Time_Value* send_timeout = 0,
                const ACE_Time_Value* recv_timeout = 0,
                size_t send_buffer_size = 1024,
@@ -159,6 +264,7 @@ namespace El
 
         Stream(const char* host,
                unsigned short port,
+               bool ssl,
                const ACE_Time_Value* connect_timeout = 0,
                const ACE_Time_Value* send_timeout = 0,
                const ACE_Time_Value* recv_timeout = 0,
@@ -171,7 +277,8 @@ namespace El
                 ::El::Net::Socket::Exception,
                 El::Exception);
 
-        Stream(const ACE_Time_Value* send_timeout = 0,
+        Stream(bool ssl,
+               const ACE_Time_Value* send_timeout = 0,
                const ACE_Time_Value* recv_timeout = 0,
                size_t send_buffer_size = 1024,
                size_t recv_buffer_size = 1024,
@@ -205,12 +312,12 @@ namespace El
 
       protected:
         typedef std::auto_ptr<StreamBuf> StreamBufPtr;
-        typedef std::auto_ptr<ACE_SOCK_Stream> ACE_SOCK_StreamPtr;
+        typedef std::auto_ptr<Socket> SocketPtr;
 
-        bool connected_;
-        ACE_SOCK_StreamPtr socket_;
-        StreamBufPtr       streambuf_;
-        Interceptor*       interceptor_;
+        bool         connected_;
+        SocketPtr    socket_;
+        StreamBufPtr streambuf_;
+        Interceptor* interceptor_;
 
       private:
         Stream(const Stream& );
@@ -285,7 +392,7 @@ namespace El
       ACE_SOCK_Stream&
       StreamBuf::socket() const throw()
       {
-        return socket_;
+        return socket_.socket ();
       }
 
       inline
@@ -446,7 +553,7 @@ namespace El
       {
         return streambuf_->socket();
       }
-      
+
       inline
       int
       Stream::last_error() const throw()

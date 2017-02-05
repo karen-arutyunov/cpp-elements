@@ -156,8 +156,6 @@ namespace El
         void debug_istream(std::ostream* ostr) throw();
         void debug_ostream(std::ostream* ostr) throw();
 
-        ACE_SOCK_Stream& socket() const throw();
-
         enum StreamLayer
         {
           SL_NONE,
@@ -310,20 +308,6 @@ namespace El
       //
       // Session class
       //
-
-      inline
-      ACE_SOCK_Stream&
-      Session::socket() const throw()
-      {
-        if(opened_)
-        {
-          return socket_stream_->socket();
-        }
-
-        throw Exception("El::Net::HTTP::Session::socket: "
-                        "session is not opened");
-      }
-      
       inline
       std::iostream&
       Session::stream() const throw(Exception, El::Exception)

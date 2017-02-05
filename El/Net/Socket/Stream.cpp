@@ -17,9 +17,12 @@
 #include <iostream>
 
 #include <ace/OS.h>
-#include <ace/SOCK_Connector.h>
-#include <ace/SOCK_Stream.h>
 #include <ace/INET_Addr.h>
+#include <ace/SOCK_Stream.h>
+#include <ace/SOCK_Connector.h>
+
+#include <ace/SSL/SSL_SOCK_Stream.h>
+#include <ace/SSL/SSL_SOCK_Connector.h>
 
 #include "Stream.hpp"
 
@@ -32,7 +35,7 @@ namespace El
       //
       // StreamBuf class
       //
-      StreamBuf::StreamBuf(ACE_SOCK_Stream& socket,
+      StreamBuf::StreamBuf(Socket& socket,
                            const ACE_Time_Value* send_timeout,
                            const ACE_Time_Value* recv_timeout,
                            size_t send_buffer_size,
@@ -64,12 +67,6 @@ namespace El
         {
           throw InvalidArg("El::Net::Socket::StreamBuf::StreamBuf: both "
                            "send_buffer_size and recv_buffer_size are 0");
-        }
-
-        if(socket.get_handle () == ACE_INVALID_HANDLE)
-        {
-          throw InvalidArg("El::Net::Socket::StreamBuf::StreamBuf: "
-                           "sock_stream is not a valid stream");
         }
       }
       
@@ -376,7 +373,8 @@ namespace El
       // Stream class
       //
       
-      Stream::Stream(const ACE_Time_Value* send_timeout,
+      Stream::Stream(bool ssl,
+                     const ACE_Time_Value* send_timeout,
                      const ACE_Time_Value* recv_timeout,
                      size_t send_buffer_size,
                      size_t recv_buffer_size,
@@ -387,21 +385,9 @@ namespace El
             connected_(false),
             interceptor_(interceptor)
       {
-        socket_ = ACE_SOCK_StreamPtr(new ACE_SOCK_Stream());
-
-        if(socket_->open(SOCK_STREAM, AF_INET, 0, 0) == -1)
-        {
-          socket_.reset();
-          
-          int error = ACE_OS::last_error();
-      
-          std::ostringstream ostr;
-          ostr << "El::Net::Socket::Stream::Stream: failed to open. Reason:"
-               << std::endl << "errno " << error << ", "
-               << ACE_OS::strerror(error);
-          
-          throw ::El::Net::Socket::Exception(ostr.str());
-        }
+        socket_ = ssl
+          ? SocketPtr(new SSLSocket ())
+          : SocketPtr(new PlainSocket());
 
         try
         {
@@ -426,7 +412,7 @@ namespace El
         init(streambuf_.get());
       }
       
-      Stream::Stream(ACE_SOCK_Stream& sock_stream,
+      Stream::Stream(Socket& sock_stream,
                      const ACE_Time_Value* send_timeout,
                      const ACE_Time_Value* recv_timeout,
                      size_t send_buffer_size,
@@ -463,6 +449,7 @@ namespace El
 
       Stream::Stream(const char* host,
                      unsigned short port,
+                     bool ssl,
                      const ACE_Time_Value* connect_timeout,
                      const ACE_Time_Value* send_timeout,
                      const ACE_Time_Value* recv_timeout,
@@ -485,46 +472,12 @@ namespace El
           throw InvalidArg("El::Net::Socket::Stream::Stream: port is 0");
         }
         
-        socket_ = ACE_SOCK_StreamPtr(new ACE_SOCK_Stream());
+        socket_ = ssl
+          ? SocketPtr (new SSLSocket())
+          : SocketPtr (new PlainSocket());
 
-        if(socket_->open(SOCK_STREAM, AF_INET, 0, 0) == -1)
-        {
-          socket_.reset();
-          
-          int error = ACE_OS::last_error();
-      
-          std::ostringstream ostr;
-          ostr << "El::Net::Socket::Stream::Stream: failed to open "
-            "before connecting to " << host << ":" << port << ". Reason:"
-               << std::endl << "errno " << error << ", "
-               << ACE_OS::strerror(error);
-          
-          throw ::El::Net::Socket::Exception(ostr.str());
-        }
-        
-/*        
-        unsigned int bufsize = 2048;
-          
-        if(socket_->set_option (SOL_SOCKET,
-                                SO_RCVBUF,
-                                &bufsize,
-                                sizeof(bufsize)) == -1)
-        {
-          int error = ACE_OS::last_error();
-
-          std::ostringstream ostr;
-          ostr << "El::Net::Socket::Stream::Stream: unable to set socket "
-            "option SO_RCVBUF with size " << bufsize << ". Error "
-               << error << ", reason " << ACE_OS::strerror(error);
-              
-          throw Exception(ostr.str());
-        }
-*/
-
-        ACE_SOCK_Connector connector;
         ACE_INET_Addr address(port, host);
-
-        if(connector.connect(*socket_, address, connect_timeout) == -1)
+        if(socket_->connect(address, connect_timeout) == -1)
         {
           int error = ACE_OS::last_error();
       
@@ -598,10 +551,8 @@ namespace El
           throw InvalidOperation(ostr.str());          
         }
 
-        ACE_SOCK_Connector connector;
         ACE_INET_Addr address(port, host);
-
-        if(connector.connect(*socket_, address, connect_timeout) == -1)
+        if(socket_->connect(address, connect_timeout) == -1)
         {
           int error = ACE_OS::last_error();
       

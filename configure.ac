@@ -91,7 +91,7 @@ OSBE_CXX_USE_LIB(ACE,
                  [ACE],
                  [include],
                  [lib],
-                 [ACE],
+                 [ACE ACE_SSL],
                  [],
                  [External/ACE.pre.rules])
 
