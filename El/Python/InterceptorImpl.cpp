@@ -144,8 +144,11 @@ extern "C" void
 free(void* ptr)
 {
   real_mem_func(real_free, "free");
-  real_free(ptr);
-  El::Python::InterceptorImpl::count_free(ptr);
+  if (real_free)
+  {
+    real_free(ptr);
+    El::Python::InterceptorImpl::count_free(ptr);
+  }
 }
 
 extern "C" void*
